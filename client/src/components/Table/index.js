@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { MDBDataTable } from 'mdbreact';
 import API from "../../utils/API";
-import al from "../../pages/teamPages/al";
+// import al from "../../pages/teamPages/al";
 import { golfHelper } from "../../middleware/helper";
 
 // This table is being used for the Home Page currently, but not for the My Teams page. I am going to create that table separately. 
@@ -72,16 +72,16 @@ class Table extends Component {
         goosePGA: "",
         // MLB
         // PGA Here:
-        alMLB: 195,
-        tomMLB: 268,
-        patMLB: 240,
-        steidsMLB: 240,
-        neptuneMLB: 204,
-        jamesMLB: 286,
-        joeMLB: 244,
-        djMLB: 237,
-        eresMLB: 258,
-        gooseMLB: 252,
+        // alMLB: 195,
+        // tomMLB: 268,
+        // patMLB: 240,
+        // steidsMLB: 240,
+        // neptuneMLB: 204,
+        // jamesMLB: 286,
+        // joeMLB: 244,
+        // djMLB: 237,
+        // eresMLB: 258,
+        // gooseMLB: 252,
         // Total Points here. 
         tomTotal: "",
         patTotal: "",
@@ -93,16 +93,16 @@ class Table extends Component {
         joeTotal: "",
         steidsTotal: "",
         benTotal: "",
-        tomBonus: 200,
-        patBonus: 200,
-        gooseBonus: 220,
-        joeBonus: 190,
-        steidsBonus: 190,
-        neptuneBonus: 180,
-        alBonus: 220,
-        eresBonus: 200,
-        djBonus: 200,
-        jamesBonus: 200
+        // tomBonus: 200,
+        // patBonus: 200,
+        // gooseBonus: 220,
+        // joeBonus: 190,
+        // steidsBonus: 190,
+        // neptuneBonus: 180,
+        // alBonus: 220,
+        // eresBonus: 200,
+        // djBonus: 200,
+        // jamesBonus: 200
 
     }
 
@@ -152,12 +152,12 @@ class Table extends Component {
                     sort: 'asc',
                     width: 150
                 },
-                {
-                    label: 'Bonus',
-                    field: 'bonus',
-                    sort: 'asc',
-                    width: 150
-                },
+                // {
+                //     label: 'Bonus',
+                //     field: 'bonus',
+                //     sort: 'asc',
+                //     width: 150
+                // },
                 {
                     label: 'Total',
                     field: 'total',
@@ -172,8 +172,7 @@ class Table extends Component {
                     nfl: this.state.tomNFL,
                     pga: this.state.tomPGA,
                     nba: this.state.tomNBA,
-                    // nhl: this.state.tomNHL,
-                    nhl: 211,
+                    nhl: this.state.tomNHL,
                     mlb: this.state.tomMLB,
                     bonus: this.state.tomBonus,
                     total: this.state.tomTotal
@@ -184,8 +183,7 @@ class Table extends Component {
                     nfl: this.state.patFixedFootball,
                     pga: this.state.patPGA,
                     nba: this.state.patrickNBA,
-                    // nhl: this.state.patNHL,
-                    nhl: 262,
+                    nhl: this.state.patNHL,              
                     mlb: this.state.patMLB,
                     bonus: this.state.patBonus,
                     total: this.state.patTotal
@@ -196,8 +194,7 @@ class Table extends Component {
                     nfl: this.state.jamesNFL,
                     pga: this.state.jamesPGA,
                     nba: this.state.jamesNBA,
-                    // nhl: this.state.jamesNHL,
-                    nhl: 331, 
+                    nhl: this.state.jamesNHL,
                     mlb: this.state.jamesMLB,
                     bonus: this.state.jamesBonus,
                     total: this.state.jamesTotal
@@ -208,8 +205,7 @@ class Table extends Component {
                     nfl: this.state.gooseNFL,
                     pga: this.state.goosePGA,
                     nba: this.state.gooseNBA,
-                    // nhl: this.state.gooseNHL,
-                    nhl: 223,
+                    nhl: this.state.gooseNHL,
                     mlb: this.state.gooseMLB,
                     bonus: this.state.gooseBonus,
                     total: this.state.gooseTotal
@@ -220,8 +216,7 @@ class Table extends Component {
                     nfl: this.state.neptuneFixedFootball,
                     pga: this.state.neptunePGA,
                     nba: this.state.neptuneNBA,
-                    // nhl: this.state.neptuneNHL,
-                    nhl: 312,
+                    nhl: this.state.neptuneNHL,
                     mlb: this.state.neptuneMLB,
                     bonus: this.state.neptuneBonus,
                     total: this.state.neptuneTotal
@@ -232,8 +227,7 @@ class Table extends Component {
                     nfl: this.state.joeNFL,
                     pga: this.state.joePGA,
                     nba: this.state.joeNBA,
-                    // nhl: this.state.joeNHL,
-                    nhl: 282,
+                    nhl: this.state.joeNHL,
                     mlb: this.state.joeMLB,
                     bonus: this.state.joeBonus,
                     total: this.state.joeTotal
@@ -244,8 +238,7 @@ class Table extends Component {
                     nfl: this.state.eresNFL,
                     pga: this.state.eresPGA,
                     nba: this.state.benNBA,
-                    // nhl: this.state.eresNHL,
-                    nhl: 284,
+                    nhl: this.state.eresNHL,
                     mlb: this.state.eresMLB,
                     bonus: this.state.eresBonus,
                     total: this.state.benTotal
@@ -256,8 +249,7 @@ class Table extends Component {
                     nfl: this.state.djNFL,
                     pga: this.state.djPGA,
                     nba: this.state.djNBA,
-                    // nhl: this.state.djNHL,
-                    nhl: 270,
+                    nhl: this.state.djNHL,
                     mlb: this.state.djMLB,
                     bonus: this.state.djBonus,
                     total: this.state.djTotal
@@ -268,8 +260,7 @@ class Table extends Component {
                     nfl: this.state.steidsFixedFootball,
                     pga: this.state.steidsPGA,
                     nba: this.state.steidsNBA,
-                    // nhl: this.state.steidsNHL,
-                    nhl: 315,
+                    nhl: this.state.steidsNHL,
                     mlb: this.state.steidsMLB,
                     bonus: this.state.steidsBonus,
                     total: this.state.steidsTotal
@@ -280,8 +271,7 @@ class Table extends Component {
                     nfl: this.state.alFixedFootball,
                     pga: this.state.alPGA,
                     nba: this.state.alNBA,
-                    // nhl: this.state.alNHL,
-                    nhl: 296,
+                    nhl: this.state.alNHL,
                     mlb: this.state.alMLB,
                     bonus: this.state.alBonus,
                     total: this.state.alTotal
@@ -308,7 +298,7 @@ class Table extends Component {
         // Now, once the updates have applied, we call the getteams. This will show updated results. I'm gonna freeze this for the time being so I don't make a million API calls. 
         this.getScoresEPL();
         // I'm gonna run this as a function even though these are just dead numbers at this point (since the NFL regular season ended)
-        this.getScoresNFL();
+        // this.getScoresNFL();
         // running NHL here
         this.getScoresNHL();
         // MLB Here 
@@ -324,59 +314,44 @@ class Table extends Component {
         // Totals for Tom 
         var tomTotalPoints =
             parseInt((this.state.tomNBA)) +
-            // parseInt((this.state.tomNHL)) +
-            211 +
+            parseInt((this.state.tomNHL)) +
             parseInt((this.state.tomPGA)) +
             parseInt((this.state.tomNFL)) +
             parseInt((this.state.tomEPL)) +
             parseInt((this.state.tomMLB)) +
             // Bonus
-            parseInt((this.state.tomBonus)) - 
-            // Negative bonus for losing NHL
-            30
+            parseInt((this.state.tomBonus)) 
             this.setState({ tomTotal: tomTotalPoints });
         console.log(tomTotalPoints);
 
         // Totals for Pat 
         var patTotalPoints =
             parseInt((this.state.patrickNBA)) +
-            // parseInt((this.state.patNHL)) +
-            262 + 
+            parseInt((this.state.patNHL)) +
             parseInt((this.state.patPGA)) +
             parseInt((this.state.patNFL)) +
             parseInt((this.state.patEPL)) +
             parseInt((this.state.patMLB)) +
             // Bonus
-            parseInt((this.state.patBonus)) - 
-            // Bonus for losing PGA
-            30
+            parseInt((this.state.patBonus)) 
         this.setState({ patTotal: patTotalPoints });
 
         // Totals for JAmes
         var jamesTotalPoints =
             parseInt((this.state.jamesNBA)) +
-            // parseInt((this.state.jamesNHL)) +
-            331 + 
+            parseInt((this.state.jamesNHL)) +
             parseInt((this.state.jamesPGA)) +
             parseInt((this.state.jamesNFL)) +
             parseInt((this.state.jamesEPL)) +
             parseInt((this.state.jamesMLB)) +
             parseInt((this.state.jamesBonus))
             // Bonus
-            - 
-            // Negative Bonus for losing NBA
-            30 + 
-            // Positive bonus for winning NHL
-            30 + 
-            // Positive Bonus for winning MLB
-            30
         this.setState({ jamesTotal: jamesTotalPoints });
 
         // Totals for Neptune
         var neptuneTotalPoints =
             parseInt((this.state.neptuneNBA)) +
-            // parseInt((this.state.neptuneNHL)) +
-            312 + 
+            parseInt((this.state.neptuneNHL)) +
             parseInt((this.state.neptunePGA)) +
             parseInt((this.state.neptuneNFL)) +
             parseInt((this.state.neptuneEPL)) +
@@ -388,8 +363,7 @@ class Table extends Component {
         // Totals for DJ
         var djTotalPoints =
             parseInt((this.state.djNBA)) +
-            // parseInt((this.state.djNHL)) +
-            270 + 
+            parseInt((this.state.djNHL)) +
             parseInt((this.state.djPGA)) +
             parseInt((this.state.djNFL)) +
             parseInt((this.state.djEPL)) +
@@ -401,8 +375,7 @@ class Table extends Component {
         // Totals for Goose 
         var gooseTotalPoints =
             parseInt((this.state.gooseNBA)) +
-            // parseInt((this.state.gooseNHL)) +
-            223 + 
+            parseInt((this.state.gooseNHL)) +
             parseInt((this.state.goosePGA)) +
             parseInt((this.state.gooseNFL)) +
             parseInt((this.state.gooseEPL)) +
@@ -414,46 +387,30 @@ class Table extends Component {
         // Totals for Al
         var alTotalPoints =
             parseInt((this.state.alNBA)) +
-            // parseInt((this.state.alNHL)) +
-            296 + 
+            parseInt((this.state.alNHL)) +
             parseInt((this.state.alPGA)) +
             parseInt((this.state.alNFL)) +
             parseInt((this.state.alEPL)) +
             parseInt((this.state.alMLB)) +
             parseInt((this.state.alBonus))
             // Bonus
-            +
-            // bonus for winning EPL 
-            30 +
-            // bonus for PGA
-            30 -
-            // negative bonus for losing MLB
-            30
         this.setState({ alTotal: alTotalPoints });
 
         // Totals for Joe
         var joeTotalPoints =
             parseInt((this.state.joeNBA)) +
-            // parseInt((this.state.joeNHL)) +
-            282 + 
+            parseInt((this.state.joeNHL)) +
             parseInt((this.state.joePGA)) +
             parseInt((this.state.joeNFL)) +
             parseInt((this.state.joeEPL)) +
             parseInt((this.state.joeMLB)) +
             parseInt((this.state.joeBonus))
-            // Bonus
-            -
-            // Negative Bonus for losing EPL
-            30 +
-            // Positive Bonus for winning NBA
-            30
         this.setState({ joeTotal: joeTotalPoints });
 
         // Totals for Steids
         var steidsTotalPoints =
             parseInt((this.state.steidsNBA)) +
-            // parseInt((this.state.steidsNHL)) +
-            315 + 
+            parseInt((this.state.steidsNHL)) +
             parseInt((this.state.steidsPGA)) +
             parseInt((this.state.steidsNFL)) +
             parseInt((this.state.steidsEPL)) +
@@ -464,9 +421,8 @@ class Table extends Component {
 
         // Totals for Ben - now Mark Eres 
         var benTotalPoints =
-            parseInt((this.state.benNBA)) +
-            // parseInt((this.state.eresNHL)) +
-            284 + 
+            parseInt((this.state.eresNBA)) +
+            parseInt((this.state.eresNHL)) +
             parseInt((this.state.eresPGA)) +
             parseInt((this.state.eresNFL)) +
             parseInt((this.state.eresEPL)) +
@@ -476,7 +432,7 @@ class Table extends Component {
         this.setState({ benTotal: benTotalPoints });
     };
 
-    // This one I get to hard code because the season ended. 
+    // NFL Starting here. 
 
     getScoresNFL = () => {
         var x = golfHelper();
@@ -524,43 +480,43 @@ class Table extends Component {
         var x = golfHelper();
         Object.keys(x).forEach((key) => { x[key] = x[key] / 20 });
         // Al
-        var alGolf = (x.Gooch + x.Smith + x.Scheffler + x.Homa).toFixed(0);
-        // Mito removed for lowest score
+        var alGolf = (x.Rahm + x.Morikawa + x.Conners + x.Harman + x.Davis).toFixed(0);
+        // No score removed.
         this.setState({ alPGA: alGolf });
         // Tom
-        var tomGolf = (x.Tringale + x.Niemann + x.Schauffele + x.Niemann).toFixed(0);
+        var tomGolf = (x.Finau + x.Fitzpatrick + x.Kim + x.Bradley + x.McNealy).toFixed(0);
         // Henley removed for lowest score. 
         this.setState({ tomPGA: tomGolf });
         // Goose
-        var gooseGolf = (x.Grillo + x.Hovland + x.Harman + x.Thomas).toFixed(0);
+        var gooseGolf = (x.Hovland + x.Im + x.Pereira + x.Power + x.Grillo).toFixed(0);
         // Oosthuizen removed for lowest score
         this.setState({ goosePGA: gooseGolf });
         // James
-        var jamesGolf = (x.Lowry + x.Im + x.Koepka + x.Horschel).toFixed(0);
+        var jamesGolf = (x.Burns + x.Horschel+ x.Hatton + x.Fleetwood + x.Wise).toFixed(0);
         // Na removed for lowest score
         this.setState({ jamesPGA: jamesGolf });
         // Joe
-        var joeGolf = (x.VanRooyen + x.Finau + x.Scott + x.Simpson).toFixed(0);
+        var joeGolf = (x.Hoge + x.Hughes + x.Putnam + x.Day + x.Griffin).toFixed(0);
         // Bryson removed for lowest score
         this.setState({ joePGA: joeGolf });
         // Neptune
-        var neptuneGolf = (x.Fleetwood + x.Zalatoris + x.Spieth + x.Matsuyama).toFixed(0);
+        var neptuneGolf = (x.Scheffler + x.Schauffele + x.Cantlay + x.Woods + x.Herbert).toFixed(0);
         // Ancer removed for lowest score
         this.setState({ neptunePGA: neptuneGolf });
         // Patrick
-        var patGolf = (x.Rahm + x.Berger + x.Champ + x.Wolff).toFixed(0);
+        var patGolf = (x.Thomas + x.Zalatoris + x.Young + x.Theegala + x.Riley).toFixed(0);
         // Dustin Johnson removed for lowest score
         this.setState({ patPGA: patGolf });
         // Steids
-        var steidsGolf = (x.Kim + x.Burns + x.Kokrak + x.Conners).toFixed(0);
+        var steidsGolf = (x.Homa + x.Berger + x.Straka + x.Henley + x.Fowler).toFixed(0);
         // Harris English removed for lowest Score
         this.setState({ steidsPGA: steidsGolf });
         // DJ
-        var djGolf = (x.Mcilroy + x.Morikawa + x.Rose + x.Casey).toFixed(0);
+        var djGolf = (x.English + x.SiWoo + x.Scott + x.Champ + x.Rose).toFixed(0);
         // Sergio removed for lowest score
         this.setState({ djPGA: djGolf });
         // Eres
-        var eresGolf = (x.Cantlay + x.Fitzpatrick + x.Reed + x.Hatton).toFixed(0);
+        var eresGolf = (x.Mcilroy + x.Spieth + x.Matsuyama + x.Lowry + x.Simpson).toFixed(0);
         // Fowler removed for lowest score
         this.setState({ eresPGA: eresGolf });
 
@@ -1437,70 +1393,70 @@ class Table extends Component {
 
                 // Tom NHL here 
 
-                var flyersWins;
-                var flyersOTLS;
-                var flyersTotal;
-                var sharksWins;
-                var sharksOTLS;
-                var sharksTotal;
-                var senatorsWins;
-                var senatorsOTLS;
-                var senatorsTotal;
+                var blueJacketsWins;
+                var blueJacketsOTLS;
+                var blueJacketsTotal;
+                var coyotesWins;
+                var coyotesOTLS;
+                var coyotesTotal;
+                var canadiansWins;
+                var canadiansOTLS;
+                var canadiansTotal;
                 var totalNHL;
 
-                // Here is the flyers for loop. 
+                // Here is the blueJackets for loop. 
                 for (var i = 0; i < metroResults.length; i++) {
 
-                    if (metroResults[i].team.id === 4) {
-                        flyersWins = metroResults[i].leagueRecord.wins;
-                        flyersOTLS = metroResults[i].leagueRecord.ot;
-                        console.log(flyersWins);
-                        console.log(flyersOTLS);
+                    if (metroResults[i].team.id === 29) {
+                        blueJacketsWins = metroResults[i].leagueRecord.wins;
+                        blueJacketsOTLS = metroResults[i].leagueRecord.ot;
+                        console.log(blueJacketsWins);
+                        console.log(blueJacketsOTLS);
                         console.log("this loop is running")
                     }
                 }
-                // sharks total
-                flyersTotal = (flyersWins * 2) + flyersOTLS;
-                console.log(flyersTotal)
+                // BlueJackets total
+                blueJacketsTotal = (blueJacketsWins * 2) + blueJacketsOTLS;
+                console.log(blueJacketsTotal)
 
-                // Here is the loop for the senators and flyers, who are in the same division. 
-                for (var i = 0; i < pacificResults.length; i++) {
+                // Here is the loop for the coyotes.
+                for (var i = 0; i < centralResults.length; i++) {
 
-                    // sharks
-                    if (pacificResults[i].team.id === 28) {
-                        sharksWins = pacificResults[i].leagueRecord.wins;
-                        sharksOTLS = pacificResults[i].leagueRecord.ot;
-                        console.log(sharksWins);
-                        console.log(sharksOTLS);
+                    // coyotes
+                    if (centralResults[i].team.id === 53) {
+                        coyotesWins = centralResults[i].leagueRecord.wins;
+                        coyotesOTLS = centralResults[i].leagueRecord.ot;
+                        console.log(coyotesWins);
+                        console.log(coyotesOTLS);
                         console.log("this loop is running")
                     }
                 }
 
-                // Here is the flyers for loop. 
+                // Here is the Canadians for loop. 
                 for (var i = 0; i < metroResults.length; i++) {
 
-                    // senators
-                    if (atlanticResults[i].team.id === 9) {
-                        senatorsWins = atlanticResults[i].leagueRecord.wins;
-                        senatorsOTLS = atlanticResults[i].leagueRecord.ot;
-                        console.log(senatorsWins);
-                        console.log(senatorsOTLS);
+                    // canadiens
+                    if (atlanticResults[i].team.id === 8) {
+                        canadiansWins = atlanticResults[i].leagueRecord.wins;
+                        canadiansOTLS = atlanticResults[i].leagueRecord.ot;
+                        console.log(canadiansWins);
+                        console.log(canadiansOTLS);
                         console.log("this loop is running")
                     }
                 }
-                // flyers total
-                flyersTotal = (flyersWins * 2) + flyersOTLS;
-                console.log(flyersTotal)
+                // blueJackets total
+                blueJacketsTotal = (blueJacketsWins * 2) + blueJacketsOTLS;
+                console.log(blueJacketsTotal)
 
-                // sharks total
-                sharksTotal = (sharksWins * 2) + sharksOTLS;
-                console.log(sharksTotal);
+                // coyotes total
+                coyotesTotal = (coyotesWins * 2) + coyotesOTLS;
+                console.log(coyotesTotal);
 
-                // senators total
-                senatorsTotal = (senatorsWins * 2) + senatorsOTLS;
-                console.log(senatorsTotal);
+                // canadians total
+                canadiansTotal = (canadiansWins * 2) + canadiansOTLS;
+                console.log(canadiansTotal);
 
-                var totalTomNHL = flyersTotal + senatorsTotal + sharksTotal
+                var totalTomNHL = blueJacketsTotal + canadiansTotal + coyotesTotal
 
 
                 this.setState({ alNHL: totalAlNHL });
