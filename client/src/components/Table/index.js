@@ -21,7 +21,7 @@ class Table extends Component {
         alNBA: "",
         joeNBA: "",
         steidsNBA: "",
-        benNBA: "",
+        eresNBA: "",
         // Putting EPL arrays here. 
         allEPL: [],
         tomEPL: "",
@@ -92,7 +92,7 @@ class Table extends Component {
         alTotal: "",
         joeTotal: "",
         steidsTotal: "",
-        benTotal: "",
+        eresTotal: "",
         // tomBonus: 200,
         // patBonus: 200,
         // gooseBonus: 220,
@@ -122,12 +122,12 @@ class Table extends Component {
                     sort: 'asc',
                     width: 150
                 },
-                {
-                    label: 'NFL',
-                    field: 'nfl',
-                    sort: 'asc',
-                    width: 150
-                },
+                // {
+                //     label: 'NFL',
+                //     field: 'nfl',
+                //     sort: 'asc',
+                //     width: 150
+                // },
                 {
                     label: 'NBA',
                     field: 'nba',
@@ -146,12 +146,12 @@ class Table extends Component {
                     sort: 'asc',
                     width: 150
                 },
-                {
-                    label: 'MLB',
-                    field: 'mlb',
-                    sort: 'asc',
-                    width: 150
-                },
+                // {
+                //     label: 'MLB',
+                //     field: 'mlb',
+                //     sort: 'asc',
+                //     width: 150
+                // },
                 // {
                 //     label: 'Bonus',
                 //     field: 'bonus',
@@ -237,11 +237,11 @@ class Table extends Component {
                     epl: this.state.eresEPL,
                     nfl: this.state.eresNFL,
                     pga: this.state.eresPGA,
-                    nba: this.state.benNBA,
+                    nba: this.state.eresNBA,
                     nhl: this.state.eresNHL,
                     mlb: this.state.eresMLB,
                     bonus: this.state.eresBonus,
-                    total: this.state.benTotal
+                    total: this.state.eresTotal
                 },
                 {
                     team: 'DJ',
@@ -420,7 +420,7 @@ class Table extends Component {
         this.setState({ steidsTotal: steidsTotalPoints });
 
         // Totals for Ben - now Mark Eres 
-        var benTotalPoints =
+        var eresTotalPoints =
             parseInt((this.state.eresNBA)) +
             parseInt((this.state.eresNHL)) +
             parseInt((this.state.eresPGA)) +
@@ -429,7 +429,7 @@ class Table extends Component {
             // parseInt((this.state.eresMLB)) +
             // parseInt((this.state.eresBonus))
         // Bonus
-        this.setState({ benTotal: benTotalPoints });
+        this.setState({ eresTotal: eresTotalPoints });
     };
 
     // NFL Starting here. 
@@ -2064,26 +2064,26 @@ class Table extends Component {
                 // console.log(SteidsPoints);
                 this.setState({ steidsNBA: SteidsPoints });
 
-                // Ben
+                // Eres
                 var netsWin = res.data.api.standings[2].win;
                 var lakersWin = res.data.api.standings[24].win;
                 var hornetsWin = res.data.api.standings[14].win;
 
-                const tempbenNBA = [];
+                const temperesNBA = [];
 
-                tempbenNBA.push(netsWin);
-                tempbenNBA.push(lakersWin);
-                tempbenNBA.push(hornetsWin);
+                temperesNBA.push(netsWin);
+                temperesNBA.push(lakersWin);
+                temperesNBA.push(hornetsWin);
 
-                var BenDoubledScores = tempbenNBA.map(team => team * 2);
+                var eresDoubledScores = temperesNBA.map(team => team * 2);
 
-                var BenPoints = 0;
+                var eresPoints = 0;
 
-                for (var i = 0; i < BenDoubledScores.length; i++) {
-                    BenPoints += BenDoubledScores[i];
+                for (var i = 0; i < eresDoubledScores.length; i++) {
+                    eresPoints += eresDoubledScores[i];
                 }
-                // console.log(BenPoints);
-                this.setState({ benNBA: BenPoints });
+                // console.log(eresPoints);
+                this.setState({ eresNBA: eresPoints });
                 this.totalScores();
             })
             .catch(error => {
