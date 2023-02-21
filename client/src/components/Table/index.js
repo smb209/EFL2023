@@ -316,11 +316,11 @@ class Table extends Component {
             parseInt((this.state.tomNBA)) +
             parseInt((this.state.tomNHL)) +
             parseInt((this.state.tomPGA)) +
-            parseInt((this.state.tomNFL)) +
-            parseInt((this.state.tomEPL)) +
-            parseInt((this.state.tomMLB)) +
+            // parseInt((this.state.tomNFL)) +
+            parseInt((this.state.tomEPL))
+            // parseInt((this.state.tomMLB)) +
             // Bonus
-            parseInt((this.state.tomBonus))
+            // parseInt((this.state.tomBonus))
         this.setState({ tomTotal: tomTotalPoints });
         console.log(tomTotalPoints);
 
@@ -329,11 +329,11 @@ class Table extends Component {
             parseInt((this.state.patrickNBA)) +
             parseInt((this.state.patNHL)) +
             parseInt((this.state.patPGA)) +
-            parseInt((this.state.patNFL)) +
-            parseInt((this.state.patEPL)) +
-            parseInt((this.state.patMLB)) +
-            // Bonus
-            parseInt((this.state.patBonus))
+            // parseInt((this.state.patNFL)) +
+            parseInt((this.state.patEPL)) 
+            // parseInt((this.state.patMLB)) +
+            // // Bonus
+            // parseInt((this.state.patBonus))
         this.setState({ patTotal: patTotalPoints });
 
         // Totals for JAmes
@@ -341,10 +341,10 @@ class Table extends Component {
             parseInt((this.state.jamesNBA)) +
             parseInt((this.state.jamesNHL)) +
             parseInt((this.state.jamesPGA)) +
-            parseInt((this.state.jamesNFL)) +
-            parseInt((this.state.jamesEPL)) +
-            parseInt((this.state.jamesMLB)) +
-            parseInt((this.state.jamesBonus))
+            // parseInt((this.state.jamesNFL)) +
+            parseInt((this.state.jamesEPL)) 
+            // parseInt((this.state.jamesMLB)) +
+            // parseInt((this.state.jamesBonus))
         // Bonus
         this.setState({ jamesTotal: jamesTotalPoints });
 
@@ -353,11 +353,11 @@ class Table extends Component {
             parseInt((this.state.neptuneNBA)) +
             parseInt((this.state.neptuneNHL)) +
             parseInt((this.state.neptunePGA)) +
-            parseInt((this.state.neptuneNFL)) +
-            parseInt((this.state.neptuneEPL)) +
-            parseInt((this.state.neptuneMLB)) +
-            // Bonus
-            parseInt((this.state.neptuneBonus))
+            // parseInt((this.state.neptuneNFL)) +
+            parseInt((this.state.neptuneEPL)) 
+            // parseInt((this.state.neptuneMLB)) +
+            // // Bonus
+            // parseInt((this.state.neptuneBonus))
         this.setState({ neptuneTotal: neptuneTotalPoints });
 
         // Totals for DJ
@@ -365,11 +365,11 @@ class Table extends Component {
             parseInt((this.state.djNBA)) +
             parseInt((this.state.djNHL)) +
             parseInt((this.state.djPGA)) +
-            parseInt((this.state.djNFL)) +
-            parseInt((this.state.djEPL)) +
-            parseInt((this.state.djMLB)) +
-            // Bonus
-            parseInt((this.state.djBonus))
+            // parseInt((this.state.djNFL)) +
+            parseInt((this.state.djEPL)) 
+            // parseInt((this.state.djMLB)) +
+            // // Bonus
+            // parseInt((this.state.djBonus))
         this.setState({ djTotal: djTotalPoints });
 
         // Totals for Goose 
@@ -377,11 +377,11 @@ class Table extends Component {
             parseInt((this.state.gooseNBA)) +
             parseInt((this.state.gooseNHL)) +
             parseInt((this.state.goosePGA)) +
-            parseInt((this.state.gooseNFL)) +
-            parseInt((this.state.gooseEPL)) +
-            parseInt((this.state.gooseMLB)) +
-            // Bonus
-            parseInt((this.state.gooseBonus))
+            // parseInt((this.state.gooseNFL)) +
+            parseInt((this.state.gooseEPL)) 
+            // parseInt((this.state.gooseMLB)) +
+            // // Bonus
+            // parseInt((this.state.gooseBonus))
         this.setState({ gooseTotal: gooseTotalPoints });
 
         // Totals for Al
@@ -389,10 +389,10 @@ class Table extends Component {
             parseInt((this.state.alNBA)) +
             parseInt((this.state.alNHL)) +
             parseInt((this.state.alPGA)) +
-            parseInt((this.state.alNFL)) +
-            parseInt((this.state.alEPL)) +
-            parseInt((this.state.alMLB)) +
-            parseInt((this.state.alBonus))
+            // parseInt((this.state.alNFL)) +
+            parseInt((this.state.alEPL)) 
+            // parseInt((this.state.alMLB)) +
+            // parseInt((this.state.alBonus))
         // Bonus
         this.setState({ alTotal: alTotalPoints });
 
@@ -401,10 +401,10 @@ class Table extends Component {
             parseInt((this.state.joeNBA)) +
             parseInt((this.state.joeNHL)) +
             parseInt((this.state.joePGA)) +
-            parseInt((this.state.joeNFL)) +
-            parseInt((this.state.joeEPL)) +
-            parseInt((this.state.joeMLB)) +
-            parseInt((this.state.joeBonus))
+            // parseInt((this.state.joeNFL)) +
+            parseInt((this.state.joeEPL)) 
+            // parseInt((this.state.joeMLB)) +
+            // parseInt((this.state.joeBonus))
         this.setState({ joeTotal: joeTotalPoints });
 
         // Totals for Steids
@@ -412,10 +412,10 @@ class Table extends Component {
             parseInt((this.state.steidsNBA)) +
             parseInt((this.state.steidsNHL)) +
             parseInt((this.state.steidsPGA)) +
-            parseInt((this.state.steidsNFL)) +
-            parseInt((this.state.steidsEPL)) +
-            parseInt((this.state.steidsMLB)) +
-            parseInt((this.state.steidsBonus))
+            // parseInt((this.state.steidsNFL)) +
+            parseInt((this.state.steidsEPL)) 
+            // parseInt((this.state.steidsMLB)) +
+            // parseInt((this.state.steidsBonus))
         // Bonus
         this.setState({ steidsTotal: steidsTotalPoints });
 
@@ -424,10 +424,10 @@ class Table extends Component {
             parseInt((this.state.eresNBA)) +
             parseInt((this.state.eresNHL)) +
             parseInt((this.state.eresPGA)) +
-            parseInt((this.state.eresNFL)) +
-            parseInt((this.state.eresEPL)) +
-            parseInt((this.state.eresMLB)) +
-            parseInt((this.state.eresBonus))
+            // parseInt((this.state.eresNFL)) +
+            parseInt((this.state.eresEPL)) 
+            // parseInt((this.state.eresMLB)) +
+            // parseInt((this.state.eresBonus))
         // Bonus
         this.setState({ benTotal: benTotalPoints });
     };
@@ -1875,15 +1875,16 @@ class Table extends Component {
         API.getScoresNBA()
             .then(res => {
                 // HERE ARE NBA TEAMS FOR TOMMY. 
-                var mavsWin = res.data.api.standings[17].win;
-                var blazersWin = res.data.api.standings[28].win;
-                var spursWin = res.data.api.standings[18].win;
+                console.log(res.data.api.standings)
+                var hawksWin = res.data.api.standings[11].win;
+                var bullsWin = res.data.api.standings[7].win;
+                var pistonsWin = res.data.api.standings[9].win;
 
                 const tempTomNBA = this.state.allNBA;
 
-                tempTomNBA.push(mavsWin);
-                tempTomNBA.push(blazersWin);
-                tempTomNBA.push(spursWin);
+                tempTomNBA.push(hawksWin);
+                tempTomNBA.push(bullsWin);
+                tempTomNBA.push(pistonsWin);
 
                 var tomDoubledScores = tempTomNBA.map(team => team * 2);
 
@@ -1896,15 +1897,15 @@ class Table extends Component {
                 this.setState({ tomNBA: TomPoints });
 
                 // PATRICK
-                var sunsWin = res.data.api.standings[22].win;
-                var hornetsWin = res.data.api.standings[1].win;
-                var kingsWin = res.data.api.standings[21].win;
+                var mavsWin = res.data.api.standings[26].win;
+                var pacersWin = res.data.api.standings[8].win;
+                var thunderWin = res.data.api.standings[17].win;
 
                 const tempPatrickNBA = [];
 
-                tempPatrickNBA.push(sunsWin);
-                tempPatrickNBA.push(hornetsWin);
-                tempPatrickNBA.push(kingsWin);
+                tempPatrickNBA.push(mavsWin);
+                tempPatrickNBA.push(pacersWin);
+                tempPatrickNBA.push(thunderWin);
 
                 var patDoubledScores = tempPatrickNBA.map(team => team * 2);
 
@@ -1917,15 +1918,15 @@ class Table extends Component {
                 this.setState({ patrickNBA: PatrickPoints });
 
                 // James
-                var lakersWin = res.data.api.standings[24].win;
-                var pacersWin = res.data.api.standings[13].win;
-                var thunderWin = res.data.api.standings[29].win;
+                var sunsWin = res.data.api.standings[22].win;
+                var raptorsWin = res.data.api.standings[4].win;
+                var rocketsWin = res.data.api.standings[29].win;
 
                 const tempJamesNBA = [];
 
-                tempJamesNBA.push(lakersWin);
-                tempJamesNBA.push(pacersWin);
-                tempJamesNBA.push(thunderWin);
+                tempJamesNBA.push(sunsWin);
+                tempJamesNBA.push(raptorsWin);
+                tempJamesNBA.push(rocketsWin);
 
                 var jamesDoubledScores = tempJamesNBA.map(team => team * 2);
 
@@ -1938,15 +1939,15 @@ class Table extends Component {
                 this.setState({ jamesNBA: jamesPoints });
 
                 // Neptune
-                var jazzWin = res.data.api.standings[25].win;
-                var celticsWin = res.data.api.standings[9].win;
-                var wizardsWin = res.data.api.standings[0].win;
+                var bucksWin = res.data.api.standings[5].win;
+                var sixersWin = res.data.api.standings[1].win;
+                var cavsWin = res.data.api.standings[6].win;
 
                 const tempNeptuneNBA = [];
 
-                tempNeptuneNBA.push(jazzWin);
-                tempNeptuneNBA.push(celticsWin);
-                tempNeptuneNBA.push(wizardsWin);
+                tempNeptuneNBA.push(bucksWin);
+                tempNeptuneNBA.push(sixersWin);
+                tempNeptuneNBA.push(cavsWin);
 
                 var NeptuneDoubledScores = tempNeptuneNBA.map(team => team * 2);
 
@@ -1959,15 +1960,15 @@ class Table extends Component {
                 this.setState({ neptuneNBA: NeptunePoints });
 
                 // DJ
-                var bucksWin = res.data.api.standings[11].win;
-                var grizzliesWin = res.data.api.standings[15].win;
-                var pistonsWin = res.data.api.standings[14].win;
+                var heatWin = res.data.api.standings[10].win;
+                var blazersWin = res.data.api.standings[19].win;
+                var magicWin = res.data.api.standings[13].win;
 
                 const tempdjNBA = [];
 
-                tempdjNBA.push(bucksWin);
-                tempdjNBA.push(grizzliesWin);
-                tempdjNBA.push(pistonsWin);
+                tempdjNBA.push(heatWin);
+                tempdjNBA.push(blazersWin);
+                tempdjNBA.push(magicWin);
 
                 var DJDoubledScores = tempdjNBA.map(team => team * 2);
 
@@ -1980,14 +1981,14 @@ class Table extends Component {
                 this.setState({ djNBA: DJPoints });
 
                 // Goose
-                var nuggetsWin = res.data.api.standings[27].win;
-                var bullsWin = res.data.api.standings[10].win;
-                var knicksWin = res.data.api.standings[5].win;
+                var celticsWin = res.data.api.standings[0].win;
+                var tWolvesWin = res.data.api.standings[16].win;
+                var knicksWin = res.data.api.standings[3].win;
 
                 const tempGooseNBA = [];
 
-                tempGooseNBA.push(nuggetsWin);
-                tempGooseNBA.push(bullsWin);
+                tempGooseNBA.push(celticsWin);
+                tempGooseNBA.push(tWolvesWin);
                 tempGooseNBA.push(knicksWin);
 
                 var GooseDoubledScores = tempGooseNBA.map(team => team * 2);
@@ -2001,15 +2002,15 @@ class Table extends Component {
                 this.setState({ gooseNBA: GoosePoints });
 
                 // Al
-                var sixersWin = res.data.api.standings[7].win;
-                var pelicansWin = res.data.api.standings[19].win;
-                var cavaliersWin = res.data.api.standings[12].win;
+                var warriorsWin = res.data.api.standings[23].win;
+                var wizardsWin = res.data.api.standings[12].win;
+                var jazzWin = res.data.api.standings[18].win;
 
                 const tempAlNBA = [];
 
-                tempAlNBA.push(sixersWin);
-                tempAlNBA.push(pelicansWin);
-                tempAlNBA.push(cavaliersWin);
+                tempAlNBA.push(warriorsWin);
+                tempAlNBA.push(wizardsWin);
+                tempAlNBA.push(jazzWin);
 
                 var AlDoubledScores = tempAlNBA.map(team => team * 2);
 
@@ -2022,15 +2023,15 @@ class Table extends Component {
                 this.setState({ alNBA: AlPoints });
 
                 // Joe
-                var netsWin = res.data.api.standings[6].win;
-                var warriorsWin = res.data.api.standings[20].win;
-                var heatWin = res.data.api.standings[2].win;
+                var clippersWin = res.data.api.standings[21].win;
+                var grizzliesWin = res.data.api.standings[25].win;
+                var pelicansWin = res.data.api.standings[27].win;
 
                 const tempjoeNBA = [];
 
-                tempjoeNBA.push(netsWin);
-                tempjoeNBA.push(warriorsWin);
-                tempjoeNBA.push(heatWin);
+                tempjoeNBA.push(clippersWin);
+                tempjoeNBA.push(grizzliesWin);
+                tempjoeNBA.push(pelicansWin);
 
                 var JoeDoubledScores = tempjoeNBA.map(team => team * 2);
 
@@ -2043,15 +2044,15 @@ class Table extends Component {
                 this.setState({ joeNBA: JoePoints });
 
                 // Steids
-                var hawksWin = res.data.api.standings[3].win;
-                var raptorsWin = res.data.api.standings[8].win;
-                var tWolvesWin = res.data.api.standings[26].win;
+                var nuggetsWin = res.data.api.standings[15].win;
+                var kingsWin = res.data.api.standings[20].win;
+                var spursWin = res.data.api.standings[28].win;
 
                 const tempsteidsNBA = [];
 
-                tempsteidsNBA.push(hawksWin);
-                tempsteidsNBA.push(raptorsWin);
-                tempsteidsNBA.push(tWolvesWin);
+                tempsteidsNBA.push(nuggetsWin);
+                tempsteidsNBA.push(kingsWin);
+                tempsteidsNBA.push(spursWin);
 
                 var SteidsDoubledScores = tempsteidsNBA.map(team => team * 2);
 
@@ -2064,15 +2065,15 @@ class Table extends Component {
                 this.setState({ steidsNBA: SteidsPoints });
 
                 // Ben
-                var clippersWin = res.data.api.standings[23].win;
-                var magicWin = res.data.api.standings[4].win;
-                var rocketsWin = res.data.api.standings[16].win;
+                var netsWin = res.data.api.standings[2].win;
+                var lakersWin = res.data.api.standings[24].win;
+                var hornetsWin = res.data.api.standings[14].win;
 
                 const tempbenNBA = [];
 
-                tempbenNBA.push(clippersWin);
-                tempbenNBA.push(magicWin);
-                tempbenNBA.push(rocketsWin);
+                tempbenNBA.push(netsWin);
+                tempbenNBA.push(lakersWin);
+                tempbenNBA.push(hornetsWin);
 
                 var BenDoubledScores = tempbenNBA.map(team => team * 2);
 

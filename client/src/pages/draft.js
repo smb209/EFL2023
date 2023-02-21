@@ -979,7 +979,7 @@ class draft extends React.Component {
                                     <tr>
                                         <th scope="row">182</th>
                                         <td className="thunder">Oklahoma City Thunder</td>
-                                        <td>Daddy</td>
+                                        <td>Pat/JP</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">183</th>

@@ -4,76 +4,76 @@ export const golfHelper = () => {
     let x = {
 
         // Neptune
-        "Scheffler": 849,
-        "Schauffele": 360,
-        "Cantlay": 331,
+        "Scheffler": 916,
+        "Schauffele": 383,
+        "Cantlay": 531,
         "Woods": 0,
-        "Herbert": 50,
+        "Herbert": 56,
 
         // Al
-        "Rahm": 1450,
-        "Morikawa": 591,
-        "Conners": 181, 
+        "Rahm": 2000,
+        "Morikawa": 691,
+        "Conners": 186, 
         "Harman": 681,
         "Davis": 116,
 
 
         // Eres
-        "Mcilroy": 521,
+        "Mcilroy": 552,
         "Spieth": 161,
         "Matsuyama": 222,
-        "Lowry": 35,
+        "Lowry": 93,
         "Simpson": 12,
 
         // Pat/JP
-        "Thomas": 219,
-        "Zalatoris": 89,
-        "Young": 137,
-        "Theegala": 605,
+        "Thomas": 262,
+        "Zalatoris": 229,
+        "Young": 180,
+        "Theegala": 705,
         "Riley": 131, 
 
         // SAT
-        "Homa": 1259,
+        "Homa": 1574,
         "Berger": 0,
         "Straka": 359,
         "Henley": 561,
-        "Fowler": 498,
+        "Fowler": 541,
 
         // Tommy
-        "Finau": 768,
+        "Finau": 810,
         "Fitzpatrick": 169,
-        "Kim": 804,
+        "Kim": 815,
         "Bradley": 1006,
         "McNealy": 374,
 
         // Goose
-        "Hovland": 329,
-        "Im": 448,
+        "Hovland": 372,
+        "Im": 454,
         "Pereira": 171,
-        "Power": 882,
-        "Grillo": 294,
+        "Power": 940,
+        "Grillo": 298,
 
         // James
         "Burns": 284,
         "Horschel":140, 
-        "Hatton": 153,
-        "Fleetwood": 129,
+        "Hatton": 169,
+        "Fleetwood": 171,
         "Wise": 244,
 
 
         // DJ
-        "English": 180,
+        "English": 247,
         "SiWoo": 722,
-        "Scott": 71,
+        "Scott": 75,
         "Champ": 91,
         "Rose": 670,
 
 
         // Big Dog
-        "Hoge": 512,
-        "Hughes": 659,
+        "Hoge": 570,
+        "Hughes": 668,
         "Putnam": 563,
-        "Day": 480,
+        "Day": 458,
         "Griffin": 361, 
 
         // NFL starts here 
