@@ -19,7 +19,7 @@ export default {
     return axios({
       method: 'GET',
       url: 'https://api-football-beta.p.rapidapi.com/standings',
-      params: { season: '2021', league: '39' },
+      params: { season: '2022', league: '39' },
       headers: {
         'x-rapidapi-key': '52aa6a2637mshdf98d5a291eb6cep182376jsnfb67836d7b3b',
         'x-rapidapi-host': 'api-football-beta.p.rapidapi.com'

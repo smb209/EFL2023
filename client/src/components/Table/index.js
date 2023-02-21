@@ -1486,12 +1486,132 @@ class Table extends Component {
     getScoresEPL = () => {
         API.getScoresEPL()
             .then(res => {
-                // HERE ARE EPL TEAMS FOR TOMMY. 
-                // HERE ARE EPL TEAMS FOR TOMMY. 
-                //  arsenal
+                // HERE ARE EPL TEAMS FOR TOMMY.
+                //  liverpool
                 console.log(res.data.response[0].league.standings[0])
-                var arsenalWin;
-                var arsenalTie;
+                var liverpoolWin;
+                var liverpoolTie;
+                var brightonWin;
+                var brightonTie;
+
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
+
+                    if (forLoopArray[i].team.id === 40) {
+                        liverpoolWin = forLoopArray[i].all.win
+                        liverpoolTie = forLoopArray[i].all.draw
+                    }
+
+                    if (forLoopArray[i].team.id === 51) {
+                        brightonWin = forLoopArray[i].all.win
+                        brightonTie = forLoopArray[i].all.draw
+                    }
+                }
+
+                var liverpoolTotal = (liverpoolWin * 4.25) + (liverpoolTie);
+                var brightonTotal = (brightonWin * 4.25) + (brightonTie);
+
+                // Here is the final result
+                var tomPoints = liverpoolTotal + brightonTotal;
+                this.setState({ tomEPL: tomPoints });
+
+                // HERE ARE EPL TEAMS FOR Patrick. 
+                //   Starting Patrick EPL Here 
+                var astonWin;
+                var astonTie;
+                var leedsWin;
+                var leedsTie;
+
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
+
+                    if (forLoopArray[i].team.id === 66) {
+                        astonWin = forLoopArray[i].all.win
+                        astonTie = forLoopArray[i].all.draw
+                    }
+
+                    if (forLoopArray[i].team.id === 63) {
+                        leedsWin = forLoopArray[i].all.win
+                        leedsTie = forLoopArray[i].all.draw
+                    }
+                }
+
+                var astonTotal = (astonWin * 4.25) + (astonTie);
+                var leedsTotal = (leedsWin * 4.25) + (leedsTie);
+
+                // Here is the final result
+                var patrickPoints = astonTotal + leedsTotal;
+                this.setState({ patrickEPL: patrickPoints });
+
+                // Steids EPL here
+                var manUWin;
+                var manUTie;
+                var fulhamWin;
+                var fulhamTie;
+
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
+
+                    if (forLoopArray[i].team.id === 33) {
+                        manUWin = forLoopArray[i].all.win
+                        manUTie = forLoopArray[i].all.draw
+                    }
+
+                    if (forLoopArray[i].team.id === 36) {
+                        fulhamWin = forLoopArray[i].all.win
+                        fulhamTie = forLoopArray[i].all.draw
+                    }
+                }
+
+                var manUTotal = (manUWin * 4.25) + (manUTie);
+                var fulhamTotal = (fulhamWin * 4.25) + (fulhamTie);
+
+                // Here is the final result
+                var steidsPoints = manUTotal + fulhamTotal;
+                this.setState({ steidsEPL: steidsPoints });
+
+                // Patrick EPL here
+                var astonWin;
+                var astonTie;
+                var leedsWin;
+                var leedsTie;
+
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
+
+                    if (forLoopArray[i].team.id === 66) {
+                        astonWin = forLoopArray[i].all.win
+                        astonTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + astonWin);
+                        console.log("here are the ties" + astonTie);
+                    }
+
+                    if (forLoopArray[i].team.id === 63) {
+                        leedsWin = forLoopArray[i].all.win
+                        leedsTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + leedsWin);
+                        console.log("here are the ties" + leedsTie);
+                    }
+                }
+
+                var astonTotal = (astonWin * 4.25) + (astonTie);
+                var leedsTotal = (leedsWin * 4.25) + (leedsTie);
+
+                // Here is the final result
+                var patPoints = astonTotal + leedsTotal;
+                this.setState({ patEPL: patPoints });
+
+                //   Starting Neptune EPL Here 
+                var newcastleWin;
+                var newcastleTie;
                 var wolvesWin;
                 var wolvesTie;
 
@@ -1499,13 +1619,13 @@ class Table extends Component {
                 var forLoopArray = res.data.response[0].league.standings[0]
                 for (var i = 0; i < forLoopArray.length; i++) {
 
-                    if (forLoopArray[i].team.id === 42) {
-                        arsenalWin = forLoopArray[i].all.win
-                        arsenalTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 34) {
+                        newcastleWin = forLoopArray[i].all.win
+                        newcastleTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + arsenalWin);
-                        console.log("here are the ties" + arsenalTie);
+                        console.log("here are the wins" + newcastleWin);
+                        console.log("here are the ties" + newcastleTie);
                     }
 
                     if (forLoopArray[i].team.id === 39) {
@@ -1518,74 +1638,23 @@ class Table extends Component {
                     }
                 }
 
-                var arsenalTotal = (arsenalWin * 4.25) + (arsenalTie);
+                var newcastleTotal = (newcastleWin * 4.25) + (newcastleTie);
                 var wolvesTotal = (wolvesWin * 4.25) + (wolvesTie);
 
                 // Here is the final result
-                var tomPoints = arsenalTotal + wolvesTotal;
-                this.setState({ tomEPL: tomPoints });
+                var neptunePoints = newcastleTotal + wolvesTotal;
+                this.setState({ neptuneEPL: neptunePoints });
 
-                // HERE ARE EPL TEAMS FOR Patrick. 
-                //   Starting Patrick EPL Here 
-                var manCityWin;
-                var manCityTie;
-                var wolvesWin;
-                var wolvesTie;
+                // Joe EPL here
 
-                // Steids EPL here
-                var westHamWin;
-                var westHamTie;
-                var burnleyWin;
-                var burnleyTie;
-
-                // running the for loop here. 
-                var forLoopArray = res.data.response[0].league.standings[0]
-                for (var i = 0; i < forLoopArray.length; i++) {
-
-                    if (forLoopArray[i].team.id === 48) {
-                        westHamWin = forLoopArray[i].all.win
-                        westHamTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + westHamWin);
-                        console.log("here are the ties" + westHamTie);
-                    }
-
-                    if (forLoopArray[i].team.id === 44) {
-                        burnleyWin = forLoopArray[i].all.win
-                        burnleyTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + burnleyWin);
-                        console.log("here are the ties" + burnleyTie);
-                    }
-                }
-
-                var westHamTotal = (westHamWin * 4.25) + (westHamTie);
-                var burnleyTotal = (burnleyWin * 4.25) + (burnleyTie);
-
-                // Here is the final result
-                var steidsPoints = westHamTotal + burnleyTotal;
-                this.setState({ steidsEPL: steidsPoints });
-
-                // Patrick EPL here
-                var tottenhamWin;
-                var tottenhamTie;
                 var evertonWin;
                 var evertonTie;
+                var tottenhamWin;
+                var tottenhamTie;
 
                 // running the for loop here. 
                 var forLoopArray = res.data.response[0].league.standings[0]
                 for (var i = 0; i < forLoopArray.length; i++) {
-
-                    if (forLoopArray[i].team.id === 47) {
-                        tottenhamWin = forLoopArray[i].all.win
-                        tottenhamTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + tottenhamWin);
-                        console.log("here are the ties" + tottenhamTie);
-                    }
 
                     if (forLoopArray[i].team.id === 45) {
                         evertonWin = forLoopArray[i].all.win
@@ -1595,201 +1664,29 @@ class Table extends Component {
                         console.log("here are the wins" + evertonWin);
                         console.log("here are the ties" + evertonTie);
                     }
+
+                    if (forLoopArray[i].team.id === 47) {
+                        tottenhamWin = forLoopArray[i].all.win
+                        tottenhamTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + tottenhamWin);
+                        console.log("here are the ties" + tottenhamTie);
+                    }
                 }
 
-                var tottenhamTotal = (tottenhamWin * 4.25) + (tottenhamTie);
                 var evertonTotal = (evertonWin * 4.25) + (evertonTie);
+                var tottenhamTotal = (tottenhamWin * 4.25) + (tottenhamTie);
 
                 // Here is the final result
-                var patPoints = tottenhamTotal + evertonTotal;
-                this.setState({ patEPL: patPoints });
-
-                //   Starting Neptune EPL Here 
-                var chelseaWin;
-                var chelseaTie;
-                var watfordWin;
-                var watfordTie;
-
-                // running the for loop here. 
-                var forLoopArray = res.data.response[0].league.standings[0]
-                for (var i = 0; i < forLoopArray.length; i++) {
-
-                    if (forLoopArray[i].team.id === 49) {
-                        chelseaWin = forLoopArray[i].all.win
-                        chelseaTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + chelseaWin);
-                        console.log("here are the ties" + chelseaTie);
-                    }
-
-                    if (forLoopArray[i].team.id === 38) {
-                        watfordWin = forLoopArray[i].all.win
-                        watfordTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + watfordWin);
-                        console.log("here are the ties" + watfordTie);
-                    }
-                }
-
-                var chelseaTotal = (chelseaWin * 4.25) + (chelseaTie);
-                var watfordTotal = (watfordWin * 4.25) + (watfordTie);
-
-                // Here is the final result
-                var neptunePoints = chelseaTotal + watfordTotal;
-                this.setState({ neptuneEPL: neptunePoints });
-
-                // Joe EPL here
-
-                var brentfordWin;
-                var brentfordTie;
-                var southhamptonWin;
-                var southhamptonTie;
-
-                // running the for loop here. 
-                var forLoopArray = res.data.response[0].league.standings[0]
-                for (var i = 0; i < forLoopArray.length; i++) {
-
-                    if (forLoopArray[i].team.id === 55) {
-                        brentfordWin = forLoopArray[i].all.win
-                        brentfordTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + brentfordWin);
-                        console.log("here are the ties" + brentfordTie);
-                    }
-
-                    if (forLoopArray[i].team.id === 41) {
-                        southhamptonWin = forLoopArray[i].all.win
-                        southhamptonTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + southhamptonWin);
-                        console.log("here are the ties" + southhamptonTie);
-                    }
-                }
-
-                var brentfordTotal = (brentfordWin * 4.25) + (brentfordTie);
-                var southhamptonTotal = (southhamptonWin * 4.25) + (southhamptonTie);
-
-                // Here is the final result
-                var joePoints = brentfordTotal + southhamptonTotal;
+                var joePoints = evertonTotal + tottenhamTotal;
                 this.setState({ joeEPL: joePoints });
 
                 // James EPL here
-                var manUWin;
-                var manUTie;
-                var leicesterWin;
-                var leicesterTie;
-
-                // running the for loop here. 
-                var forLoopArray = res.data.response[0].league.standings[0]
-                for (var i = 0; i < forLoopArray.length; i++) {
-
-                    if (forLoopArray[i].team.id === 33) {
-                        manUWin = forLoopArray[i].all.win
-                        manUTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + manUWin);
-                        console.log("here are the ties" + manUTie);
-                    }
-
-                    if (forLoopArray[i].team.id === 46) {
-                        leicesterWin = forLoopArray[i].all.win
-                        leicesterTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + leicesterWin);
-                        console.log("here are the ties" + leicesterTie);
-                    }
-                }
-
-                var manUTotal = (manUWin * 4.25) + (manUTie);
-                var leicesterTotal = (leicesterWin * 4.25) + (leicesterTie);
-
-                // Here is the final result
-                var jamesPoints = manUTotal + leicesterTotal;
-                this.setState({ jamesEPL: jamesPoints });
-
-                // Goose EPL here
-                var crystalWin;
-                var crystalTie;
-                var newcastleWin;
-                var newcastleTie;
-
-                // running the for loop here. 
-                var forLoopArray = res.data.response[0].league.standings[0]
-                for (var i = 0; i < forLoopArray.length; i++) {
-
-                    if (forLoopArray[i].team.id === 52) {
-                        crystalWin = forLoopArray[i].all.win
-                        crystalTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + crystalWin);
-                        console.log("here are the ties" + crystalTie);
-                    }
-
-                    if (forLoopArray[i].team.id === 34) {
-                        newcastleWin = forLoopArray[i].all.win
-                        newcastleTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + newcastleWin);
-                        console.log("here are the ties" + newcastleTie);
-                    }
-                }
-
-                var crystalTotal = (crystalWin * 4.25) + (crystalTie);
-                var newcastleTotal = (newcastleWin * 4.25) + (newcastleTie);
-
-                // Here is the final result
-                var goosePoints = crystalTotal + newcastleTotal;
-                this.setState({ gooseEPL: goosePoints });
-
-                // HERE ARE EPL TEAMS FOR DJ. 
-                var brightonWin;
-                var brightonTie;
-                var astonVWin;
-                var astonVTie;
-
-                // running the for loop here. 
-                var forLoopArray = res.data.response[0].league.standings[0]
-                for (var i = 0; i < forLoopArray.length; i++) {
-
-                    if (forLoopArray[i].team.id === 51) {
-                        brightonWin = forLoopArray[i].all.win
-                        brightonTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + brightonWin);
-                        console.log("here are the ties" + brightonTie);
-                    }
-
-                    if (forLoopArray[i].team.id === 66) {
-                        astonVWin = forLoopArray[i].all.win
-                        astonVTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + astonVWin);
-                        console.log("here are the ties" + astonVTie);
-                    }
-                }
-
-                var brightonTotal = (brightonWin * 4.25) + (brightonTie);
-                var astonVTotal = (astonVWin * 4.25) + (astonVTie);
-
-                // Here is the final result
-                var djPoints = brightonTotal + astonVTotal;
-                this.setState({ djEPL: djPoints });
-
-                // Mark Eres EPL here
                 var manCityWin;
                 var manCityTie;
-                var norwichWin;
-                var norwichTie;
+                var brentfordWin;
+                var brentfordTie;
 
                 // running the for loop here. 
                 var forLoopArray = res.data.response[0].league.standings[0]
@@ -1804,57 +1701,165 @@ class Table extends Component {
                         console.log("here are the ties" + manCityTie);
                     }
 
-                    if (forLoopArray[i].team.id === 71) {
-                        norwichWin = forLoopArray[i].all.win
-                        norwichTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 55) {
+                        brentfordWin = forLoopArray[i].all.win
+                        brentfordTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + norwichWin);
-                        console.log("here are the ties" + norwichTie);
+                        console.log("here are the wins" + brentfordWin);
+                        console.log("here are the ties" + brentfordTie);
                     }
                 }
 
                 var manCityTotal = (manCityWin * 4.25) + (manCityTie);
-                var norwichTotal = (norwichWin * 4.25) + (norwichTie);
+                var brentfordTotal = (brentfordWin * 4.25) + (brentfordTie);
 
                 // Here is the final result
-                var eresPoints = manCityTotal + norwichTotal;
-                this.setState({ eresEPL: eresPoints });
+                var jamesPoints = manCityTotal + brentfordTotal;
+                this.setState({ jamesEPL: jamesPoints });
 
-                // Al EPL here
-                var leedsWin;
-                var leedsTie;
-                var liverpoolWin;
-                var liverpoolTie;
+                // Goose EPL here
+                var arsenalWin;
+                var arsenalTie;
+                var crystalPalaceWin;
+                var crystalPalaceTie;
 
                 // running the for loop here. 
                 var forLoopArray = res.data.response[0].league.standings[0]
                 for (var i = 0; i < forLoopArray.length; i++) {
 
-                    if (forLoopArray[i].team.id === 63) {
-                        leedsWin = forLoopArray[i].all.win
-                        leedsTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 42) {
+                        arsenalWin = forLoopArray[i].all.win
+                        arsenalTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + leedsWin);
-                        console.log("here are the ties" + leedsTie);
+                        console.log("here are the wins" + arsenalWin);
+                        console.log("here are the ties" + arsenalTie);
                     }
 
-                    if (forLoopArray[i].team.id === 40) {
-                        liverpoolWin = forLoopArray[i].all.win
-                        liverpoolTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 52) {
+                        crystalPalaceWin = forLoopArray[i].all.win
+                        crystalPalaceTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + liverpoolWin);
-                        console.log("here are the ties" + liverpoolTie);
+                        console.log("here are the wins" + crystalPalaceWin);
+                        console.log("here are the ties" + crystalPalaceTie);
                     }
                 }
 
-                var leedsTotal = (leedsWin * 4.25) + (leedsTie);
-                var liverpoolTotal = (liverpoolWin * 4.25) + (liverpoolTie);
+                var arsenalTotal = (arsenalWin * 4.25) + (arsenalTie);
+                var crystalPalaceTotal = (crystalPalaceWin * 4.25) + (crystalPalaceTie);
 
                 // Here is the final result
-                var alPoints = leedsTotal + liverpoolTotal;
+                var goosePoints = arsenalTotal + crystalPalaceTotal;
+                this.setState({ gooseEPL: goosePoints });
+
+                // HERE ARE EPL TEAMS FOR DJ. 
+                var leicesterWin;
+                var leicesterTie;
+                var southhamptonWin;
+                var southhamptonTie;
+
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
+
+                    if (forLoopArray[i].team.id === 46) {
+                        leicesterWin = forLoopArray[i].all.win
+                        leicesterTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + leicesterWin);
+                        console.log("here are the ties" + leicesterTie);
+                    }
+
+                    if (forLoopArray[i].team.id === 41) {
+                        southhamptonWin = forLoopArray[i].all.win
+                        southhamptonTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + southhamptonWin);
+                        console.log("here are the ties" + southhamptonTie);
+                    }
+                }
+
+                var leicesterTotal = (leicesterWin * 4.25) + (leicesterTie);
+                var southhamptonTotal = (southhamptonWin * 4.25) + (southhamptonTie);
+
+                // Here is the final result
+                var djPoints = leicesterTotal + southhamptonTotal;
+                this.setState({ djEPL: djPoints });
+
+                // Mark Eres EPL here
+                var chelseaWin;
+                var chelseaTie;
+                var bournemouthWin;
+                var bournemouthTie;
+
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
+
+                    if (forLoopArray[i].team.id === 49) {
+                        chelseaWin = forLoopArray[i].all.win
+                        chelseaTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + chelseaWin);
+                        console.log("here are the ties" + chelseaTie);
+                    }
+
+                    if (forLoopArray[i].team.id === 35) {
+                        bournemouthWin = forLoopArray[i].all.win
+                        bournemouthTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + bournemouthWin);
+                        console.log("here are the ties" + bournemouthTie);
+                    }
+                }
+
+                var chelseaTotal = (chelseaWin * 4.25) + (chelseaTie);
+                var bournemouthTotal = (bournemouthWin * 4.25) + (bournemouthTie);
+
+                // Here is the final result
+                var eresPoints = chelseaTotal + bournemouthTotal;
+                this.setState({ eresEPL: eresPoints });
+
+                // Al EPL here
+                var westhamWin;
+                var westhamTie;
+                var nottinghamWin;
+                var nottinghamTie;
+
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
+
+                    if (forLoopArray[i].team.id === 48) {
+                        westhamWin = forLoopArray[i].all.win
+                        westhamTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + westhamWin);
+                        console.log("here are the ties" + westhamTie);
+                    }
+
+                    if (forLoopArray[i].team.id === 65) {
+                        nottinghamWin = forLoopArray[i].all.win
+                        nottinghamTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + nottinghamWin);
+                        console.log("here are the ties" + nottinghamTie);
+                    }
+                }
+
+                var westhamTotal = (westhamWin * 4.25) + (westhamTie);
+                var nottinghamTotal = (nottinghamWin * 4.25) + (nottinghamTie);
+
+                // Here is the final result
+                var alPoints = westhamTotal + nottinghamTotal;
                 this.setState({ alEPL: alPoints });
 
                 // And now I need to run the totalscores function so that it can get logged. 
