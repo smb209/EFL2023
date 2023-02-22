@@ -9,21 +9,22 @@ class al extends React.Component {
         // Putting NBA arathletics here. Each person's array will include three NBA teams. 
         allNBA: [],
         alNBA: "",
-        sixers: "",
-        pelicans: "",
-        cavaliers: "",
-        // broncos: 50,
+        warriors: "",
+        wizards: "",
+        jazz: "",
+        // dolphins: 50,
         // packers: 130,
         // bills: 100,
         // totalNFL: 280,
         // EPL
-        everton: "",
-        southhampton: "",
+        westham: "",
+        nottingham: "",
         alEPL: "",
         // NHL
-        lightning: "",
-        knights: "",
-        canucks: "",
+        wild: "",
+        islanders: "",
+        jets: "",
+        alNHL: "",
         totalNHL: "",
         // Golf here
         scheffler: "",
@@ -33,10 +34,10 @@ class al extends React.Component {
         gooch: "",
         totalGolf: "",
         // MLB Here
-        athletics: 60,
-        tigers: 66,
-        marlins: 69,
-        totalMLB: 195
+        // athletics: 60,
+        // tigers: 66,
+        // marlins: 69,
+        // totalMLB: 
     }
 
     componentDidMount = () => {
@@ -45,15 +46,15 @@ class al extends React.Component {
         this.getScoresNHL();
         this.getScoresPGA();
         // this.getScoresMLB();
-        this.getScoresNFL();
+        // this.getScoresNFL();
     }
 
     getScoresNFL = () => {
         var x = golfHelper();
-        this.setState({ fortyniners: x.FortyNiners });
-        this.setState({ broncos: x.Broncos });
+        this.setState({ browns: x.Browns });
         this.setState({ dolphins: x.Dolphins });
-        var allNFL = (x.FortyNiners + x.Broncos + x.Dolphins)
+        this.setState({ commanders: x.Commanders });
+        var allNFL = (x.Browns + x.Dolphins + x.Commanders)
         this.setState({ totalNFL: allNFL });
     };
 
@@ -113,79 +114,76 @@ class al extends React.Component {
         API.getScoresNHL()
             .then(res => {
                 // This is the Metro Division
-                // var metroResults = res.data.records[0].teamRecords;
+                var metroResults = res.data.records[0].teamRecords;
                 // Atlantic Division
                 var atlanticResults = res.data.records[1].teamRecords;
                 // Central Division
-                // var centralResults = res.data.records[2].teamRecords;
+                var centralResults = res.data.records[2].teamRecords;
                 // // central
                 var pacificResults = res.data.records[3].teamRecords;
 
-                console.log(atlanticResults);
+                // Al NHL here 
+                var wildWins;
+                var wildOTLS;
+                var wildTotal;
+                var islandersWins;
+                var islandersOTLS;
+                var islandersTotal;
+                var jetsWins;
+                var jetsOTLS;
+                var jetsTotal;
 
-                var lightningWins;
-                var lightningOTLS;
-                var lightningTotal;
-                var knightsWins;
-                var knightsOTLS;
-                var knightsTotal;
-                var canucksWins;
-                var canucksOTLS;
-                var canucksTotal;
-                var allNHL;
+                // Here is the wild loop. 
+                for (var i = 0; i < centralResults.length; i++) {
+                    // wild
+                    if (centralResults[i].team.id === 30) {
+                        wildWins = centralResults[i].leagueRecord.wins;
+                        wildOTLS = centralResults[i].leagueRecord.ot;
+                        console.log(wildWins);
+                        console.log(wildOTLS);
+                        console.log("this loop is running")
+                    }
 
-                // Here is the lightning loop. 
-                for (var i = 0; i < atlanticResults.length; i++) {
-                    // lightning
-                    if (atlanticResults[i].team.id === 14) {
-                        lightningWins = atlanticResults[i].leagueRecord.wins;
-                        lightningOTLS = atlanticResults[i].leagueRecord.ot;
-                        console.log(lightningWins);
-                        console.log(lightningOTLS);
+                    // jets
+                    if (centralResults[i].team.id === 52) {
+                        jetsWins = centralResults[i].leagueRecord.wins;
+                        jetsOTLS = centralResults[i].leagueRecord.ot;
+                        console.log(jetsWins);
+                        console.log(jetsOTLS);
                         console.log("this loop is running")
                     }
                 }
 
-                for (var i = 0; i < pacificResults.length; i++) {
+                for (var i = 0; i < metroResults.length; i++) {
 
-                    // canucks
-                    if (pacificResults[i].team.id === 23) {
-                        canucksWins = pacificResults[i].leagueRecord.wins;
-                        canucksOTLS = pacificResults[i].leagueRecord.ot;
-                        console.log(canucksWins);
-                        console.log(canucksOTLS);
-                        console.log("this loop is running")
-                    }
-
-                    // knights
-                    if (pacificResults[i].team.id === 54) {
-                        knightsWins = pacificResults[i].leagueRecord.wins;
-                        knightsOTLS = pacificResults[i].leagueRecord.ot;
-                        console.log(knightsWins);
-                        console.log(knightsOTLS);
+                    // islanders
+                    if (metroResults[i].team.id === 2) {
+                        islandersWins = metroResults[i].leagueRecord.wins;
+                        islandersOTLS = metroResults[i].leagueRecord.ot;
+                        console.log(islandersWins);
+                        console.log(islandersOTLS);
                         console.log("this loop is running")
                     }
                 }
 
-                // lightning total
-                lightningTotal = (lightningWins * 2) + lightningOTLS;
-                console.log(lightningTotal);
+                // wild total
+                wildTotal = (wildWins * 2) + wildOTLS;
+                console.log(wildTotal);
 
-                // knights total
-                knightsTotal = (knightsWins * 2) + knightsOTLS;
-                console.log(knightsTotal)
+                // islanders total
+                islandersTotal = (islandersWins * 2) + islandersOTLS;
+                console.log(islandersTotal)
 
-                // canucks total
-                canucksTotal = (canucksWins * 2) + canucksOTLS;
-                console.log(canucksTotal);
+                // jets total
+                jetsTotal = (jetsWins * 2) + jetsOTLS;
+                console.log(jetsTotal);
 
-                var allNHL = lightningTotal + knightsTotal + canucksTotal
-
-                this.setState({ totalNHL: allNHL });
-                this.setState({ lightning: lightningTotal });
-                this.setState({ knights: knightsTotal });
-                this.setState({ canucks: canucksTotal });
-
+                var alNHL = wildTotal + islandersTotal + jetsTotal
+                this.setState({ totalNHL: alNHL });
+                this.setState({ wild: wildTotal });
+                this.setState({ jets: jetsTotal });
+                this.setState({ islanders: islandersTotal });
+                
             })
             .catch(error => {
                 console.log(error)
@@ -196,41 +194,41 @@ class al extends React.Component {
         API.getScoresEPL()
             .then(res => {
                 console.log(res.data.response[0].league.standings[0])
-                var leedsWin;
-                var leedsTie;
-                var liverpoolWin;
-                var liverpoolTie;
+                var westhamWin;
+                var westhamTie;
+                var nottinghamWin;
+                var nottinghamTie;
 
                 // running the for loop here. 
                 var forLoopArray = res.data.response[0].league.standings[0]
                 for (var i = 0; i < forLoopArray.length; i++) {
 
-                    if (forLoopArray[i].team.id === 63) {
-                        leedsWin = forLoopArray[i].all.win
-                        leedsTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 48) {
+                        westhamWin = forLoopArray[i].all.win
+                        westhamTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + leedsWin);
-                        console.log("here are the ties" + leedsTie);
+                        console.log("here are the wins" + westhamWin);
+                        console.log("here are the ties" + westhamTie);
                     }
 
-                    if (forLoopArray[i].team.id === 40) {
-                        liverpoolWin = forLoopArray[i].all.win
-                        liverpoolTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 65) {
+                        nottinghamWin = forLoopArray[i].all.win
+                        nottinghamTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + liverpoolWin);
-                        console.log("here are the ties" + liverpoolTie);
+                        console.log("here are the wins" + nottinghamWin);
+                        console.log("here are the ties" + nottinghamTie);
                     }
                 }
 
-                var leedsTotal = (leedsWin * 4.25) + (leedsTie);
-                var liverpoolTotal = (liverpoolWin * 4.25) + (liverpoolTie);
+                var westhamTotal = (westhamWin * 4.25) + (westhamTie);
+                var nottinghamTotal = (nottinghamWin * 4.25) + (nottinghamTie);
 
                 // Here is the final result
-                var alPoints = leedsTotal + liverpoolTotal;
-                this.setState({ leeds: leedsTotal });
-                this.setState({ liverpool: liverpoolTotal });
+                var alPoints = westhamTotal + nottinghamTotal;
+                this.setState({ westham: westhamTotal });
+                this.setState({ nottingham: nottinghamTotal });
                 this.setState({ eplTotal: alPoints });
             })
             .catch(error => {
@@ -241,24 +239,24 @@ class al extends React.Component {
     getScoresNBA = () => {
         API.getScoresNBA()
             .then(res => {
-                // HERE ARE NBA TEAMS FOR TOMMY. 
+                // HERE ARE NBA TEAMS FOR AL
                 // console.log(res);
                 // console.log(res.data.api.standings);
-                var sixersWin = res.data.api.standings[7].win;
-                var pelicansWin = res.data.api.standings[19].win;
-                var cavaliersWin = res.data.api.standings[12].win;
+                var warriorsWin = res.data.api.standings[23].win;
+                var wizardsWin = res.data.api.standings[12].win;
+                var jazzWin = res.data.api.standings[18].win;
 
                 // I need to multiply the API result by 2 FIRST since we need them individually. 
 
-                var doublesixers = (sixersWin * 2);
-                var doublepelicans = (pelicansWin * 2);
-                var doublecavaliers = (cavaliersWin * 2);
+                var doublewarriors = (warriorsWin * 2);
+                var doublewizards = (wizardsWin * 2);
+                var doublejazz = (jazzWin * 2);
 
                 const tempAlNBA = this.state.allNBA;
 
-                tempAlNBA.push(sixersWin);
-                tempAlNBA.push(pelicansWin);
-                tempAlNBA.push(cavaliersWin);
+                tempAlNBA.push(warriorsWin);
+                tempAlNBA.push(wizardsWin);
+                tempAlNBA.push(jazzWin);
 
                 var AlDoubledScores = tempAlNBA.map(team => team * 2);
 
@@ -269,9 +267,9 @@ class al extends React.Component {
                 }
                 console.log(AlPoints);
                 this.setState({ alNBA: AlPoints });
-                this.setState({ sixers: doublesixers });
-                this.setState({ pelicans: doublepelicans });
-                this.setState({ cavaliers: doublecavaliers });
+                this.setState({ warriors: doublewarriors });
+                this.setState({ wizards: doublewizards });
+                this.setState({ jazz: doublejazz });
             })
             .catch(error => {
                 console.log(error)
@@ -341,19 +339,19 @@ class al extends React.Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">56</th>
-                                        <td className="sixers">Philadelphia 76ers</td>
-                                        <td>{this.state.sixers}</td>
+                                        <th scope="row">7</th>
+                                        <td className="warriors">Golden State Warriors</td>
+                                        <td>{this.state.warriors}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">73</th>
-                                        <td className="pelicans">New Orleans Pelicans</td>
-                                        <td>{this.state.pelicans}</td>
+                                        <th scope="row">78</th>
+                                        <td className="wizards">Washington Wizards</td>
+                                        <td>{this.state.wizards}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">172</th>
-                                        <td className="cavs">Cleveland Cavaliers</td>
-                                        <td>{this.state.cavaliers}</td>
+                                        <td className="jazz">Utah Jazz</td>
+                                        <td>{this.state.jazz}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Total</th>
@@ -378,19 +376,19 @@ class al extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">57</th>
-                                                <td className="niners">San Francisco 49ers</td>
-                                                <td>{this.state.fortyniners}</td>
+                                                <th scope="row">36</th>
+                                                <td className="browns">Cleveland Browns</td>
+                                                <td>{this.state.browns}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">111</th>
-                                                <td className="broncos">Denver Broncos</td>
-                                                <td>{this.state.broncos}</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">140</th>
+                                                <th scope="row">50</th>
                                                 <td className="fins">Miami Dolphins</td>
                                                 <td>{this.state.dolphins}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">157</th>
+                                                <td className="redskins">Washington Commanders</td>
+                                                <td>{this.state.commanders}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>
@@ -417,14 +415,14 @@ class al extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">2</th>
-                                                <td className="liverpool">Liverpool</td>
-                                                <td>{this.state.liverpool}</td>
+                                                <th scope="row">186</th>
+                                                <td className="nottingham">Nottingham</td>
+                                                <td>{this.state.nottingham}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">75</th>
-                                                <td className="leeds">Leeds United</td>
-                                                <td>{this.state.leeds}</td>
+                                                <th scope="row">25</th>
+                                                <td className="westHam">Westham United</td>
+                                                <td>{this.state.westham}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>
@@ -452,19 +450,19 @@ class al extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">20</th>
-                                                <td className="lightning">Tampa Bay Lightning</td>
-                                                <td>{this.state.lightning}</td>
+                                                <th scope="row">63</th>
+                                                <td className="wild">Minnesota Wild</td>
+                                                <td>{this.state.wild}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">39</th>
-                                                <td className="knights">Vegas Golden Knights</td>
-                                                <td>{this.state.knights}</td>
+                                                <th scope="row">88</th>
+                                                <td className="islanders">New York Islanders</td>
+                                                <td>{this.state.islanders}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">157</th>
-                                                <td className="canucks">Vancouver Canucks</td>
-                                                <td>{this.state.canucks}</td>
+                                                <th scope="row">93</th>
+                                                <td className="jets">Winnipeg Jets</td>
+                                                <td>{this.state.jets}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>
