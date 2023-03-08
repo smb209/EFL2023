@@ -11,9 +11,9 @@ class ben extends React.Component {
         // Putting NBA aryankees here. Each person's array will include three NBA teams. 
         allNBA: [],
         benNBA: "",
-        clippers: "",
-        magic: "",
-        rockets: "",
+        nets: "",
+        lakers: "",
+        hornets: "",
         // eagles: 90,
         // cowboys: 80,
         // redskins: 30,
@@ -251,22 +251,22 @@ class ben extends React.Component {
             .then(res => {
                 // HERE ARE NBA TEAMS FOR TOMMY. 
                 // console.log(res);
-                // console.log(res.data.api.standings);
-                var clippersWin = res.data.api.standings[23].win;
-                var magicWin = res.data.api.standings[4].win;
-                var rocketsWin = res.data.api.standings[16].win;
+                console.log(res.data.api.standings);
+                var netsWin = res.data.api.standings[3].win;
+                var lakersWin = res.data.api.standings[24].win;
+                var hornetsWin = res.data.api.standings[14].win;
 
                 // I need to multiply the API result by 2 FIRST since we need them individually. 
 
-                var doubleclippers = (clippersWin * 2);
-                var doublemagic = (magicWin * 2);
-                var doublerockets = (rocketsWin * 2);
+                var doublenets = (netsWin * 2);
+                var doublelakers = (lakersWin * 2);
+                var doublehornets = (hornetsWin * 2);
 
                 const tempbenNBA = this.state.allNBA;
 
-                tempbenNBA.push(clippersWin);
-                tempbenNBA.push(magicWin);
-                tempbenNBA.push(rocketsWin);
+                tempbenNBA.push(netsWin);
+                tempbenNBA.push(lakersWin);
+                tempbenNBA.push(hornetsWin);
 
                 var benDoubledScores = tempbenNBA.map(team => team * 2);
 
@@ -277,9 +277,9 @@ class ben extends React.Component {
                 }
                 console.log(benPoints);
                 this.setState({ benNBA: benPoints });
-                this.setState({ clippers: doubleclippers });
-                this.setState({ magic: doublemagic });
-                this.setState({ rockets: doublerockets });
+                this.setState({ nets: doublenets });
+                this.setState({ lakers: doublelakers });
+                this.setState({ hornets: doublehornets });
             })
             .catch(error => {
                 console.log(error)
@@ -349,19 +349,19 @@ class ben extends React.Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">31</th>
-                                        <td className="clippers">LA Clippers</td>
-                                        <td>{this.state.clippers}</td>
+                                        <th scope="row">29</th>
+                                        <td className="nets">Brooklyn Nets</td>
+                                        <td>{this.state.nets}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">162</th>
-                                        <td className="magic">Orlando Magic</td>
-                                        <td>{this.state.magic}</td>
+                                        <th scope="row">47</th>
+                                        <td className="lakers">LA Lakers</td>
+                                        <td>{this.state.lakers}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">179</th>
-                                        <td className="rockets">Houston Rockets</td>
-                                        <td>{this.state.rockets}</td>
+                                        <th scope="row">92</th>
+                                        <td className="hornets">Charlotte Hornets</td>
+                                        <td>{this.state.hornets}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Total</th>

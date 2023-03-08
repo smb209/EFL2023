@@ -9,8 +9,8 @@ class goose extends React.Component {
         // Putting NBA arangels here. Each person's array will include three NBA teams. 
         allNBA: [],
         gooseNBA: "",
-        nuggets: "",
-        bulls: "",
+        celtics: "",
+        timberwolves: "",
         knicks: "",
         // chiefs: 120,
         // panthers: 50,
@@ -243,21 +243,21 @@ class goose extends React.Component {
             .then(res => {
                 // HERE ARE NBA TEAMS FOR TOMMY. 
                 // console.log(res);
-                // console.log(res.data.api.standings);
-                var nuggetsWin = res.data.api.standings[27].win;
-                var bullsWin = res.data.api.standings[10].win;
-                var knicksWin = res.data.api.standings[5].win;
+                console.log(res.data.api.standings);
+                var celticsWin = res.data.api.standings[0].win;
+                var timberwolvesWin = res.data.api.standings[16].win;
+                var knicksWin = res.data.api.standings[2].win;
 
                 // I need to multiply the API result by 2 FIRST since we need them individually. 
 
-                var doublenuggets = (nuggetsWin * 2);
-                var doublebulls = (bullsWin * 2);
+                var doubleceltics = (celticsWin * 2);
+                var doubletimberwolves = (timberwolvesWin * 2);
                 var doubleKnicks = (knicksWin * 2);
 
                 const tempGooseNBA = this.state.allNBA;
 
-                tempGooseNBA.push(nuggetsWin);
-                tempGooseNBA.push(bullsWin);
+                tempGooseNBA.push(celticsWin);
+                tempGooseNBA.push(timberwolvesWin);
                 tempGooseNBA.push(knicksWin);
 
                 var GooseDoubledScores = tempGooseNBA.map(team => team * 2);
@@ -269,8 +269,8 @@ class goose extends React.Component {
                 }
                 console.log(GoosePoints);
                 this.setState({ gooseNBA: GoosePoints });
-                this.setState({ nuggets: doublenuggets });
-                this.setState({ bulls: doublebulls });
+                this.setState({ celtics: doubleceltics });
+                this.setState({ timberwolves: doubletimberwolves });
                 this.setState({ knicks: doubleKnicks });
             })
             .catch(error => {
@@ -341,17 +341,17 @@ class goose extends React.Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">32</th>
-                                        <td className="nuggets">Denver Nuggets</td>
-                                        <td>{this.state.nuggets}</td>
+                                        <th scope="row">18</th>
+                                        <td className="celtics">Boston Celtics</td>
+                                        <td>{this.state.celtics}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">47</th>
-                                        <td className="bulls">Chicago Bulls</td>
-                                        <td>{this.state.bulls}</td>
+                                        <th scope="row">34</th>
+                                        <td className="tWolves">Minnesota Timberwolves</td>
+                                        <td>{this.state.timberwolves}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">64</th>
+                                        <th scope="row">70</th>
                                         <td className="knicks">New York Knicks</td>
                                         <td>{this.state.knicks}</td>
                                     </tr>

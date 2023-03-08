@@ -9,9 +9,9 @@ class patrick extends React.Component {
         // Putting NBA arrays here. Each person's array will include three NBA teams. 
         allNBA: [],
         PatrickNBA: "",
-        suns: "",
-        kings: "",
-        hornets: "",
+        mavericks: "",
+        pacers: "",
+        thunder: "",
         // ravens: 140,
         // titans: 90,
         // jets: 70,
@@ -23,7 +23,7 @@ class patrick extends React.Component {
         // NHL HERE
         oilers: "",
         predators: "",
-        kings: "",
+        pacers: "",
         totalNHL: "",
         // Golf here
         rahm: "",
@@ -133,7 +133,7 @@ class patrick extends React.Component {
                 var canadiansTotal;
                 var allNHL;
 
-                // Here is the predators/kings for loop. 
+                // Here is the predators/pacers for loop. 
                 for (var i = 0; i < pacificResults.length; i++) {
 
                     // oilers
@@ -248,21 +248,21 @@ class patrick extends React.Component {
                 // HERE ARE NBA TEAMS FOR TOMMY. 
                 // console.log(res);
                 // console.log(res.data.api.standings);
-                var sunsWin = res.data.api.standings[22].win;
-                var hornetsWin = res.data.api.standings[1].win;
-                var kingsWin = res.data.api.standings[21].win;
+                var mavericksWin = res.data.api.standings[26].win;
+                var thunderWin = res.data.api.standings[19].win;
+                var pacersWin = res.data.api.standings[8].win;
 
                 // I need to multiply the API result by 2 FIRST since we need them individually. 
 
-                var doublesuns = (sunsWin * 2);
-                var doublehornets = (hornetsWin * 2);
-                var doublekings = (kingsWin * 2);
+                var doublemavericks = (mavericksWin * 2);
+                var doublethunder = (thunderWin * 2);
+                var doublepacers = (pacersWin * 2);
 
                 const tempPatrickNBA = this.state.allNBA;
 
-                tempPatrickNBA.push(sunsWin);
-                tempPatrickNBA.push(hornetsWin);
-                tempPatrickNBA.push(kingsWin);
+                tempPatrickNBA.push(mavericksWin);
+                tempPatrickNBA.push(thunderWin);
+                tempPatrickNBA.push(pacersWin);
 
                 var PatrickDoubledScores = tempPatrickNBA.map(team => team * 2);
 
@@ -273,9 +273,9 @@ class patrick extends React.Component {
                 }
                 console.log(PatrickPoints);
                 this.setState({ PatrickNBA: PatrickPoints });
-                this.setState({ suns: doublesuns });
-                this.setState({ kings: doublekings });
-                this.setState({ hornets: doublehornets });
+                this.setState({ mavericks: doublemavericks });
+                this.setState({ pacers: doublepacers });
+                this.setState({ thunder: doublethunder });
             })
             .catch(error => {
                 console.log(error)
@@ -346,19 +346,19 @@ class patrick extends React.Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">21</th>
-                                        <td className="suns">Phoenix Suns</td>
-                                        <td>{this.state.suns}</td>
+                                        <th scope="row">38</th>
+                                        <td className="mavs">Dallas Mavericks</td>
+                                        <td>{this.state.mavericks}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">86</th>
-                                        <td className="hornets">Charlotte Hornets</td>
-                                        <td>{this.state.hornets}</td>
+                                        <th scope="row">172</th>
+                                        <td className="pacers">Indiana Pacers</td>
+                                        <td>{this.state.pacers}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">95</th>
-                                        <td className="kings">Sacramento Kings</td>
-                                        <td>{this.state.kings}</td>
+                                        <th scope="row">172</th>
+                                        <td className="thunder">OKC Thunder</td>
+                                        <td>{this.state.thunder}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Total</th>

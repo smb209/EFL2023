@@ -242,9 +242,9 @@ class al extends React.Component {
                 // HERE ARE NBA TEAMS FOR AL
                 // console.log(res);
                 // console.log(res.data.api.standings);
-                var warriorsWin = res.data.api.standings[23].win;
+                var warriorsWin = res.data.api.standings[22].win;
                 var wizardsWin = res.data.api.standings[12].win;
-                var jazzWin = res.data.api.standings[18].win;
+                var jazzWin = res.data.api.standings[17].win;
 
                 // I need to multiply the API result by 2 FIRST since we need them individually. 
 
@@ -345,11 +345,11 @@ class al extends React.Component {
                                     </tr>
                                     <tr>
                                         <th scope="row">78</th>
-                                        <td className="wizards">Washington Wizards</td>
+                                        <td className="wiz">Washington Wizards</td>
                                         <td>{this.state.wizards}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">172</th>
+                                        <th scope="row">144</th>
                                         <td className="jazz">Utah Jazz</td>
                                         <td>{this.state.jazz}</td>
                                     </tr>

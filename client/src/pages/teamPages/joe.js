@@ -9,9 +9,9 @@ class joe extends React.Component {
         // Putting NBA arpadres here. Each person's array will include three NBA teams. 
         allNBA: [],
         joeNBA: "",
-        nets: "",
-        warriors: "",
-        heat: "",
+        clippers: "",
+        grizzlies: "",
+        pelicans: "",
         // colts: 70,
         // vikings: 100,
         // raiders: 70,
@@ -246,22 +246,22 @@ class joe extends React.Component {
             .then(res => {
                 // HERE ARE NBA TEAMS FOR TOMMY. 
                 // console.log(res);
-                // console.log(res.data.api.standings);
-                var netsWin = res.data.api.standings[6].win;
-                var warriorsWin = res.data.api.standings[20].win;
-                var heatWin = res.data.api.standings[2].win;
+                console.log(res.data.api.standings);
+                var clippersWin = res.data.api.standings[23].win;
+                var grizzliesWin = res.data.api.standings[25].win;
+                var pelicansWin = res.data.api.standings[27].win;
 
                 // I need to multiply the API result by 2 FIRST since we need them individually. 
 
-                var doublenets = (netsWin * 2);
-                var doublewarriors = (warriorsWin * 2);
-                var doubleheat = (heatWin * 2);
+                var doubleclippers = (clippersWin * 2);
+                var doublegrizzlies = (grizzliesWin * 2);
+                var doublepelicans = (pelicansWin * 2);
 
                 const tempjoeNBA = this.state.allNBA;
 
-                tempjoeNBA.push(netsWin);
-                tempjoeNBA.push(warriorsWin);
-                tempjoeNBA.push(heatWin);
+                tempjoeNBA.push(clippersWin);
+                tempjoeNBA.push(grizzliesWin);
+                tempjoeNBA.push(pelicansWin);
 
                 var joeDoubledScores = tempjoeNBA.map(team => team * 2);
 
@@ -272,9 +272,9 @@ class joe extends React.Component {
                 }
                 console.log(joePoints);
                 this.setState({ joeNBA: joePoints });
-                this.setState({ nets: doublenets });
-                this.setState({ warriors: doublewarriors });
-                this.setState({ heat: doubleheat });
+                this.setState({ clippers: doubleclippers });
+                this.setState({ grizzlies: doublegrizzlies });
+                this.setState({ pelicans: doublepelicans });
             })
             .catch(error => {
                 console.log(error)
@@ -344,19 +344,19 @@ class joe extends React.Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">7</th>
-                                        <td className="nets">Brooklyn Nets</td>
-                                        <td>{this.state.nets}</td>
+                                        <th scope="row">15</th>
+                                        <td className="clippers">LA Clippers</td>
+                                        <td>{this.state.clippers}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">25</th>
-                                        <td className="warriors">Golden State Warriors</td>
-                                        <td>{this.state.warriors}</td>
+                                        <th scope="row">26</th>
+                                        <td className="grizzlies">Memphis Grizzlies</td>
+                                        <td>{this.state.grizzlies}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">36</th>
-                                        <td className="heat">Miami Heat</td>
-                                        <td>{this.state.heat}</td>
+                                        <th scope="row">48</th>
+                                        <td className="pelicans">NO Pelicans</td>
+                                        <td>{this.state.pelicans}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Total</th>

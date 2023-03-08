@@ -9,9 +9,9 @@ class neptune extends React.Component {
         // Putting NBA arcubs here. Each person's array will include three NBA teams. 
         allNBA: [],
         neptuneNBA: "",
-        jazz: "",
-        celtics: "",
-        wizardss: "",
+        bucks: "",
+        sixers: "",
+        cavs: "",
         // NFL STARTING HERE 
         // rams: 90,
         // jaguars: 60,
@@ -247,21 +247,21 @@ class neptune extends React.Component {
                 // HERE ARE NBA TEAMS FOR TOMMY. 
                 // console.log(res);
                 // console.log(res.data.api.standings);
-                var jazzWin = res.data.api.standings[25].win;
-                var celticsWin = res.data.api.standings[9].win;
-                var wizardsWin = res.data.api.standings[0].win;
+                var bucksWin = res.data.api.standings[5].win;
+                var sixersWin = res.data.api.standings[1].win;
+                var cavsWin = res.data.api.standings[6].win;
 
                 // I need to multiply the API result by 2 FIRST since we need them individually. 
 
-                var doublejazz = (jazzWin * 2);
-                var doubleceltics = (celticsWin * 2);
-                var doublewizards = (wizardsWin * 2);
+                var doublebucks = (bucksWin * 2);
+                var doublesixers = (sixersWin * 2);
+                var doublecavs = (cavsWin * 2);
 
                 const tempNeptuneNBA = this.state.allNBA;
 
-                tempNeptuneNBA.push(jazzWin);
-                tempNeptuneNBA.push(celticsWin);
-                tempNeptuneNBA.push(wizardsWin);
+                tempNeptuneNBA.push(bucksWin);
+                tempNeptuneNBA.push(sixersWin);
+                tempNeptuneNBA.push(cavsWin);
 
                 var NeptuneDoubledScores = tempNeptuneNBA.map(team => team * 2);
 
@@ -272,9 +272,9 @@ class neptune extends React.Component {
                 }
                 console.log(NeptunePoints);
                 this.setState({ neptuneNBA: NeptunePoints });
-                this.setState({ jazz: doublejazz });
-                this.setState({ celtics: doubleceltics });
-                this.setState({ wizards: doublewizards });
+                this.setState({ bucks: doublebucks });
+                this.setState({ sixers: doublesixers });
+                this.setState({ cavs: doublecavs });
             })
             .catch(error => {
                 console.log(error)
@@ -345,19 +345,19 @@ class neptune extends React.Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">24</th>
-                                        <td className="jazz">Utah jazz</td>
-                                        <td>{this.state.jazz}</td>
+                                        <th scope="row">5</th>
+                                        <td className="bucks">Milwaukee Bucks</td>
+                                        <td>{this.state.bucks}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">46</th>
-                                        <td className="celtics">Boston Celtics</td>
-                                        <td>{this.state.celtics}</td>
+                                        <th scope="row">16</th>
+                                        <td className="sixers">Philadelphia 76ers</td>
+                                        <td>{this.state.sixers}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">122</th>
-                                        <td className="wiz">Washington Wizards</td>
-                                        <td>{this.state.wizards}</td>
+                                        <th scope="row">40</th>
+                                        <td className="cavs">Cleveland Cavaliers</td>
+                                        <td>{this.state.cavs}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Total</th>

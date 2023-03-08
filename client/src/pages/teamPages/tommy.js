@@ -10,9 +10,9 @@ class tommy extends React.Component {
         // Putting NBA arrays here. Each person's array will include three NBA teams. 
         allNBA: [],
         tomNBA: "",
-        mavs: "",
-        blazers: "",
-        spurs: "",
+        hawks: "",
+        bulls: "",
+        pistons: "",
         // NFL Here
         // fourtyNiners: 130,
         // seahawks: 110,
@@ -258,21 +258,21 @@ class tommy extends React.Component {
                 // HERE ARE NBA TEAMS FOR TOMMY. 
                 // console.log(res);
                 console.log(res.data.api.standings);
-                var mavsWin = res.data.api.standings[17].win;
-                var blazersWin = res.data.api.standings[28].win;
-                var spursWin = res.data.api.standings[18].win;
+                var hawksWin = res.data.api.standings[11].win;
+                var bullsWin = res.data.api.standings[7].win;
+                var pistonsWin = res.data.api.standings[9].win;
 
                 // I need to multiply the API result by 2 FIRST since we need them individually. 
 
-                var doublemavs = (mavsWin * 2);
-                var doubleblazers = (blazersWin * 2);
-                var doubleSpurs = (spursWin * 2);
+                var doublehawks = (hawksWin * 2);
+                var doublebulls = (bullsWin * 2);
+                var doublepistons = (pistonsWin * 2);
 
                 const tempTomNBA = this.state.allNBA;
 
-                tempTomNBA.push(mavsWin);
-                tempTomNBA.push(blazersWin);
-                tempTomNBA.push(spursWin);
+                tempTomNBA.push(hawksWin);
+                tempTomNBA.push(bullsWin);
+                tempTomNBA.push(pistonsWin);
 
                 var tomDoubledScores = tempTomNBA.map(team => team * 2);
 
@@ -283,9 +283,9 @@ class tommy extends React.Component {
                 }
                 console.log(TomPoints);
                 this.setState({ tomNBA: TomPoints });
-                this.setState({ mavs: doublemavs });
-                this.setState({ blazers: doubleblazers });
-                this.setState({ spurs: doubleSpurs });
+                this.setState({ hawks: doublehawks });
+                this.setState({ bulls: doublebulls });
+                this.setState({ pistons: doublepistons });
             })
             .catch(error => {
                 console.log(error)
@@ -357,19 +357,19 @@ class tommy extends React.Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">37</th>
-                                        <td className="mavs">Dallas Mavericks</td>
-                                        <td>{this.state.mavs}</td>
+                                        <th scope="row">46</th>
+                                        <td className="hawks">Atlanta Hawks</td>
+                                        <td>{this.state.hawks}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">46</th>
-                                        <td className="blazers">Portland Trailblazers</td>
-                                        <td>{this.state.blazers}</td>
+                                        <th scope="row">55</th>
+                                        <td className="bulls">Chicago Bulls</td>
+                                        <td>{this.state.bulls}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">109</th>
-                                        <td className="spurs">San Antonio Spurs</td>
-                                        <td>{this.state.spurs}</td>
+                                        <td className="pistons">Detroit Pistons</td>
+                                        <td>{this.state.pistons}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Total</th>

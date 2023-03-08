@@ -9,9 +9,9 @@ class steids extends React.Component {
         // Putting NBA ardodgers here. Each person's array will include three NBA teams. 
         allNBA: [],
         steidsNBA: "",
-        hawks: "",
-        raptors: "",
-        tWolves: "",
+        nuggets: "",
+        kings: "",
+        spurs: "",
         // browns: 60,
         // steelers: 80,
         // buccaneers: 70,
@@ -247,21 +247,21 @@ class steids extends React.Component {
                 // HERE ARE NBA TEAMS FOR TOMMY. 
                 // console.log(res);
                 // console.log(res.data.api.standings);
-                var hawksWin = res.data.api.standings[3].win;
-                var raptorsWin = res.data.api.standings[8].win;
-                var tWolvesWin = res.data.api.standings[26].win;
+                var nuggetsWin = res.data.api.standings[15].win;
+                var kingsWin = res.data.api.standings[20].win;
+                var spursWin = res.data.api.standings[28].win;
 
                 // I need to multiply the API result by 2 FIRST since we need them individually. 
 
-                var doublehawks = (hawksWin * 2);
-                var doubleraptors = (raptorsWin * 2);
-                var doubletWolves = (tWolvesWin * 2);
+                var doublenuggets = (nuggetsWin * 2);
+                var doublekings = (kingsWin * 2);
+                var doublespurs = (spursWin * 2);
 
                 const tempsteidsNBA = this.state.allNBA;
 
-                tempsteidsNBA.push(hawksWin);
-                tempsteidsNBA.push(raptorsWin);
-                tempsteidsNBA.push(tWolvesWin);
+                tempsteidsNBA.push(nuggetsWin);
+                tempsteidsNBA.push(kingsWin);
+                tempsteidsNBA.push(spursWin);
 
                 var steidsDoubledScores = tempsteidsNBA.map(team => team * 2);
 
@@ -272,9 +272,9 @@ class steids extends React.Component {
                 }
                 // console.log(steidsPoints);
                 this.setState({ steidsNBA: steidsPoints });
-                this.setState({ hawks: doublehawks });
-                this.setState({ raptors: doubleraptors });
-                this.setState({ tWolves: doubletWolves });
+                this.setState({ nuggets: doublenuggets });
+                this.setState({ kings: doublekings });
+                this.setState({ spurs: doublespurs });
             })
             .catch(error => {
                 console.log(error)
@@ -345,19 +345,19 @@ class steids extends React.Component {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">35</th>
-                                        <td className="hawks">Atlanta Hawks</td>
-                                        <td>{this.state.hawks}</td>
+                                        <th scope="row">22</th>
+                                        <td className="nuggets">Denver Nuggets</td>
+                                        <td>{this.state.nuggets}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">94</th>
-                                        <td className="raptors">Toronto Raptors</td>
-                                        <td>{this.state.raptors}</td>
+                                        <th scope="row">80</th>
+                                        <td className="kings">Sacramento Kings</td>
+                                        <td>{this.state.kings}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">104</th>
-                                        <td className="tWolves">Minnesota Timberwolves</td>
-                                        <td>{this.state.tWolves}</td>
+                                        <th scope="row">161</th>
+                                        <td className="spurs">San Antonio Spurs</td>
+                                        <td>{this.state.spurs}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Total</th>
