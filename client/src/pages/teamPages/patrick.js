@@ -21,8 +21,8 @@ class patrick extends React.Component {
         everton: "",
         patEPL: "",
         // NHL HERE
-        oilers: "",
-        predators: "",
+        lightning: "",
+        blues: "",
         pacers: "",
         totalNHL: "",
         // Golf here
@@ -122,33 +122,46 @@ class patrick extends React.Component {
                 var pacificResults = res.data.records[3].teamRecords;
 
                 console.log(metroResults);
-                var oilersWins;
-                var oilersOTLS;
-                var oilersTotal;
+                var lightningWins;
+                var lightningOTLS;
+                var lightningTotal;
+                var bluesWins;
+                var bluesOTLS;
+                var bluesTotal;
                 var predatorsWins;
                 var predatorsOTLS;
                 var predatorsTotal;
-                var canadiansWins;
-                var canadiansOTLS;
-                var canadiansTotal;
                 var allNHL;
 
-                // Here is the predators/pacers for loop. 
-                for (var i = 0; i < pacificResults.length; i++) {
+                // Here is the blues/pacers for loop. 
+                for (var i = 0; i < atlanticResults.length; i++) {
 
-                    // oilers
-                    if (pacificResults[i].team.id === 22) {
-                        oilersWins = metroResults[i].leagueRecord.wins;
-                        oilersOTLS = metroResults[i].leagueRecord.ot;
-                        console.log(oilersWins);
-                        console.log(oilersOTLS);
+                    // lightning
+                    if (atlanticResults[i].team.id === 14) {
+                        lightningWins = atlanticResults[i].leagueRecord.wins;
+                        lightningOTLS = atlanticResults[i].leagueRecord.ot;
+                        console.log(lightningWins);
+                        console.log(lightningOTLS);
                         console.log("this loop is running")
                     }
                 }
 
                 for (var i = 0; i < centralResults.length; i++) {
 
-                    // predators
+                    // blues
+                    if (centralResults[i].team.id === 19) {
+                        bluesWins = centralResults[i].leagueRecord.wins;
+                        bluesOTLS = centralResults[i].leagueRecord.ot;
+                        console.log(bluesWins);
+                        console.log(bluesOTLS);
+                        console.log("this loop is running")
+                    }
+                }
+
+                // Here is the loop for the lightning
+                for (var i = 0; i < centralResults.length; i++) {
+
+                    // lightning
                     if (centralResults[i].team.id === 18) {
                         predatorsWins = centralResults[i].leagueRecord.wins;
                         predatorsOTLS = centralResults[i].leagueRecord.ot;
@@ -158,37 +171,24 @@ class patrick extends React.Component {
                     }
                 }
 
-                // Here is the loop for the oilers
-                for (var i = 0; i < atlanticResults.length; i++) {
+                // blues total
+                bluesTotal = (bluesWins * 2) + bluesOTLS;
+                console.log(bluesTotal)
 
-                    // oilers
-                    if (atlanticResults[i].team.id === 8) {
-                        canadiansWins = atlanticResults[i].leagueRecord.wins;
-                        canadiansOTLS = atlanticResults[i].leagueRecord.ot;
-                        console.log(canadiansWins);
-                        console.log(canadiansOTLS);
-                        console.log("this loop is running")
-                    }
-                }
+                // lightning total
+                lightningTotal = (lightningWins * 2) + lightningOTLS;
+                console.log(lightningTotal);
 
-                // predators total
+                // blues total
                 predatorsTotal = (predatorsWins * 2) + predatorsOTLS;
-                console.log(predatorsTotal)
+                console.log(predatorsTotal);
 
-                // oilers total
-                oilersTotal = (oilersWins * 2) + oilersOTLS;
-                console.log(oilersTotal);
-
-                // predators total
-                canadiansTotal = (canadiansWins * 2) + canadiansOTLS;
-                console.log(canadiansTotal);
-
-                var allNHL = oilersTotal + predatorsTotal + canadiansTotal
+                var allNHL = lightningTotal + bluesTotal + predatorsTotal
 
                 this.setState({ totalNHL: allNHL });
-                this.setState({ oilers: oilersTotal });
+                this.setState({ lightning: lightningTotal });
+                this.setState({ blues: bluesTotal });
                 this.setState({ predators: predatorsTotal });
-                this.setState({ canadians: canadiansTotal });
 
             })
             .catch(error => {
@@ -457,19 +457,19 @@ class patrick extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">135</th>
-                                                <td className="oilers">Edmonton Oilers</td>
-                                                <td>{this.state.oilers}</td>
+                                                <th scope="row">23</th>
+                                                <td className="lightning">Tampa Bay Lightning</td>
+                                                <td>{this.state.lightning}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">147</th>
+                                                <th scope="row">85</th>
+                                                <td className="blues">St. Louis Blues</td>
+                                                <td>{this.state.blues}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">111</th>
                                                 <td className="predators">Nashville Predators</td>
                                                 <td>{this.state.predators}</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">154</th>
-                                                <td className="canadiens">Montreal Canadians</td>
-                                                <td>{this.state.canadians}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

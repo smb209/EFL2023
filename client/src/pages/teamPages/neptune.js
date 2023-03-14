@@ -22,9 +22,9 @@ class neptune extends React.Component {
         norwich: "",
         neptuneEPL: "",
         // NHL Going here. 
-        wild: "",
-        rangers: "",
-        jets: "",
+        flyers: "",
+        stars: "",
+        sabres: "",
         totalNHL: "",
         // Golf here
         spieth: "",
@@ -35,7 +35,7 @@ class neptune extends React.Component {
         totalGolf: "",
         // MLB Here
         cubs: 74,
-        rangers: 68,
+        stars: 68,
         pirates: 62,
         totalMLB: 204
     }
@@ -64,7 +64,7 @@ class neptune extends React.Component {
                 console.log(res.data.response[0]);
                 var fullIndex = res.data.response[0];
                 var cubsWin;
-                var rangersWin;
+                var starsWin;
                 var piratesWin;
 
                 for (var i = 0; i < fullIndex.length; i++) {
@@ -81,19 +81,19 @@ class neptune extends React.Component {
                         piratesWin = fullIndex[i].games.win.total
                     }
 
-                    // rangers
+                    // stars
                     if (fullIndex[i].team.id === 35) {
-                        rangersWin = fullIndex[i].games.win.total
+                        starsWin = fullIndex[i].games.win.total
                     }
 
                 }
 
-                var allMLB = cubsWin + piratesWin + rangersWin;
+                var allMLB = cubsWin + piratesWin + starsWin;
 
                 this.setState({ totalMLB: allMLB });
                 this.setState({ cubs: cubsWin });
                 this.setState({ pirates: piratesWin });
-                this.setState({ rangers: rangersWin });
+                this.setState({ stars: starsWin });
 
             });
     };
@@ -116,77 +116,82 @@ class neptune extends React.Component {
                 // This is the Metro Division
                 var metroResults = res.data.records[0].teamRecords;
                 // Atlantic Division
-                // var atlanticResults = res.data.records[1].teamRecords;
+                var atlanticResults = res.data.records[1].teamRecords;
                 // // Central Division
                 var centralResults = res.data.records[2].teamRecords;
                 // Pacific
-                // var pacificResults = res.data.records[3].teamRecords;
+                var pacificResults = res.data.records[3].teamRecords;
 
                 console.log(metroResults);
-                var wildWins;
-                var wildOTLS;
-                var wildTotal;
-                var rangersWins;
-                var rangersOTLS;
-                var rangersTotal;
-                var jetsWins;
-                var jetsOTLS;
-                var jetsTotal;
+                var flyersWins;
+                var flyersOTLS;
+                var flyersTotal;
+                var starsWins;
+                var starsOTLS;
+                var starsTotal;
+                var sabresWins;
+                var sabresOTLS;
+                var sabresTotal;
                 var allNHL;
 
-                // Here is the wild loop. 
+                // Here is the stars loop. 
                 for (var i = 0; i < centralResults.length; i++) {
-                    // wild
-                    if (centralResults[i].team.id === 30) {
-                        wildWins = centralResults[i].leagueRecord.wins;
-                        wildOTLS = centralResults[i].leagueRecord.ot;
-                        console.log(wildWins);
-                        console.log(wildOTLS);
-                        console.log("this loop is running")
-                    }
-
-                    // jets
-                    if (centralResults[i].team.id === 52) {
-                        jetsWins = centralResults[i].leagueRecord.wins;
-                        jetsOTLS = centralResults[i].leagueRecord.ot;
-                        console.log(jetsWins);
-                        console.log(jetsOTLS);
+                    // stars
+                    if (centralResults[i].team.id === 25) {
+                        starsWins = centralResults[i].leagueRecord.wins;
+                        starsOTLS = centralResults[i].leagueRecord.ot;
+                        console.log(starsWins);
+                        console.log(starsOTLS);
                         console.log("this loop is running")
                     }
 
                 }
 
-                // Here is the loop for the wild
+
+                // Here is the flyers loop. 
                 for (var i = 0; i < metroResults.length; i++) {
-
-                    // rangers
-                    if (metroResults[i].team.id === 3) {
-                        rangersWins = metroResults[i].leagueRecord.wins;
-                        rangersOTLS = metroResults[i].leagueRecord.ot;
-                        console.log(rangersWins);
-                        console.log(rangersOTLS);
+                    // flyers
+                    if (metroResults[i].team.id === 4) {
+                        flyersWins = metroResults[i].leagueRecord.wins;
+                        flyersOTLS = metroResults[i].leagueRecord.ot;
+                        console.log(flyersWins);
+                        console.log(flyersOTLS);
                         console.log("this loop is running")
                     }
                 }
 
-                // rangers total
-                rangersTotal = (rangersWins * 2) + rangersOTLS;
-                console.log(rangersTotal);
 
-                // wild total
-                wildTotal = (wildWins * 2) + wildOTLS;
-                console.log(wildTotal);
+                // Here is the loop for the sabres
+                for (var i = 0; i < atlanticResults.length; i++) {
 
-                // rangers total
-                jetsTotal = (jetsWins * 2) + jetsOTLS;
-                console.log(jetsTotal);
+                    // sabres
+                    if (atlanticResults[i].team.id === 7) {
+                        sabresWins = atlanticResults[i].leagueRecord.wins;
+                        sabresOTLS = atlanticResults[i].leagueRecord.ot;
+                        console.log(sabresWins);
+                        console.log(sabresOTLS);
+                        console.log("this loop is running")
+                    }
+                }
 
-                var allNHL = wildTotal + rangersTotal + jetsTotal
+                // stars total
+                starsTotal = (starsWins * 2) + starsOTLS;
+                console.log(starsTotal);
+
+                // flyers total
+                flyersTotal = (flyersWins * 2) + flyersOTLS;
+                console.log(flyersTotal);
+
+                // stars total
+                sabresTotal = (sabresWins * 2) + sabresOTLS;
+                console.log(sabresTotal);
+
+                var allNHL = flyersTotal + starsTotal + sabresTotal
 
                 this.setState({ totalNHL: allNHL });
-                this.setState({ wild: wildTotal });
-                this.setState({ rangers: rangersTotal });
-                this.setState({ jets: jetsTotal });
+                this.setState({ flyers: flyersTotal });
+                this.setState({ stars: starsTotal });
+                this.setState({ sabres: sabresTotal });
 
             })
             .catch(error => {
@@ -456,19 +461,19 @@ class neptune extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">119</th>
-                                                <td className="rangers">New York Rangers</td>
-                                                <td>{this.state.rangers}</td>
+                                                <th scope="row">86</th>
+                                                <td className="stars">Dallas Stars</td>
+                                                <td>{this.state.stars}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">131</th>
-                                                <td className="wild">Minnesota Wild</td>
-                                                <td>{this.state.wild}</td>
+                                                <th scope="row">126</th>
+                                                <td className="flyers">Philadelphia Flyers</td>
+                                                <td>{this.state.flyers}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">143</th>
-                                                <td className="jets">Winnipeg Jets</td>
-                                                <td>{this.state.jets}</td>
+                                                <th scope="row">154</th>
+                                                <td className="sabres">Buffalo Sabres</td>
+                                                <td>{this.state.sabres}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>
@@ -502,8 +507,8 @@ class neptune extends React.Component {
                                             </tr>
                                             <tr>
                                                 <th scope="row">170</th>
-                                                <td className="rangers">Texas Rangers</td>
-                                                <td>{this.state.rangers}</td>
+                                                <td className="stars">Texas stars</td>
+                                                <td>{this.state.stars}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">171</th>

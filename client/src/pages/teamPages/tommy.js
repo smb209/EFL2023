@@ -23,9 +23,9 @@ class tommy extends React.Component {
         wolves: "",
         eplTotal: "",
         // NHL States here 
-        sharks: "",
-        flyers: "",
-        senators: "",
+        coyotes: "",
+        blueJackets: "",
+        canadians: "",
         totalNHL: "",
         // Golf here
         schauffele: "",
@@ -123,76 +123,76 @@ class tommy extends React.Component {
                 // Pacific
                 var pacificResults = res.data.records[3].teamRecords;
 
-                console.log(pacificResults)
-                var flyersWins;
-                var flyersOTLS;
-                var flyersTotal;
-                var sharksWins;
-                var sharksOTLS;
-                var sharksTotal;
-                var senatorsWins;
-                var senatorsOTLS;
-                var senatorsTotal;
+                console.log(atlanticResults)
+                var blueJacketsWins;
+                var blueJacketsOTLS;
+                var blueJacketsTotal;
+                var coyotesWins;
+                var coyotesOTLS;
+                var coyotesTotal;
+                var canadiansWins;
+                var canadiansOTLS;
+                var canadiansTotal;
                 var totalNHL;
 
-                // Here is the flyers for loop. 
+                // Here is the blueJackets for loop. 
                 for (var i = 0; i < metroResults.length; i++) {
 
-                    if (metroResults[i].team.id === 4) {
-                        flyersWins = metroResults[i].leagueRecord.wins;
-                        flyersOTLS = metroResults[i].leagueRecord.ot;
-                        // console.log(flyersWins);
-                        // console.log(flyersOTLS);
+                    if (metroResults[i].team.id === 29) {
+                        blueJacketsWins = metroResults[i].leagueRecord.wins;
+                        blueJacketsOTLS = metroResults[i].leagueRecord.ot;
+                        // console.log(blueJacketsWins);
+                        // console.log(blueJacketsOTLS);
                         // console.log("this loop is running")
                     }
                 }
-                // sharks total
-                flyersTotal = (flyersWins * 2) + flyersOTLS;
-                console.log(flyersTotal)
+                // coyotes total
+                blueJacketsTotal = (blueJacketsWins * 2) + blueJacketsOTLS;
+                console.log(blueJacketsTotal)
 
-                // Here is the loop for the senators and flyers, who are in the same division. 
-                for (var i = 0; i < pacificResults.length; i++) {
+                // Here is the loop for the canadians and blueJackets, who are in the same division. 
+                for (var i = 0; i < centralResults.length; i++) {
 
-                    // sharks
-                    if (pacificResults[i].team.id === 28) {
-                        sharksWins = pacificResults[i].leagueRecord.wins;
-                        sharksOTLS = pacificResults[i].leagueRecord.ot;
-                        // console.log(sharksWins);
-                        // console.log(sharksOTLS);
+                    // coyotes
+                    if (centralResults[i].team.id === 53) {
+                        coyotesWins = centralResults[i].leagueRecord.wins;
+                        coyotesOTLS = centralResults[i].leagueRecord.ot;
+                        // console.log(coyotesWins);
+                        // console.log(coyotesOTLS);
                         // console.log("this loop is running")
                     }
                 }
 
-                // Here is the flyers for loop. 
-                for (var i = 0; i < metroResults.length; i++) {
+                // Here is the blueJackets for loop. 
+                for (var i = 0; i < atlanticResults.length; i++) {
 
-                    // senators
-                    if (atlanticResults[i].team.id === 9) {
-                        senatorsWins = atlanticResults[i].leagueRecord.wins;
-                        senatorsOTLS = atlanticResults[i].leagueRecord.ot;
-                        // console.log(senatorsWins);
-                        // console.log(senatorsOTLS);
+                    // canadians
+                    if (atlanticResults[i].team.id === 8) {
+                        canadiansWins = atlanticResults[i].leagueRecord.wins;
+                        canadiansOTLS = atlanticResults[i].leagueRecord.ot;
+                        // console.log(canadiansWins);
+                        // console.log(canadiansOTLS);
                         // console.log("this loop is running")
                     }
                 }
-                // flyers total
-                flyersTotal = (flyersWins * 2) + flyersOTLS;
-                console.log(flyersTotal)
+                // blueJackets total
+                blueJacketsTotal = (blueJacketsWins * 2) + blueJacketsOTLS;
+                console.log(blueJacketsTotal)
 
-                // sharks total
-                sharksTotal = (sharksWins * 2) + sharksOTLS;
-                console.log(sharksTotal);
+                // coyotes total
+                coyotesTotal = (coyotesWins * 2) + coyotesOTLS;
+                console.log(coyotesTotal);
 
-                // senators total
-                senatorsTotal = (senatorsWins * 2) + senatorsOTLS;
-                console.log(senatorsTotal);
+                // canadians total
+                canadiansTotal = (canadiansWins * 2) + canadiansOTLS;
+                console.log(canadiansTotal);
 
-                var allNHL = flyersTotal + senatorsTotal + sharksTotal
+                var allNHL = blueJacketsTotal + canadiansTotal + coyotesTotal
 
                 this.setState({ totalNHL: allNHL });
-                this.setState({ flyers: flyersTotal });
-                this.setState({ senators: senatorsTotal });
-                this.setState({ sharks: sharksTotal });
+                this.setState({ blueJackets: blueJacketsTotal });
+                this.setState({ canadians: canadiansTotal });
+                this.setState({ coyotes: coyotesTotal });
 
             })
             .catch(error => {
@@ -470,19 +470,19 @@ class tommy extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">139</th>
-                                                <td className="flyers">Philadelphia Flyers</td>
-                                                <td>{this.state.flyers}</td>
+                                                <th scope="row">160</th>
+                                                <td className="blueJackets">Columbus Blue Jackets</td>
+                                                <td>{this.state.blueJackets}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">160</th>
-                                                <td className="sharks">San Jose Sharks</td>
-                                                <td>{this.state.sharks}</td>
+                                                <th scope="row">178</th>
+                                                <td className="coyotes">Phoenix Coyotes</td>
+                                                <td>{this.state.coyotes}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">184</th>
-                                                <td className="senators">Ottawa Senators</td>
-                                                <td>{this.state.senators}</td>
+                                                <td className="canadiens">Montreal Canadians</td>
+                                                <td>{this.state.canadians}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>
@@ -550,27 +550,27 @@ class tommy extends React.Component {
                                         <tbody>
                                             <tr>
                                                 <th scope="row">12</th>
-                                                <td className="senators">Xander Schauffele</td>
+                                                <td className="canadians">Xander Schauffele</td>
                                                 <td>{this.state.schauffele}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">112</th>
-                                                <td className="senators">Joaquin Niemann</td>
+                                                <td className="canadians">Joaquin Niemann</td>
                                                 <td>{this.state.niemann}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">141</th>
-                                                <td className="senators">Maverick McNealy</td>
+                                                <td className="canadians">Maverick McNealy</td>
                                                 <td>{this.state.mcnealy}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">163</th>
-                                                <td className="senators">Russell Henley</td>
+                                                <td className="canadians">Russell Henley</td>
                                                 <td>{this.state.henley}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">178</th>
-                                                <td className="senators">Cameron Tringale</td>
+                                                <td className="canadians">Cameron Tringale</td>
                                                 <td>{this.state.tringale}</td>
                                             </tr>
                                             <tr>

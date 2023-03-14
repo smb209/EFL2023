@@ -1438,7 +1438,7 @@ class Table extends Component {
                 }
 
                 // Here is the Canadians for loop. 
-                for (var i = 0; i < metroResults.length; i++) {
+                for (var i = 0; i < atlanticResults.length; i++) {
 
                     // canadiens
                     if (atlanticResults[i].team.id === 8) {

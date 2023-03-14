@@ -21,8 +21,8 @@ class steids extends React.Component {
         watford: "",
         steidsEPL: "",
         // NHL
-        avalanche: "",
-        jackets: "",
+        oilers: "",
+        panthers: "",
         leafs: "",
         totalNHL: "",
         // Golf here
@@ -121,32 +121,32 @@ class steids extends React.Component {
                 var pacificResults = res.data.records[3].teamRecords;
 
                 console.log(atlanticResults)
-                var avalancheWins;
-                var avalancheOTLS;
-                var avalancheTotal;
+                var oilersWins;
+                var oilersOTLS;
+                var oilersTotal;
                 var leafsWins;
                 var leafsOTLS;
                 var leafsTotal;
-                var jacketsWins;
-                var jacketsOTLS;
-                var jacketsTotal;
+                var panthersWins;
+                var panthersOTLS;
+                var panthersTotal;
                 var allNHL;
 
-                // Here is the avalanche for loop. 
-                for (var i = 0; i < centralResults.length; i++) {
+                // Here is the oilers for loop. 
+                for (var i = 0; i < pacificResults.length; i++) {
 
-                    if (centralResults[i].team.id === 21) {
-                        avalancheWins = centralResults[i].leagueRecord.wins;
-                        avalancheOTLS = centralResults[i].leagueRecord.ot;
-                        console.log(avalancheWins);
-                        console.log(avalancheOTLS);
+                    if (pacificResults[i].team.id === 22) {
+                        oilersWins = pacificResults[i].leagueRecord.wins;
+                        oilersOTLS = pacificResults[i].leagueRecord.ot;
+                        console.log(oilersWins);
+                        console.log(oilersOTLS);
                         console.log("this loop is running")
                     }
 
                 }
 
                 for (var i = 0; i < atlanticResults.length; i++) {
-                    // jackets
+                    // panthers
                     if (atlanticResults[i].team.id === 10) {
                         leafsWins = atlanticResults[i].leagueRecord.wins;
                         leafsOTLS = atlanticResults[i].leagueRecord.ot;
@@ -156,36 +156,36 @@ class steids extends React.Component {
                     }
                 }
 
-                // Here is the loop for the jackets
-                for (var i = 0; i < metroResults.length; i++) {
+                // Here is the loop for the panthers
+                for (var i = 0; i < atlanticResults.length; i++) {
 
-                    // avalanche
-                    if (metroResults[i].team.id === 29) {
-                        jacketsWins = metroResults[i].leagueRecord.wins;
-                        jacketsOTLS = metroResults[i].leagueRecord.ot;
-                        console.log(jacketsWins);
-                        console.log(jacketsOTLS);
+                    // oilers
+                    if (atlanticResults[i].team.id === 13) {
+                        panthersWins = atlanticResults[i].leagueRecord.wins;
+                        panthersOTLS = atlanticResults[i].leagueRecord.ot;
+                        console.log(panthersWins);
+                        console.log(panthersOTLS);
                         console.log("this loop is running")
                     }
                 }
 
-                // avalanche total
-                avalancheTotal = (avalancheWins * 2) + avalancheOTLS;
-                console.log(avalancheTotal);
+                // oilers total
+                oilersTotal = (oilersWins * 2) + oilersOTLS;
+                console.log(oilersTotal);
 
                 // leafs total
                 leafsTotal = (leafsWins * 2) + leafsOTLS;
                 console.log(leafsTotal)
 
-                // jackets total
-                jacketsTotal = (jacketsWins * 2) + jacketsOTLS;
-                console.log(jacketsTotal);
+                // panthers total
+                panthersTotal = (panthersWins * 2) + panthersOTLS;
+                console.log(panthersTotal);
 
-                var allNHL = avalancheTotal + jacketsTotal + leafsTotal
+                var allNHL = oilersTotal + panthersTotal + leafsTotal
 
                 this.setState({ totalNHL: allNHL });
-                this.setState({ avalanche: avalancheTotal });
-                this.setState({ jackets: jacketsTotal });
+                this.setState({ oilers: oilersTotal });
+                this.setState({ panthers: panthersTotal });
                 this.setState({ leafs: leafsTotal });
 
             })
@@ -457,20 +457,20 @@ class steids extends React.Component {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">15</th>
-                                                <td className="avalanche">Colorado Avalanche</td>
-                                                <td>{this.state.avalanche}</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">67</th>
+                                        <tr>
+                                                <th scope="row">41</th>
                                                 <td className="leafs">Toronto Maple Leafs</td>
                                                 <td>{this.state.leafs}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">173</th>
-                                                <td className="jackets">Columbus Blue Jackets</td>
-                                                <td>{this.state.jackets}</td>
+                                                <th scope="row">60</th>
+                                                <td className="oilers">Edmonton Oilers</td>
+                                                <td>{this.state.oilers}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">61</th>
+                                                <td className="panthers">Carolina Panthers</td>
+                                                <td>{this.state.panthers}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

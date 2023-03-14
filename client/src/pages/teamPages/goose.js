@@ -21,9 +21,9 @@ class goose extends React.Component {
         westham: "",
         gooseEPL: "",
         // NHL Here
-        islanders: "",
-        devils: "",
-        ducks: "",
+        redWings: "",
+        blackhawks: "",
+        bruins: "",
         // Golf here
         thomas: "",
         hovland: "",
@@ -121,68 +121,68 @@ class goose extends React.Component {
                 var pacificResults = res.data.records[3].teamRecords;
 
                 console.log(centralResults);
-                var islandersWins;
-                var islandersOTLS;
-                var islandersTotal;
-                var devilsWins;
-                var devilsOTLS;
-                var devilsTotal;
-                var ducksWins;
-                var ducksOTLS;
-                var ducksTotal;
+                var redWingsWins;
+                var redWingsOTLS;
+                var redWingsTotal;
+                var blackhawksWins;
+                var blackhawksOTLS;
+                var blackhawksTotal;
+                var bruinsWins;
+                var bruinsOTLS;
+                var bruinsTotal;
                 var allNHL;
 
-                // Here is the islanders and devils loop. 
-                for (var i = 0; i < metroResults.length; i++) {
-                    // islanders
-                    if (metroResults[i].team.id === 2) {
-                        islandersWins = metroResults[i].leagueRecord.wins;
-                        islandersOTLS = metroResults[i].leagueRecord.ot;
-                        console.log(islandersWins);
-                        console.log(islandersOTLS);
+                // Here is the redWings and blackhawks loop. 
+                for (var i = 0; i < atlanticResults.length; i++) {
+                    // redWings
+                    if (atlanticResults[i].team.id === 17) {
+                        redWingsWins = atlanticResults[i].leagueRecord.wins;
+                        redWingsOTLS = atlanticResults[i].leagueRecord.ot;
+                        console.log(redWingsWins);
+                        console.log(redWingsOTLS);
                         console.log("this loop is running")
                     }
 
-                    // devils
-                    if (metroResults[i].team.id === 1) {
-                        devilsWins = metroResults[i].leagueRecord.wins;
-                        devilsOTLS = metroResults[i].leagueRecord.ot;
-                        console.log(devilsWins);
-                        console.log(devilsOTLS);
-                        console.log("this loop is running")
-                    }
-                }
-
-                for (var i = 0; i < pacificResults.length; i++) {
-
-                    // ducks
-                    if (pacificResults[i].team.id === 24) {
-                        ducksWins = pacificResults[i].leagueRecord.wins;
-                        ducksOTLS = pacificResults[i].leagueRecord.ot;
-                        console.log(ducksWins);
-                        console.log(ducksOTLS);
+                    // blackhawks
+                    if (centralResults[i].team.id === 16) {
+                        blackhawksWins = centralResults[i].leagueRecord.wins;
+                        blackhawksOTLS = centralResults[i].leagueRecord.ot;
+                        console.log(blackhawksWins);
+                        console.log(blackhawksOTLS);
                         console.log("this loop is running")
                     }
                 }
 
-                // islanders total
-                islandersTotal = (islandersWins * 2) + islandersOTLS;
-                console.log(islandersTotal);
+                for (var i = 0; i < atlanticResults.length; i++) {
 
-                // devils total
-                devilsTotal = (devilsWins * 2) + devilsOTLS;
-                console.log(devilsTotal)
+                    // bruins
+                    if (atlanticResults[i].team.id === 6) {
+                        bruinsWins = atlanticResults[i].leagueRecord.wins;
+                        bruinsOTLS = atlanticResults[i].leagueRecord.ot;
+                        console.log(bruinsWins);
+                        console.log(bruinsOTLS);
+                        console.log("this loop is running")
+                    }
+                }
 
-                // ducks total
-                ducksTotal = (ducksWins * 2) + ducksOTLS;
-                console.log(ducksTotal);
+                // redWings total
+                redWingsTotal = (redWingsWins * 2) + redWingsOTLS;
+                console.log(redWingsTotal);
 
-                var allNHL = islandersTotal + devilsTotal + ducksTotal
+                // blackhawks total
+                blackhawksTotal = (blackhawksWins * 2) + blackhawksOTLS;
+                console.log(blackhawksTotal)
+
+                // bruins total
+                bruinsTotal = (bruinsWins * 2) + bruinsOTLS;
+                console.log(bruinsTotal);
+
+                var allNHL = redWingsTotal + blackhawksTotal + bruinsTotal
 
                 this.setState({ totalNHL: allNHL });
-                this.setState({ islanders: islandersTotal });
-                this.setState({ devils: devilsTotal });
-                this.setState({ ducks: ducksTotal });
+                this.setState({ redWings: redWingsTotal });
+                this.setState({ blackhawks: blackhawksTotal });
+                this.setState({ bruins: bruinsTotal });
 
             })
             .catch(error => {
@@ -452,19 +452,19 @@ class goose extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">89</th>
-                                                <td className="islanders">NY Islanders</td>
-                                                <td>{this.state.islanders}</td>
+                                                <th scope="row">82</th>
+                                                <td className="bruins">Boston Bruins</td>
+                                                <td>{this.state.bruins}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">151</th>
-                                                <td className="devils">New Jersey Devils</td>
-                                                <td>{this.state.devils}</td>
+                                                <th scope="row">119</th>
+                                                <td className="redwings">Detroit Red Wings</td>
+                                                <td>{this.state.redWings}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">167</th>
-                                                <td className="ducks">Anaheim Mighty Ducks</td>
-                                                <td>{this.state.ducks}</td>
+                                                <th scope="row">158</th>
+                                                <td className="blackhawks">Chicago Blackhawks</td>
+                                                <td>{this.state.blackhawks}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

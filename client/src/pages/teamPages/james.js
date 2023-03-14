@@ -21,9 +21,9 @@ class james extends React.Component {
         leicester: "",
         jamesEPL: "",
         // NHL HERE
-        flames: "",
-        panthers: "",
-        stars: "",
+        rangers: "",
+        canes: "",
+        canucks: "",
         totalNHL: "",
         // Golf here
         koepka: "",
@@ -121,73 +121,73 @@ class james extends React.Component {
                 var pacificResults = res.data.records[3].teamRecords;
 
                 console.log(centralResults);
-                var flamesWins;
-                var flamesOTLS;
-                var flamesTotal;
-                var panthersWins;
-                var panthersOTLS;
-                var panthersTotal;
-                var starsWins;
-                var starsOTLS;
-                var starsTotal;
+                var rangersWins;
+                var rangersOTLS;
+                var rangersTotal;
+                var canesWins;
+                var canesOTLS;
+                var canesTotal;
+                var canucksWins;
+                var canucksOTLS;
+                var canucksTotal;
                 var allNHL;
 
-                // Here is the flames loop. 
+                // Here is the rangers loop. 
+                for (var i = 0; i < metroResults.length; i++) {
+                    // rangers
+                    if (metroResults[i].team.id === 3) {
+                        rangersWins = metroResults[i].leagueRecord.wins;
+                        rangersOTLS = metroResults[i].leagueRecord.ot;
+                        console.log(rangersWins);
+                        console.log(rangersOTLS);
+                        console.log("this loop is running")
+                    }
+                }
+
+
+                // Here is the loop for the canes
+                for (var i = 0; i < metroResults.length; i++) {
+
+                    // canes
+                    if (metroResults[i].team.id === 12) {
+                        canesWins = metroResults[i].leagueRecord.wins;
+                        canesOTLS = metroResults[i].leagueRecord.ot;
+                        console.log(canesWins);
+                        console.log(canesOTLS);
+                        console.log("this loop is running")
+                    }
+                }
+
                 for (var i = 0; i < pacificResults.length; i++) {
-                    // flames
-                    if (pacificResults[i].team.id === 20) {
-                        flamesWins = pacificResults[i].leagueRecord.wins;
-                        flamesOTLS = pacificResults[i].leagueRecord.ot;
-                        console.log(flamesWins);
-                        console.log(flamesOTLS);
+
+                    // canucks
+                    if (pacificResults[i].team.id === 23) {
+                        canucksWins = pacificResults[i].leagueRecord.wins;
+                        canucksOTLS = pacificResults[i].leagueRecord.ot;
+                        console.log(canucksWins);
+                        console.log(canucksOTLS);
                         console.log("this loop is running")
                     }
                 }
 
+                // canes total
+                canesTotal = (canesWins * 2) + canesOTLS;
+                console.log(canesTotal)
 
-                // Here is the loop for the panthers
-                for (var i = 0; i < atlanticResults.length; i++) {
+                // canucks total
+                canucksTotal = (canucksWins * 2) + canucksOTLS;
+                console.log(canucksTotal);
 
-                    // panthers
-                    if (atlanticResults[i].team.id === 13) {
-                        panthersWins = atlanticResults[i].leagueRecord.wins;
-                        panthersOTLS = atlanticResults[i].leagueRecord.ot;
-                        console.log(panthersWins);
-                        console.log(panthersOTLS);
-                        console.log("this loop is running")
-                    }
-                }
+                // rangers total
+                rangersTotal = (rangersWins * 2) + rangersOTLS;
+                console.log(rangersTotal);
 
-                for (var i = 0; i < centralResults.length; i++) {
-
-                    // stars
-                    if (centralResults[i].team.id === 25) {
-                        starsWins = centralResults[i].leagueRecord.wins;
-                        starsOTLS = centralResults[i].leagueRecord.ot;
-                        console.log(starsWins);
-                        console.log(starsOTLS);
-                        console.log("this loop is running")
-                    }
-                }
-
-                // panthers total
-                panthersTotal = (panthersWins * 2) + panthersOTLS;
-                console.log(panthersTotal)
-
-                // stars total
-                starsTotal = (starsWins * 2) + starsOTLS;
-                console.log(starsTotal);
-
-                // flames total
-                flamesTotal = (flamesWins * 2) + flamesOTLS;
-                console.log(flamesTotal);
-
-                var allNHL = flamesTotal + panthersTotal + starsTotal
+                var allNHL = rangersTotal + canesTotal + canucksTotal
 
                 this.setState({ totalNHL: allNHL });
-                this.setState({ flames: flamesTotal });
-                this.setState({ panthers: panthersTotal });
-                this.setState({ stars: starsTotal });
+                this.setState({ rangers: rangersTotal });
+                this.setState({ canes: canesTotal });
+                this.setState({ canucks: canucksTotal });
 
             })
             .catch(error => {
@@ -457,19 +457,19 @@ class james extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">116</th>
-                                                <td className="fPanthers">Florida Panthers</td>
-                                                <td>{this.state.flames}</td>
+                                                <th scope="row">30</th>
+                                                <td className="hurricanes">Carolina Hurricanes</td>
+                                                <td>{this.state.canes}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">136</th>
-                                                <td className="stars">Dallas Stars</td>
-                                                <td>{this.state.stars}</td>
+                                                <th scope="row">73</th>
+                                                <td className="rangers">New York Rangers </td>
+                                                <td>{this.state.rangers}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">117</th>
-                                                <td className="flames">Calgary Flames</td>
-                                                <td>{this.state.flames}</td>
+                                                <th scope="row">115</th>
+                                                <td className="canucks">Vancouver Canucks</td>
+                                                <td>{this.state.canucks}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

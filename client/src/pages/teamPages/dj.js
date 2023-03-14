@@ -21,9 +21,9 @@ class dj extends React.Component {
         astonVilla: "",
         djEPL: "",
         // NHL 
-        bruins: "",
-        pens: "",
-        krakens: "",
+        avalanche: "",
+        flames: "",
+        kings: "",
         totalNHL: "",
         // Golf here
         morikawa: "",
@@ -124,71 +124,71 @@ class dj extends React.Component {
 
                 console.log(metroResults);
 
-                var bruinsWins;
-                var bruinsOTLS;
-                var bruinsTotal;
-                var pensWins;
-                var pensOTLS;
-                var pensTotal;
-                var krakensWins;
-                var krakensOTLS;
-                var krakensTotal;
+                var avalancheWins;
+                var avalancheOTLS;
+                var avalancheTotal;
+                var flamesWins;
+                var flamesOTLS;
+                var flamesTotal;
+                var kingsWins;
+                var kingsOTLS;
+                var kingsTotal;
                 var allNHL;
 
-                // Here is the bruins loop. 
-                for (var i = 0; i < atlanticResults.length; i++) {
-                    // bruins
-                    if (atlanticResults[i].team.id === 6) {
-                        bruinsWins = atlanticResults[i].leagueRecord.wins;
-                        bruinsOTLS = atlanticResults[i].leagueRecord.ot;
-                        console.log(bruinsWins);
-                        console.log(bruinsOTLS);
+                // Here is the avalanche loop. 
+                for (var i = 0; i < centralResults.length; i++) {
+                    // avalanche
+                    if (centralResults[i].team.id === 21) {
+                        avalancheWins = centralResults[i].leagueRecord.wins;
+                        avalancheOTLS = centralResults[i].leagueRecord.ot;
+                        console.log(avalancheWins);
+                        console.log(avalancheOTLS);
                         console.log("this loop is running")
                     }
                 }
 
                 for (var i = 0; i < pacificResults.length; i++) {
 
-                    // krakens
-                    if (pacificResults[i].team.id === 55) {
-                        krakensWins = pacificResults[i].leagueRecord.wins;
-                        krakensOTLS = pacificResults[i].leagueRecord.ot;
-                        console.log(krakensWins);
-                        console.log(krakensOTLS);
+                    // kings
+                    if (pacificResults[i].team.id === 26) {
+                        kingsWins = pacificResults[i].leagueRecord.wins;
+                        kingsOTLS = pacificResults[i].leagueRecord.ot;
+                        console.log(kingsWins);
+                        console.log(kingsOTLS);
                         console.log("this loop is running")
                     }
                 }
 
                 for (var i = 0; i < metroResults.length; i++) {
 
-                    // pens
-                    if (metroResults[i].team.id === 5) {
-                        pensWins = metroResults[i].leagueRecord.wins;
-                        pensOTLS = metroResults[i].leagueRecord.ot;
-                        console.log(pensWins);
-                        console.log(pensOTLS);
+                    // flames
+                    if (pacificResults[i].team.id === 20) {
+                        flamesWins = pacificResults[i].leagueRecord.wins;
+                        flamesOTLS = pacificResults[i].leagueRecord.ot;
+                        console.log(flamesWins);
+                        console.log(flamesOTLS);
                         console.log("this loop is running")
                     }
                 }
 
-                // pens total
-                pensTotal = (pensWins * 2) + pensOTLS;
-                console.log(pensTotal)
+                // flames total
+                flamesTotal = (flamesWins * 2) + flamesOTLS;
+                console.log(flamesTotal)
 
-                // krakens total
-                krakensTotal = (krakensWins * 2) + krakensOTLS;
-                console.log(krakensTotal);
+                // kings total
+                kingsTotal = (kingsWins * 2) + kingsOTLS;
+                console.log(kingsTotal);
 
-                // bruins total
-                bruinsTotal = (bruinsWins * 2) + bruinsOTLS;
-                console.log(bruinsTotal);
+                // avalanche total
+                avalancheTotal = (avalancheWins * 2) + avalancheOTLS;
+                console.log(avalancheTotal);
 
-                var allNHL = bruinsTotal + pensTotal + krakensTotal
+                var allNHL = avalancheTotal + flamesTotal + kingsTotal
 
                 this.setState({ totalNHL: allNHL });
-                this.setState({ bruins: bruinsTotal });
-                this.setState({ pens: pensTotal });
-                this.setState({ krakens: krakensTotal });
+                this.setState({ avalanche: avalancheTotal });
+                this.setState({ flames: flamesTotal });
+                this.setState({ kings: kingsTotal });
 
             })
             .catch(error => {
@@ -459,19 +459,19 @@ class dj extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">80</th>
-                                                <td className="bruins">Boston Bruins</td>
-                                                <td>{this.state.bruins}</td>
+                                                <th scope="row">13</th>
+                                                <td className="avalanche">Colorado Avalanche</td>
+                                                <td>{this.state.avalanche}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">109</th>
-                                                <td className="penguins">Pittsburgh Penguins</td>
-                                                <td>{this.state.pens}</td>
+                                                <th scope="row">62</th>
+                                                <td className="flames">Calgary Flames</td>
+                                                <td>{this.state.flames}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">143</th>
-                                                <td className="mariners">Seattle Kraken</td>
-                                                <td>{this.state.krakens}</td>
+                                                <th scope="row">100</th>
+                                                <td className="kings">LA Kings</td>
+                                                <td>{this.state.kings}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

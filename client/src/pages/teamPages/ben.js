@@ -23,9 +23,9 @@ class ben extends React.Component {
         bournemouth: "",
         benEPL: "",
         // NHL 
+        penguins: "",
         caps: "",
-        canes: "",
-        blackhawks: "",
+        kraken: "",
         totalNHL: "",
         // Golf here
         reed: "",
@@ -125,19 +125,43 @@ class ben extends React.Component {
 
                 console.log(metroResults);
 
+                var penguinsWins;
+                var penguinsOTLS;
+                var penguinsTotal;
                 var capsWins;
                 var capsOTLS;
                 var capsTotal;
-                var canesWins;
-                var canesOTLS;
-                var canesTotal;
-                var blackhawksWins;
-                var blackhawksOTLS;
-                var blackhawksTotal;
+                var krakenWins;
+                var krakenOTLS;
+                var krakenTotal;
                 var allNHL;
 
-                // Here is the caps loop. 
+                // Here is the penguins loop. 
                 for (var i = 0; i < metroResults.length; i++) {
+                    // penguins
+                    if (metroResults[i].team.id === 5) {
+                        penguinsWins = metroResults[i].leagueRecord.wins;
+                        penguinsOTLS = metroResults[i].leagueRecord.ot;
+                        console.log(penguinsWins);
+                        console.log(penguinsOTLS);
+                        console.log("this loop is running")
+                    }
+                }
+
+                for (var i = 0; i < pacificResults.length; i++) {
+
+                    // kraken
+                    if (pacificResults[i].team.id === 55) {
+                        krakenWins = pacificResults[i].leagueRecord.wins;
+                        krakenOTLS = pacificResults[i].leagueRecord.ot;
+                        console.log(krakenWins);
+                        console.log(krakenOTLS);
+                        console.log("this loop is running")
+                    }
+                }
+
+                for (var i = 0; i < metroResults.length; i++) {
+
                     // caps
                     if (metroResults[i].team.id === 15) {
                         capsWins = metroResults[i].leagueRecord.wins;
@@ -148,48 +172,24 @@ class ben extends React.Component {
                     }
                 }
 
-                for (var i = 0; i < centralResults.length; i++) {
-
-                    // blackhawks
-                    if (centralResults[i].team.id === 16) {
-                        blackhawksWins = centralResults[i].leagueRecord.wins;
-                        blackhawksOTLS = centralResults[i].leagueRecord.ot;
-                        console.log(blackhawksWins);
-                        console.log(blackhawksOTLS);
-                        console.log("this loop is running")
-                    }
-                }
-
-                for (var i = 0; i < metroResults.length; i++) {
-
-                    // canes
-                    if (metroResults[i].team.id === 12) {
-                        canesWins = metroResults[i].leagueRecord.wins;
-                        canesOTLS = metroResults[i].leagueRecord.ot;
-                        console.log(canesWins);
-                        console.log(canesOTLS);
-                        console.log("this loop is running")
-                    }
-                }
+                // penguins total
+                penguinsTotal = (penguinsWins * 2) + penguinsOTLS;
+                console.log(penguinsTotal);
 
                 // caps total
                 capsTotal = (capsWins * 2) + capsOTLS;
-                console.log(capsTotal);
+                console.log(capsTotal)
 
-                // canes total
-                canesTotal = (canesWins * 2) + canesOTLS;
-                console.log(canesTotal)
+                // kraken total
+                krakenTotal = (krakenWins * 2) + krakenOTLS;
+                console.log(krakenTotal);
 
-                // blackhawks total
-                blackhawksTotal = (blackhawksWins * 2) + blackhawksOTLS;
-                console.log(blackhawksTotal);
-
-                var allNHL = capsTotal + canesTotal + blackhawksTotal
+                var allNHL = penguinsTotal + capsTotal + krakenTotal
 
                 this.setState({ totalNHL: allNHL });
+                this.setState({ penguins: penguinsTotal });
                 this.setState({ caps: capsTotal });
-                this.setState({ canes: canesTotal });
-                this.setState({ blackhawks: blackhawksTotal });
+                this.setState({ kraken: krakenTotal });
 
             })
             .catch(error => {
@@ -460,19 +460,19 @@ class ben extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">99</th>
+                                                <th scope="row">64</th>
+                                                <td className="penguins">Pittsburgh Penguins</td>
+                                                <td>{this.state.penguins}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">89</th>
                                                 <td className="capitals">Washington Capitals</td>
                                                 <td>{this.state.caps}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">116</th>
-                                                <td className="hurricanes">Carolina Hurricanes</td>
-                                                <td>{this.state.canes}</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">149</th>
-                                                <td className="blackhawks">Chicago Blackhawks</td>
-                                                <td>{this.state.blackhawks}</td>
+                                                <th scope="row">151</th>
+                                                <td className="mariners">Seattle Kraken</td>
+                                                <td>{this.state.kraken}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>
