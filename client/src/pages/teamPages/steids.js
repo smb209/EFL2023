@@ -6,7 +6,7 @@ class steids extends React.Component {
     // Here is the function we will use for creating the actual table. 
     state = {
         allTeams: [],
-        // Putting NBA ardodgers here. Each person's array will include three NBA teams. 
+        // Putting NBA arpadres here. Each person's array will include three NBA teams. 
         allNBA: [],
         steidsNBA: "",
         nuggets: "",
@@ -33,17 +33,17 @@ class steids extends React.Component {
         kim: "",
         totalGolf: "",
         // MLB Here
-        dodgers: 111,
-        nationals: 55,
-        dBacks: 74,
-        totalMLB: 240
+        padres: "",
+        pirates: "",
+        marlins: "",
+        totalMLB: ""
     }
     componentDidMount = () => {
         this.getScoresNBA();
         this.getScoresEPL();
         this.getScoresNHL();
         this.getScoresPGA();
-        // this.getScoresMLB();
+        this.getScoresMLB();
         this.getScoresNFL();
     };
 
@@ -61,37 +61,38 @@ class steids extends React.Component {
             .then(res => {
                 console.log(res.data.response[0]);
                 var fullIndex = res.data.response[0];
-                var dodgersWin;
-                var nationalsWin;
-                var dBacksWin;
+                // Steids MLB 
+                var padresWin;
+                var marlinsWin;
+                var piratesWin;
 
                 for (var i = 0; i < fullIndex.length; i++) {
                     console.log("This loop is running."
                     )
 
-                    // dodgers
-                    if (fullIndex[i].team.id === 18) {
-                        dodgersWin = fullIndex[i].games.win.total
+                    // padres
+                    if (fullIndex[i].team.id === 30) {
+                        padresWin = fullIndex[i].games.win.total
                     }
 
-                    // dBacks
-                    if (fullIndex[i].team.id === 2) {
-                        dBacksWin = fullIndex[i].games.win.total
+                    //marlins
+                    if (fullIndex[i].team.id === 19) {
+                        marlinsWin = fullIndex[i].games.win.total
                     }
 
-                    // nationals
-                    if (fullIndex[i].team.id === 37) {
-                        nationalsWin = fullIndex[i].games.win.total
+                    // pirates
+                    if (fullIndex[i].team.id === 28) {
+                        piratesWin = fullIndex[i].games.win.total
                     }
 
                 }
 
-                var allMLB = dodgersWin + dBacksWin + nationalsWin;
+                var allMLB = padresWin + marlinsWin + piratesWin;
 
                 this.setState({ totalMLB: allMLB });
-                this.setState({ dodgers: dodgersWin });
-                this.setState({ dBacks: dBacksWin });
-                this.setState({ nationals: nationalsWin });
+                this.setState({ padres: padresWin });
+                this.setState({ marlins: marlinsWin });
+                this.setState({ pirates: piratesWin });
 
             });
     };
@@ -198,33 +199,33 @@ class steids extends React.Component {
         API.getScoresEPL()
             .then(res => {
                 console.log(res.data.response[0].league.standings[0])
-                 // Steids EPL here
-                 var manUWin;
-                 var manUTie;
-                 var fulhamWin;
-                 var fulhamTie;
- 
-                 // running the for loop here. 
-                 var forLoopArray = res.data.response[0].league.standings[0]
-                 for (var i = 0; i < forLoopArray.length; i++) {
- 
-                     if (forLoopArray[i].team.id === 33) {
-                         manUWin = forLoopArray[i].all.win
-                         manUTie = forLoopArray[i].all.draw
-                     }
- 
-                     if (forLoopArray[i].team.id === 36) {
-                         fulhamWin = forLoopArray[i].all.win
-                         fulhamTie = forLoopArray[i].all.draw
-                     }
-                 }
- 
-                 var manUTotal = (manUWin * 4.25) + (manUTie);
-                 var fulhamTotal = (fulhamWin * 4.25) + (fulhamTie);
- 
-                 // Here is the final result
-                 var steidsPoints = manUTotal + fulhamTotal;
-                 this.setState({ steidsEPL: steidsPoints });
+                // Steids EPL here
+                var manUWin;
+                var manUTie;
+                var fulhamWin;
+                var fulhamTie;
+
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
+
+                    if (forLoopArray[i].team.id === 33) {
+                        manUWin = forLoopArray[i].all.win
+                        manUTie = forLoopArray[i].all.draw
+                    }
+
+                    if (forLoopArray[i].team.id === 36) {
+                        fulhamWin = forLoopArray[i].all.win
+                        fulhamTie = forLoopArray[i].all.draw
+                    }
+                }
+
+                var manUTotal = (manUWin * 4.25) + (manUTie);
+                var fulhamTotal = (fulhamWin * 4.25) + (fulhamTie);
+
+                // Here is the final result
+                var steidsPoints = manUTotal + fulhamTotal;
+                this.setState({ steidsEPL: steidsPoints });
 
                 var manUTotal = (manUWin * 4.25) + (manUTie);
                 var fulhamTotal = (fulhamWin * 4.25) + (fulhamTie);
@@ -369,7 +370,7 @@ class steids extends React.Component {
                         </div>
 
                         {/* Here is NFL */}
-                        <div class="container smallTable">
+                        {/* <div class="container smallTable">
                             <div class="row">
                                 <div class="col">
                                     <table class="table table-striped table-bordered table-hover">
@@ -405,7 +406,7 @@ class steids extends React.Component {
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
 
                         <div class="container smallTable">
@@ -457,7 +458,7 @@ class steids extends React.Component {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
+                                            <tr>
                                                 <th scope="row">41</th>
                                                 <td className="leafs">Toronto Maple Leafs</td>
                                                 <td>{this.state.leafs}</td>
@@ -498,19 +499,19 @@ class steids extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">6</th>
-                                                <td className="dodgers">LA Dodgers</td>
-                                                <td>{this.state.dodgers}</td>
+                                                <th scope="row">39</th>
+                                                <td className="padres">San Diego Padres</td>
+                                                <td>{this.state.padres}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">146</th>
-                                                <td className="nationals">Washington Nationals</td>
-                                                <td>{this.state.nationals}</td>
+                                                <th scope="row">171</th>
+                                                <td className="pirates">Pittsburgh Pirates</td>
+                                                <td>{this.state.pirates}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">190</th>
-                                                <td className="diamondbacks">Arizona Diamondbacks</td>
-                                                <td>{this.state.dBacks}</td>
+                                                <th scope="row">136</th>
+                                                <td className="marlins">Miami Marlins</td>
+                                                <td>{this.state.marlins}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

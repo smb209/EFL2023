@@ -34,17 +34,17 @@ class neptune extends React.Component {
         fleetwood: "",
         totalGolf: "",
         // MLB Here
-        cubs: 74,
-        stars: 68,
-        pirates: 62,
-        totalMLB: 204
+        orioles: "",
+        stars: "",
+        reds: "",
+        totalMLB: ""
     }
     componentDidMount = () => {
         this.getScoresNBA();
         this.getScoresEPL();
         this.getScoresNHL();
         this.getScoresPGA();
-        // this.getScoresMLB();
+        this.getScoresMLB();
         this.getScoresNFL();
     };
 
@@ -63,37 +63,36 @@ class neptune extends React.Component {
             .then(res => {
                 console.log(res.data.response[0]);
                 var fullIndex = res.data.response[0];
-                var cubsWin;
-                var starsWin;
-                var piratesWin;
+                // Neptune MLB 
+                var oriolesWin;
+                var redsWin;
+                var royalsWin;
 
                 for (var i = 0; i < fullIndex.length; i++) {
                     console.log("This loop is running."
                     )
 
-                    // cubs
-                    if (fullIndex[i].team.id === 6) {
-                        cubsWin = fullIndex[i].games.win.total
+                    // orioles
+                    if (fullIndex[i].team.id === 4) {
+                        oriolesWin = fullIndex[i].games.win.total
                     }
 
-                    // pirates
-                    if (fullIndex[i].team.id === 28) {
-                        piratesWin = fullIndex[i].games.win.total
+                    // reds
+                    if (fullIndex[i].team.id === 8) {
+                        redsWin = fullIndex[i].games.win.total
                     }
 
-                    // stars
-                    if (fullIndex[i].team.id === 35) {
-                        starsWin = fullIndex[i].games.win.total
+                    // royals
+                    if (fullIndex[i].team.id === 16) {
+                        royalsWin = fullIndex[i].games.win.total
                     }
 
                 }
-
-                var allMLB = cubsWin + piratesWin + starsWin;
-
+                var allMLB = oriolesWin + royalsWin + redsWin;
                 this.setState({ totalMLB: allMLB });
-                this.setState({ cubs: cubsWin });
-                this.setState({ pirates: piratesWin });
-                this.setState({ stars: starsWin });
+                this.setState({ orioles: oriolesWin });
+                this.setState({ reds: redsWin });
+                this.setState({ royals: royalsWin });
 
             });
     };
@@ -203,41 +202,41 @@ class neptune extends React.Component {
         API.getScoresEPL()
             .then(res => {
                 console.log(res.data.response[0].league.standings[0])
-                 //   Starting Neptune EPL Here 
-                 var newcastleWin;
-                 var newcastleTie;
-                 var wolvesWin;
-                 var wolvesTie;
- 
-                 // running the for loop here. 
-                 var forLoopArray = res.data.response[0].league.standings[0]
-                 for (var i = 0; i < forLoopArray.length; i++) {
- 
-                     if (forLoopArray[i].team.id === 34) {
-                         newcastleWin = forLoopArray[i].all.win
-                         newcastleTie = forLoopArray[i].all.draw
-                         //then so something
-                         //return something here
-                         console.log("here are the wins" + newcastleWin);
-                         console.log("here are the ties" + newcastleTie);
-                     }
- 
-                     if (forLoopArray[i].team.id === 39) {
-                         wolvesWin = forLoopArray[i].all.win
-                         wolvesTie = forLoopArray[i].all.draw
-                         //then so something
-                         //return something here
-                         console.log("here are the wins" + wolvesWin);
-                         console.log("here are the ties" + wolvesTie);
-                     }
-                 }
- 
-                 var newcastleTotal = (newcastleWin * 4.25) + (newcastleTie);
-                 var wolvesTotal = (wolvesWin * 4.25) + (wolvesTie);
- 
-                 // Here is the final result
-                 var neptunePoints = newcastleTotal + wolvesTotal;
-                 this.setState({ neptuneEPL: neptunePoints });
+                //   Starting Neptune EPL Here 
+                var newcastleWin;
+                var newcastleTie;
+                var wolvesWin;
+                var wolvesTie;
+
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
+
+                    if (forLoopArray[i].team.id === 34) {
+                        newcastleWin = forLoopArray[i].all.win
+                        newcastleTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + newcastleWin);
+                        console.log("here are the ties" + newcastleTie);
+                    }
+
+                    if (forLoopArray[i].team.id === 39) {
+                        wolvesWin = forLoopArray[i].all.win
+                        wolvesTie = forLoopArray[i].all.draw
+                        //then so something
+                        //return something here
+                        console.log("here are the wins" + wolvesWin);
+                        console.log("here are the ties" + wolvesTie);
+                    }
+                }
+
+                var newcastleTotal = (newcastleWin * 4.25) + (newcastleTie);
+                var wolvesTotal = (wolvesWin * 4.25) + (wolvesTie);
+
+                // Here is the final result
+                var neptunePoints = newcastleTotal + wolvesTotal;
+                this.setState({ neptuneEPL: neptunePoints });
 
                 // Here is the final result
                 var neptunePoints = newcastleTotal + wolvesTotal;
@@ -506,19 +505,19 @@ class neptune extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">158</th>
-                                                <td className="cubs">Chicago Cubs</td>
-                                                <td>{this.state.cubs}</td>
+                                                <th scope="row">95</th>
+                                                <td className="orioles">Baltimore Orioles</td>
+                                                <td>{this.state.orioles}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">170</th>
-                                                <td className="stars">Texas stars</td>
-                                                <td>{this.state.stars}</td>
+                                                <th scope="row">147</th>
+                                                <td className="reds">Cincinnati Reds</td>
+                                                <td>{this.state.reds}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">171</th>
-                                                <td className="pirates">Pittsburgh Pirates</td>
-                                                <td>{this.state.pirates}</td>
+                                                <th scope="row">135</th>
+                                                <td className="royals">Kansas City Royals</td>
+                                                <td>{this.state.royals}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

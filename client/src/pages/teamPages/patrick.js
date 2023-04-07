@@ -33,17 +33,17 @@ class patrick extends React.Component {
         wolff: "",
         totalGolf: "",
         // MLB Here
-        jays: 86,
-        reds: 62,
-        guardians: 92,
-        totalMLB: 240
+        dodgers: "",
+        giants: "",
+        braves: "",
+        totalMLB: ""
     }
     componentDidMount = () => {
         this.getScoresNBA();
         this.getScoresEPL();
         this.getScoresNHL();
         this.getScoresPGA();
-        // this.getScoresMLB();
+        this.getScoresMLB();
         this.getScoresNFL();
     }
 
@@ -61,37 +61,34 @@ class patrick extends React.Component {
             .then(res => {
                 console.log(res.data.response[0]);
                 var fullIndex = res.data.response[0];
-                var jaysWin;
-                var redsWin;
-                var guardiansWin;
+                // Patrick here. 
+                var dodgersWin;
+                var bravesWin;
+                var giantsWin;
 
                 for (var i = 0; i < fullIndex.length; i++) {
                     console.log("This loop is running."
                     )
 
-                    //jays
-                    if (fullIndex[i].team.id === 36) {
-                        jaysWin = fullIndex[i].games.win.total
+                    // dodgers
+                    if (fullIndex[i].team.id === 18) {
+                        dodgersWin = fullIndex[i].games.win.total
                     }
-
-                    //guardians
-                    if (fullIndex[i].team.id === 9) {
-                        guardiansWin = fullIndex[i].games.win.total
+                    // braves
+                    if (fullIndex[i].team.id === 3) {
+                        bravesWin = fullIndex[i].games.win.total
                     }
-
-                    // reds
-                    if (fullIndex[i].team.id === 8) {
-                        redsWin = fullIndex[i].games.win.total
+                    // giants
+                    if (fullIndex[i].team.id === 31) {
+                        giantsWin = fullIndex[i].games.win.total
                     }
 
                 }
-
-                var allMLB = jaysWin + guardiansWin + redsWin;
-
+                var allMLB = dodgersWin + bravesWin + giantsWin;
                 this.setState({ totalMLB: allMLB });
-                this.setState({ jays: jaysWin });
-                this.setState({ guardians: guardiansWin });
-                this.setState({ reds: redsWin });
+                this.setState({ dodgers: dodgersWin });
+                this.setState({ braves: bravesWin });
+                this.setState({ giants: giantsWin });
 
             });
     };
@@ -496,19 +493,19 @@ class patrick extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">72</th>
-                                                <td className="blueJays">Toronto Blue Jays</td>
-                                                <td>{this.state.jays}</td>
+                                                <th scope="row">2</th>
+                                                <td className="dodgers">LA Dodgers</td>
+                                                <td>{this.state.dodgers}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">120</th>
-                                                <td className="reds">Cincinnati Reds</td>
-                                                <td>{this.state.reds}</td>
+                                                <th scope="row">110</th>
+                                                <td className="giants">San Francisco Giants</td>
+                                                <td>{this.state.giants}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">126</th>
-                                                <td className="indians">Cleveland Guardians</td>
-                                                <td>{this.state.guardians}</td>
+                                                <th scope="row">19</th>
+                                                <td className="braves">Atlanta Braves</td>
+                                                <td>{this.state.braves}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

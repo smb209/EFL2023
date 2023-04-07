@@ -35,10 +35,10 @@ class tommy extends React.Component {
         tringale: "",
         totalGolf: "",
         // MLB Here
-        rays: 86,
-        whiteSox: 81,
-        braves: 101,
-        totalMLB: "",
+        rays: "",
+        dBacks: "",
+        phillies: "",
+        tomMLB: "",
     }
 
     componentDidMount = () => {
@@ -46,7 +46,7 @@ class tommy extends React.Component {
         this.getScoresNHL();
         this.getScoresEPL();
         this.getScoresPGA();
-        // this.getScoresMLB();
+        this.getScoresMLB();
         this.getScoresNFL();
     }
 
@@ -76,9 +76,10 @@ class tommy extends React.Component {
             .then(res => {
                 console.log(res.data.response[0]);
                 var fullIndex = res.data.response[0];
+                // Tommy MLB 
                 var raysWin;
-                var whiteSoxWin;
-                var bravesWin;
+                var philliesWin;
+                var dBacksWin;
 
                 for (var i = 0; i < fullIndex.length; i++) {
                     console.log("This loop is running."
@@ -89,24 +90,22 @@ class tommy extends React.Component {
                         raysWin = fullIndex[i].games.win.total
                     }
 
-                    // braves
-                    if (fullIndex[i].team.id === 3) {
-                        bravesWin = fullIndex[i].games.win.total
+                    // phillies
+                    if (fullIndex[i].team.id === 27) {
+                        philliesWin = fullIndex[i].games.win.total
                     }
 
-                    // whiteSox
-                    if (fullIndex[i].team.id === 7) {
-                        whiteSoxWin = fullIndex[i].games.win.total
+                    // dBacks
+                    if (fullIndex[i].team.id === 2) {
+                        dBacksWin = fullIndex[i].games.win.total
                     }
 
                 }
-
-                var allMLB = raysWin + bravesWin + whiteSoxWin;
-
-                this.setState({ totalMLB: allMLB });
+                var totalTom = raysWin + dBacksWin + philliesWin;
+                this.setState({ tomMLB: totalTom });
                 this.setState({ rays: raysWin });
-                this.setState({ braves: bravesWin });
-                this.setState({ whiteSox: whiteSoxWin });
+                this.setState({ phillies: philliesWin });
+                this.setState({ dBacks: dBacksWin });
 
             });
     };
@@ -211,27 +210,27 @@ class tommy extends React.Component {
                 var brightonWin;
                 var brightonTie;
 
-            // running the for loop here. 
-            var forLoopArray = res.data.response[0].league.standings[0]
-            for (var i = 0; i < forLoopArray.length; i++) {
+                // running the for loop here. 
+                var forLoopArray = res.data.response[0].league.standings[0]
+                for (var i = 0; i < forLoopArray.length; i++) {
 
-                if (forLoopArray[i].team.id === 40) {
-                    liverpoolWin = forLoopArray[i].all.win
-                    liverpoolTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 40) {
+                        liverpoolWin = forLoopArray[i].all.win
+                        liverpoolTie = forLoopArray[i].all.draw
+                    }
+
+                    if (forLoopArray[i].team.id === 51) {
+                        brightonWin = forLoopArray[i].all.win
+                        brightonTie = forLoopArray[i].all.draw
+                    }
                 }
 
-                if (forLoopArray[i].team.id === 51) {
-                    brightonWin = forLoopArray[i].all.win
-                    brightonTie = forLoopArray[i].all.draw
-                }
-            }
+                var liverpoolTotal = (liverpoolWin * 4.25) + (liverpoolTie);
+                var brightonTotal = (brightonWin * 4.25) + (brightonTie);
 
-            var liverpoolTotal = (liverpoolWin * 4.25) + (liverpoolTie);
-            var brightonTotal = (brightonWin * 4.25) + (brightonTie);
-
-            // Here is the final result
-            var tomPoints = liverpoolTotal + brightonTotal;
-            this.setState({ tomEPL: tomPoints });
+                // Here is the final result
+                var tomPoints = liverpoolTotal + brightonTotal;
+                this.setState({ tomEPL: tomPoints });
                 var liverpoolTotal = (liverpoolWin * 4.25) + (liverpoolTie);
                 var brightonTotal = (brightonWin * 4.25) + (brightonTie);
 
@@ -507,24 +506,24 @@ class tommy extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">24</th>
+                                                <th scope="row">76</th>
+                                                <td className="phillies">Philadelphia Phillies</td>
+                                                <td>{this.state.phillies}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">90</th>
                                                 <td className="rays">Tampa Bay Rays</td>
                                                 <td>{this.state.rays}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">90</th>
-                                                <td className="braves">Atlanta Braves</td>
-                                                <td>{this.state.braves}</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">91</th>
-                                                <td className="whiteSox">Chicago White Sox</td>
-                                                <td>{this.state.whiteSox}</td>
+                                                <th scope="row">112</th>
+                                                <td className="diamondbacks">Arizona Diamondbacks</td>
+                                                <td>{this.state.dBacks}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>
                                                 <td></td>
-                                                <td>{this.state.totalMLB}</td>
+                                                <td>{this.state.tomMLB}</td>
                                             </tr>
                                         </tbody>
                                     </table>

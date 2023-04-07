@@ -6,7 +6,7 @@ class joe extends React.Component {
     // Here is the function we will use for creating the actual table. 
     state = {
         allTeams: [],
-        // Putting NBA arpadres here. Each person's array will include three NBA teams. 
+        // Putting NBA arcardinals here. Each person's array will include three NBA teams. 
         allNBA: [],
         joeNBA: "",
         clippers: "",
@@ -32,17 +32,17 @@ class joe extends React.Component {
         vanRooyen: "",
         totalGolf: "",
         // MLB Here
-        padres: 89,
-        mariners: 90,
-        royals: 65,
-        totalMLB: 244
+        cardinals: "",
+        mariners: "",
+        mariners: "",
+        totalMLB: ""
     }
     componentDidMount = () => {
         this.getScoresNBA();
         this.getScoresEPL();
         this.getScoresNHL();
         this.getScoresPGA();
-        // this.getScoresMLB();
+        this.getScoresMLB();
         this.getScoresNFL();
     }
 
@@ -60,22 +60,17 @@ class joe extends React.Component {
             .then(res => {
                 console.log(res.data.response[0]);
                 var fullIndex = res.data.response[0];
-                var padresWin;
+                var cardinalsWin;
                 var marinersWin;
-                var royalsWin;
+                var whiteSoxWin;
 
                 for (var i = 0; i < fullIndex.length; i++) {
                     console.log("This loop is running."
                     )
 
-                    // padres
-                    if (fullIndex[i].team.id === 30) {
-                        padresWin = fullIndex[i].games.win.total
-                    }
-
-                    // royals
-                    if (fullIndex[i].team.id === 16) {
-                        royalsWin = fullIndex[i].games.win.total
+                    // cardinals
+                    if (fullIndex[i].team.id === 33) {
+                        cardinalsWin = fullIndex[i].games.win.total
                     }
 
                     // mariners
@@ -83,13 +78,17 @@ class joe extends React.Component {
                         marinersWin = fullIndex[i].games.win.total
                     }
 
+                    // whiteSox
+                    if (fullIndex[i].team.id === 7) {
+                        whiteSoxWin = fullIndex[i].games.win.total
+                    }
+
                 }
-
-                var allMLB = padresWin + royalsWin + marinersWin;
-
+               
+                var allMLB = cardinalsWin + whiteSoxWin + marinersWin;
                 this.setState({ totalMLB: allMLB });
-                this.setState({ padres: padresWin });
-                this.setState({ royals: royalsWin });
+                this.setState({ cardinals: cardinalsWin });
+                this.setState({ whiteSox: whiteSoxWin });
                 this.setState({ mariners: marinersWin });
 
             });
@@ -496,19 +495,19 @@ class joe extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">93</th>
-                                                <td className="padres">San Diego Padres</td>
-                                                <td>{this.state.padres}</td>
+                                                <th scope="row">53</th>
+                                                <td className="cardinals">St. Louis Cardinals</td>
+                                                <td>{this.state.cardinals}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">118</th>
-                                                <td className="mariners">Seattle Mariners</td>
+                                                <th scope="row">87</th>
+                                                <td className="whiteSox">Chicago White Sox</td>
                                                 <td>{this.state.mariners}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">133</th>
-                                                <td className="royals">Kansas City Royals</td>
-                                                <td>{this.state.royals}</td>
+                                                <th scope="row">67</th>
+                                                <td className="mariners">Seattle Mariners</td>
+                                                <td>{this.state.mariners}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

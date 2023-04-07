@@ -6,7 +6,7 @@ class goose extends React.Component {
     // Here is the function we will use for creating the actual table. 
     state = {
         allTeams: [],
-        // Putting NBA arangels here. Each person's array will include three NBA teams. 
+        // Putting NBA arredSox here. Each person's array will include three NBA teams. 
         allNBA: [],
         gooseNBA: "",
         celtics: "",
@@ -32,10 +32,10 @@ class goose extends React.Component {
         grillo: "",
         totalGolf: "",
         // MLB Here
-        angels: 73,
-        mets: 101,
-        twins: 78,
-        totalMLB: 252
+        redSox: "",
+        rockies: "",
+        rangers: "",
+        totalMLB: ""
 
     }
     componentDidMount = () => {
@@ -43,7 +43,7 @@ class goose extends React.Component {
         this.getScoresEPL();
         this.getScoresNHL();
         this.getScoresPGA();
-        // this.getScoresMLB();
+        this.getScoresMLB();
         this.getScoresNFL();
     }
 
@@ -61,37 +61,34 @@ class goose extends React.Component {
             .then(res => {
                 console.log(res.data.response[0]);
                 var fullIndex = res.data.response[0];
-                var angelsWin;
-                var metsWin;
-                var twinsWin;
+                var redSoxWin;
+                var rangersWin;
+                var rockiesWin;
 
                 for (var i = 0; i < fullIndex.length; i++) {
                     console.log("This loop is running."
                     )
-
-                    // angels
-                    if (fullIndex[i].team.id === 17) {
-                        angelsWin = fullIndex[i].games.win.total
+                    // redSox
+                    if (fullIndex[i].team.id === 5) {
+                        redSoxWin = fullIndex[i].games.win.total
                     }
 
-                    // twins
-                    if (fullIndex[i].team.id === 22) {
-                        twinsWin = fullIndex[i].games.win.total
+                    // rangers
+                    if (fullIndex[i].team.id === 35) {
+                        rangersWin = fullIndex[i].games.win.total
                     }
 
-                    // mets
-                    if (fullIndex[i].team.id === 24) {
-                        metsWin = fullIndex[i].games.win.total
+                    // rockies
+                    if (fullIndex[i].team.id === 10) {
+                        rockiesWin = fullIndex[i].games.win.total
                     }
-
                 }
-
-                var allMLB = angelsWin + twinsWin + metsWin;
+                var allMLB = redSoxWin + rockiesWin + rangersWin;
 
                 this.setState({ totalMLB: allMLB });
-                this.setState({ angels: angelsWin });
-                this.setState({ twins: twinsWin });
-                this.setState({ mets: metsWin });
+                this.setState({ redSox: redSoxWin });
+                this.setState({ rangers: rangersWin });
+                this.setState({ rockies: rockiesWin });
 
             });
     };
@@ -491,19 +488,19 @@ class goose extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">107</th>
-                                                <td className="angels">Anaheim Angels</td>
-                                                <td>{this.state.angels}</td>
+                                                <th scope="row">99</th>
+                                                <td className="redSox">Boston Red Sox</td>
+                                                <td>{this.state.redSox}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">123</th>
-                                                <td className="mets">NY Mets</td>
-                                                <td>{this.state.mets}</td>
+                                                <th scope="row">143</th>
+                                                <td className="rockies">Colorado Rockies</td>
+                                                <td>{this.state.rockies}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">150</th>
-                                                <td className="twins">Minnesota Twins</td>
-                                                <td>{this.state.twins}</td>
+                                                <th scope="row">130</th>
+                                                <td className="rangers">Texas Rangers</td>
+                                                <td>{this.state.rangers}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

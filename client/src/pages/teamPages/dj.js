@@ -63,8 +63,8 @@ class dj extends React.Component {
                 console.log(res.data.response[0]);
                 var fullIndex = res.data.response[0];
                 var brewersWin;
-                var rockiesWin;
-                var oriolesWin;
+                var astrosWin;
+                var cubsWin;
 
                 for (var i = 0; i < fullIndex.length; i++) {
                     console.log("This loop is running."
@@ -75,24 +75,23 @@ class dj extends React.Component {
                         brewersWin = fullIndex[i].games.win.total
                     }
 
-                    // orioles
-                    if (fullIndex[i].team.id === 4) {
-                        oriolesWin = fullIndex[i].games.win.total
+                    // astros
+                    if (fullIndex[i].team.id === 15) {
+                        astrosWin = fullIndex[i].games.win.total
                     }
 
-                    // rockies
-                    if (fullIndex[i].team.id === 10) {
-                        rockiesWin = fullIndex[i].games.win.total
+                    // cubs
+                    if (fullIndex[i].team.id === 6) {
+                        cubsWin = fullIndex[i].games.win.total
                     }
 
                 }
 
-                var allMLB = brewersWin + oriolesWin + rockiesWin;
-
+                var allMLB = brewersWin + cubsWin + astrosWin;
                 this.setState({ totalMLB: allMLB });
                 this.setState({ brewers: brewersWin });
-                this.setState({ orioles: oriolesWin });
-                this.setState({ rockies: rockiesWin });
+                this.setState({ astros: astrosWin });
+                this.setState({ cubs: cubsWin });
 
             });
     };
@@ -499,19 +498,19 @@ class dj extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">33</th>
+                                                <th scope="row">79</th>
                                                 <td className="brewers">Milwaukee Brewers</td>
                                                 <td>{this.state.brewers}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">129</th>
-                                                <td className="rockies">Colorado Rockies</td>
-                                                <td>{this.state.rockies}</td>
+                                                <th scope="row">8</th>
+                                                <td className="astros">Houston Astros</td>
+                                                <td>{this.state.astros}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">185</th>
-                                                <td className="orioles">Baltimore Orioles</td>
-                                                <td>{this.state.orioles}</td>
+                                                <th scope="row">132</th>
+                                                <td className="cubs">Chicago Cubs</td>
+                                                <td>{this.state.cubs}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>
