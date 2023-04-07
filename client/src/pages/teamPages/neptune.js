@@ -203,41 +203,46 @@ class neptune extends React.Component {
         API.getScoresEPL()
             .then(res => {
                 console.log(res.data.response[0].league.standings[0])
-                var chelseaWin;
-                var chelseaTie;
-                var watfordWin;
-                var watfordTie;
-
-                // running the for loop here. 
-                var forLoopArray = res.data.response[0].league.standings[0]
-                for (var i = 0; i < forLoopArray.length; i++) {
-
-                    if (forLoopArray[i].team.id === 49) {
-                        chelseaWin = forLoopArray[i].all.win
-                        chelseaTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + chelseaWin);
-                        console.log("here are the ties" + chelseaTie);
-                    }
-
-                    if (forLoopArray[i].team.id === 38) {
-                        watfordWin = forLoopArray[i].all.win
-                        watfordTie = forLoopArray[i].all.draw
-                        //then so something
-                        //return something here
-                        console.log("here are the wins" + watfordWin);
-                        console.log("here are the ties" + watfordTie);
-                    }
-                }
-
-                var chelseaTotal = (chelseaWin * 4.25) + (chelseaTie);
-                var watfordTotal = (watfordWin * 4.25) + (watfordTie);
+                 //   Starting Neptune EPL Here 
+                 var newcastleWin;
+                 var newcastleTie;
+                 var wolvesWin;
+                 var wolvesTie;
+ 
+                 // running the for loop here. 
+                 var forLoopArray = res.data.response[0].league.standings[0]
+                 for (var i = 0; i < forLoopArray.length; i++) {
+ 
+                     if (forLoopArray[i].team.id === 34) {
+                         newcastleWin = forLoopArray[i].all.win
+                         newcastleTie = forLoopArray[i].all.draw
+                         //then so something
+                         //return something here
+                         console.log("here are the wins" + newcastleWin);
+                         console.log("here are the ties" + newcastleTie);
+                     }
+ 
+                     if (forLoopArray[i].team.id === 39) {
+                         wolvesWin = forLoopArray[i].all.win
+                         wolvesTie = forLoopArray[i].all.draw
+                         //then so something
+                         //return something here
+                         console.log("here are the wins" + wolvesWin);
+                         console.log("here are the ties" + wolvesTie);
+                     }
+                 }
+ 
+                 var newcastleTotal = (newcastleWin * 4.25) + (newcastleTie);
+                 var wolvesTotal = (wolvesWin * 4.25) + (wolvesTie);
+ 
+                 // Here is the final result
+                 var neptunePoints = newcastleTotal + wolvesTotal;
+                 this.setState({ neptuneEPL: neptunePoints });
 
                 // Here is the final result
-                var neptunePoints = chelseaTotal + watfordTotal;
-                this.setState({ chelsea: chelseaTotal });
-                this.setState({ watford: watfordTotal });
+                var neptunePoints = newcastleTotal + wolvesTotal;
+                this.setState({ newcastle: newcastleTotal });
+                this.setState({ wolves: wolvesTotal });
                 this.setState({ eplTotal: neptunePoints });
 
             })
@@ -426,14 +431,14 @@ class neptune extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">3</th>
-                                                <td className="chelsea">Chelsea</td>
-                                                <td>{this.state.chelsea}</td>
+                                                <th scope="row">21</th>
+                                                <td className="newcastle">Newcastle</td>
+                                                <td>{this.state.newcastle}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">82</th>
-                                                <td className="watford">Watford</td>
-                                                <td>{this.state.watford}</td>
+                                                <th scope="row">120</th>
+                                                <td className="wolverhampton">Wolves</td>
+                                                <td>{this.state.wolves}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

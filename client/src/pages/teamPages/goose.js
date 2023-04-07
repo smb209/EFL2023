@@ -193,43 +193,42 @@ class goose extends React.Component {
     getScoresEPL = () => {
         API.getScoresEPL()
             .then(res => {
-                //   Starting Goose EPL Here 
-                console.log(res.data.response[0].league.standings[0])
-                var crystalWin;
-                var crystalTie;
-                var newcastleWin;
-                var newcastleTie;
+                // Goose EPL here
+                var arsenalWin;
+                var arsenalTie;
+                var crystalPalaceWin;
+                var crystalPalaceTie;
 
                 // running the for loop here. 
                 var forLoopArray = res.data.response[0].league.standings[0]
                 for (var i = 0; i < forLoopArray.length; i++) {
 
-                    if (forLoopArray[i].team.id === 52) {
-                        crystalWin = forLoopArray[i].all.win
-                        crystalTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 42) {
+                        arsenalWin = forLoopArray[i].all.win
+                        arsenalTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + crystalWin);
-                        console.log("here are the ties" + crystalTie);
+                        console.log("here are the wins" + arsenalWin);
+                        console.log("here are the ties" + arsenalTie);
                     }
 
-                    if (forLoopArray[i].team.id === 34) {
-                        newcastleWin = forLoopArray[i].all.win
-                        newcastleTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 52) {
+                        crystalPalaceWin = forLoopArray[i].all.win
+                        crystalPalaceTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + newcastleWin);
-                        console.log("here are the ties" + newcastleTie);
+                        console.log("here are the wins" + crystalPalaceWin);
+                        console.log("here are the ties" + crystalPalaceTie);
                     }
                 }
 
-                var crystalTotal = (crystalWin * 4.25) + (crystalTie);
-                var newcastleTotal = (newcastleWin * 4.25) + (newcastleTie);
+                var arsenalTotal = (arsenalWin * 4.25) + (arsenalTie);
+                var crystalPalaceTotal = (crystalPalaceWin * 4.25) + (crystalPalaceTie);
 
                 // Here is the final result
-                var goosePoints = crystalTotal + newcastleTotal;
-                this.setState({ crystal: crystalTotal });
-                this.setState({ newcastle: newcastleTotal });
+                var goosePoints = crystalPalaceTotal + arsenalTotal;
+                this.setState({ crystal: crystalPalaceTotal });
+                this.setState({ arsenal: arsenalTotal });
                 this.setState({ eplTotal: goosePoints });
 
             })
@@ -417,14 +416,14 @@ class goose extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">77</th>
+                                                <th scope="row">71</th>
                                                 <td className="crystalP">Crystal Palace</td>
                                                 <td>{this.state.crystal}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">92</th>
-                                                <td className="newcastle">Newcastle</td>
-                                                <td>{this.state.newcastle}</td>
+                                                <th scope="row">3</th>
+                                                <td className="arsenal">Arsenal</td>
+                                                <td>{this.state.arsenal}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

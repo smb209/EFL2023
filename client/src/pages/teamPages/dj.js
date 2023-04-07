@@ -17,8 +17,8 @@ class dj extends React.Component {
         broncos: 70,
         totalNFL: 250,
         // EPL
-        brighton: "",
-        astonVilla: "",
+        leicester: "",
+        southhamptonilla: "",
         djEPL: "",
         // NHL 
         avalanche: "",
@@ -199,43 +199,43 @@ class dj extends React.Component {
     getScoresEPL = () => {
         API.getScoresEPL()
             .then(res => {
-
-                console.log(res.data.response[0].league.standings[0])
-                var brightonWin;
-                var brightonTie;
-                var astonVWin;
-                var astonVTie;
+                // HERE ARE EPL TEAMS FOR DJ. 
+                var leicesterWin;
+                var leicesterTie;
+                var southhamptonWin;
+                var southhamptonTie;
 
                 // running the for loop here. 
                 var forLoopArray = res.data.response[0].league.standings[0]
                 for (var i = 0; i < forLoopArray.length; i++) {
 
-                    if (forLoopArray[i].team.id === 51) {
-                        brightonWin = forLoopArray[i].all.win
-                        brightonTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 46) {
+                        leicesterWin = forLoopArray[i].all.win
+                        leicesterTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + brightonWin);
-                        console.log("here are the ties" + brightonTie);
+                        console.log("here are the wins" + leicesterWin);
+                        console.log("here are the ties" + leicesterTie);
                     }
 
-                    if (forLoopArray[i].team.id === 66) {
-                        astonVWin = forLoopArray[i].all.win
-                        astonVTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 41) {
+                        southhamptonWin = forLoopArray[i].all.win
+                        southhamptonTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + astonVWin);
-                        console.log("here are the ties" + astonVTie);
+                        console.log("here are the wins" + southhamptonWin);
+                        console.log("here are the ties" + southhamptonTie);
                     }
                 }
 
-                var brightonTotal = (brightonWin * 4.25) + (brightonTie);
-                var astonVTotal = (astonVWin * 4.25) + (astonVTie);
+                var leicesterTotal = (leicesterWin * 4.25) + (leicesterTie);
+                var southhamptonTotal = (southhamptonWin * 4.25) + (southhamptonTie);
+
 
                 // Here is the final result
-                var djPoints = brightonTotal + astonVTotal;
-                this.setState({ brighton: brightonTotal });
-                this.setState({ astonV: astonVTotal });
+                var djPoints = leicesterTotal + southhamptonTotal;
+                this.setState({ leicester: leicesterTotal });
+                this.setState({ southhampton: southhamptonTotal });
                 this.setState({ eplTotal: djPoints });
 
             })
@@ -423,14 +423,14 @@ class dj extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">59</th>
-                                                <td className="brighton">Brighton and Hove Albion</td>
-                                                <td>{this.state.brighton}</td>
+                                                <th scope="row">108</th>
+                                                <td className="leicester">Leicester</td>
+                                                <td>{this.state.leicester}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">62</th>
-                                                <td className="astonV">Aston Villa</td>
-                                                <td>{this.state.astonV}</td>
+                                                <th scope="row">129</th>
+                                                <td className="southhampton">Southhampton</td>
+                                                <td>{this.state.southhampton}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

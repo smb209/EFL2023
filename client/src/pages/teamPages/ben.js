@@ -200,44 +200,43 @@ class ben extends React.Component {
     getScoresEPL = () => {
         API.getScoresEPL()
             .then(res => {
-                //   Starting Eres EPL Here 
-
-                console.log(res.data.response[0].league.standings[0])
-                var manCityWin;
-                var manCityTie;
-                var norwichWin;
-                var norwichTie;
+                // Mark Eres EPL here
+                var chelseaWin;
+                var chelseaTie;
+                var bournemouthWin;
+                var bournemouthTie;
 
                 // running the for loop here. 
                 var forLoopArray = res.data.response[0].league.standings[0]
                 for (var i = 0; i < forLoopArray.length; i++) {
 
-                    if (forLoopArray[i].team.id === 50) {
-                        manCityWin = forLoopArray[i].all.win
-                        manCityTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 49) {
+                        chelseaWin = forLoopArray[i].all.win
+                        chelseaTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + manCityWin);
-                        console.log("here are the ties" + manCityTie);
+                        console.log("here are the wins" + chelseaWin);
+                        console.log("here are the ties" + chelseaTie);
                     }
 
-                    if (forLoopArray[i].team.id === 71) {
-                        norwichWin = forLoopArray[i].all.win
-                        norwichTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 35) {
+                        bournemouthWin = forLoopArray[i].all.win
+                        bournemouthTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + norwichWin);
-                        console.log("here are the ties" + norwichTie);
+                        console.log("here are the wins" + bournemouthWin);
+                        console.log("here are the ties" + bournemouthTie);
                     }
                 }
 
-                var manCityTotal = (manCityWin * 4.25) + (manCityTie);
-                var norwichTotal = (norwichWin * 4.25) + (norwichTie);
+                var chelseaTotal = (chelseaWin * 4.25) + (chelseaTie);
+                var bournemouthTotal = (bournemouthWin * 4.25) + (bournemouthTie);
+
 
                 // Here is the final result
-                var eresPoints = manCityTotal + norwichTotal;
-                this.setState({ manCity: manCityTotal });
-                this.setState({ norwich: norwichTotal });
+                var eresPoints = chelseaTotal + bournemouthTotal;
+                this.setState({ chelsea: chelseaTotal });
+                this.setState({ bournemouth: bournemouthTotal });
                 this.setState({ eplTotal: eresPoints });
 
             })
@@ -425,14 +424,14 @@ class ben extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">5</th>
-                                                <td className="mancity">Manchester City</td>
-                                                <td>{this.state.manCity}</td>
+                                                <th scope="row">10</th>
+                                                <td className="chelsea">Chelsea</td>
+                                                <td>{this.state.chelsea}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">189</th>
-                                                <td className="norwich">Norwich</td>
-                                                <td>{this.state.norwich}</td>
+                                                <th scope="row">181</th>
+                                                <td className="bournemouth">Bournemouth</td>
+                                                <td>{this.state.bournemouth}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>

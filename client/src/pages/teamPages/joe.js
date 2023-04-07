@@ -198,41 +198,42 @@ class joe extends React.Component {
         API.getScoresEPL()
             .then(res => {
                 console.log(res.data.response[0].league.standings[0])
-                var brentfordWin;
-                var brentfordTie;
-                var southhamptonWin;
-                var southhamptonTie;
+                var evertonWin;
+                var evertonTie;
+                var tottenhamWin;
+                var tottenhamTie;
 
                 // running the for loop here. 
                 var forLoopArray = res.data.response[0].league.standings[0]
                 for (var i = 0; i < forLoopArray.length; i++) {
 
-                    if (forLoopArray[i].team.id === 55) {
-                        brentfordWin = forLoopArray[i].all.win
-                        brentfordTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 45) {
+                        evertonWin = forLoopArray[i].all.win
+                        evertonTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + brentfordWin);
-                        console.log("here are the ties" + brentfordTie);
+                        console.log("here are the wins" + evertonWin);
+                        console.log("here are the ties" + evertonTie);
                     }
 
-                    if (forLoopArray[i].team.id === 41) {
-                        southhamptonWin = forLoopArray[i].all.win
-                        southhamptonTie = forLoopArray[i].all.draw
+                    if (forLoopArray[i].team.id === 47) {
+                        tottenhamWin = forLoopArray[i].all.win
+                        tottenhamTie = forLoopArray[i].all.draw
                         //then so something
                         //return something here
-                        console.log("here are the wins" + southhamptonWin);
-                        console.log("here are the ties" + southhamptonTie);
+                        console.log("here are the wins" + tottenhamWin);
+                        console.log("here are the ties" + tottenhamTie);
                     }
                 }
 
-                var brentfordTotal = (brentfordWin * 4.25) + (brentfordTie);
-                var southhamptonTotal = (southhamptonWin * 4.25) + (southhamptonTie);
+                var evertonTotal = (evertonWin * 4.25) + (evertonTie);
+                var tottenhamTotal = (tottenhamWin * 4.25) + (tottenhamTie);
 
                 // Here is the final result
-                var joePoints = brentfordTotal + southhamptonTotal;
-                this.setState({ brentford: brentfordTotal });
-                this.setState({ southhampton: southhamptonTotal });
+                var joePoints = evertonTotal + tottenhamTotal;
+                this.setState({ joeEPL: joePoints });
+                this.setState({ everton: evertonTotal });
+                this.setState({ tottenham: tottenhamTotal });
                 this.setState({ eplTotal: joePoints });
 
             })
@@ -420,14 +421,14 @@ class joe extends React.Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">63</th>
-                                                <td className="brentford">Brentford</td>
-                                                <td>{this.state.brentford}</td>
+                                                <th scope="row">35</th>
+                                                <td className="everton">Everton</td>
+                                                <td>{this.state.everton}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">78</th>
-                                                <td className="southhampton">Southhampton</td>
-                                                <td>{this.state.southhampton}</td>
+                                                <th scope="row">6</th>
+                                                <td className="tottenham">Tottenham</td>
+                                                <td>{this.state.tottenham}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Total</th>
