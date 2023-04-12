@@ -4,26 +4,26 @@ export const golfHelper = () => {
     let x = {
 
         // Neptune
-        "Scheffler": 916,
-        "Schauffele": 383,
-        "Cantlay": 531,
-        "Woods": 0,
-        "Herbert": 56,
+        "Scheffler": 1844,
+        "Schauffele": 617,
+        "Cantlay": 821,
+        "Woods": 11,
+        "Herbert": 124,
 
         // Al
-        "Rahm": 2000,
-        "Morikawa": 691,
-        "Conners": 186, 
-        "Harman": 681,
-        "Davis": 116,
+        "Rahm": 2631,
+        "Morikawa": 860,
+        "Conners": 779, 
+        "Harman": 739,
+        "Davis": 252,
 
 
         // Eres
-        "Mcilroy": 552,
-        "Spieth": 161,
-        "Matsuyama": 222,
-        "Lowry": 93,
-        "Simpson": 12,
+        "Mcilroy": 1010,
+        "Spieth": 628,
+        "Matsuyama": 462,
+        "Lowry": 280,
+        "Simpson": 136,
 
         // Pat/JP
         "Thomas": 262,
@@ -33,48 +33,48 @@ export const golfHelper = () => {
         "Riley": 131, 
 
         // SAT
-        "Homa": 1574,
+        "Homa": 1801,
         "Berger": 0,
-        "Straka": 359,
-        "Henley": 561,
-        "Fowler": 541,
+        "Straka": 521,
+        "Henley": 786,
+        "Fowler": 741,
 
         // Tommy
-        "Finau": 810,
-        "Fitzpatrick": 169,
-        "Kim": 815,
-        "Bradley": 1006,
-        "McNealy": 374,
+        "Finau": 976,
+        "Fitzpatrick": 318,
+        "Kim": 917,
+        "Bradley": 1153,
+        "McNealy": 403,
 
         // Goose
-        "Hovland": 372,
-        "Im": 454,
-        "Pereira": 171,
-        "Power": 940,
-        "Grillo": 298,
+        "Hovland": 738,
+        "Im": 700,
+        "Pereira": 185,
+        "Power": 972,
+        "Grillo": 319,
 
         // James
-        "Burns": 284,
-        "Horschel":140, 
-        "Hatton": 169,
-        "Fleetwood": 171,
-        "Wise": 244,
+        "Burns": 984,
+        "Horschel":228, 
+        "Hatton": 641,
+        "Fleetwood": 403,
+        "Wise": 283,
 
 
         // DJ
-        "English": 247,
-        "SiWoo": 722,
-        "Scott": 75,
+        "English": 536,
+        "SiWoo": 858,
+        "Scott": 142,
         "Champ": 91,
-        "Rose": 670,
+        "Rose": 828,
 
 
         // Big Dog
-        "Hoge": 570,
-        "Hughes": 668,
-        "Putnam": 563,
-        "Day": 458,
-        "Griffin": 361, 
+        "Hoge": 755,
+        "Hughes": 805,
+        "Putnam": 679,
+        "Day": 793,
+        "Griffin": 501, 
 
         // NFL starts here 
         // "Chiefs": 122.2,
