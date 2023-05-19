@@ -6,7 +6,7 @@ class james extends React.Component {
     // Here is the function we will use for creating the actual table. 
     state = {
         allTeams: [],
-        // Putting NBA arjays here. Each person's array will include three NBA teams. 
+        // Putting NBA arrays here. Each person's array will include three NBA teams. 
         allNBA: [],
         jamesNBA: "",
         suns: "",
