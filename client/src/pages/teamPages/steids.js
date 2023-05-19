@@ -470,7 +470,7 @@ class steids extends React.Component {
                                             </tr>
                                             <tr>
                                                 <th scope="row">61</th>
-                                                <td className="panthers">Carolina Panthers</td>
+                                                <td className="fPanthers">Florida Panthers</td>
                                                 <td>{this.state.panthers}</td>
                                             </tr>
                                             <tr>
