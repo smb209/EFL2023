@@ -4,77 +4,77 @@ export const golfHelper = () => {
     let x = {
 
         // Neptune
-        "Scheffler": 1844,
-        "Schauffele": 617,
-        "Cantlay": 821,
+        "Scheffler": 2640,
+        "Schauffele": 1233,
+        "Cantlay": 1244,
         "Woods": 11,
-        "Herbert": 124,
+        "Herbert": 142,
 
         // Al
-        "Rahm": 2631,
-        "Morikawa": 860,
-        "Conners": 779, 
-        "Harman": 739,
-        "Davis": 252,
+        "Rahm": 3042,
+        "Morikawa": 940,
+        "Conners": 940, 
+        "Harman": 844,
+        "Davis": 466,
 
 
         // Eres
-        "Mcilroy": 1010,
-        "Spieth": 628,
-        "Matsuyama": 462,
-        "Lowry": 280,
-        "Simpson": 136,
+        "Mcilroy": 1207,
+        "Spieth": 1063,
+        "Matsuyama": 572,
+        "Lowry": 402,
+        "Simpson": 140,
 
         // Pat/JP
-        "Thomas": 262,
-        "Zalatoris": 229,
-        "Young": 180,
-        "Theegala": 705,
-        "Riley": 131, 
+        "Thomas": 469,
+        "Zalatoris": 244,
+        "Young": 684,
+        "Theegala": 1009,
+        "Riley": 719, 
 
         // SAT
-        "Homa": 1801,
+        "Homa": 1955,
         "Berger": 0,
-        "Straka": 521,
-        "Henley": 786,
-        "Fowler": 741,
+        "Straka": 692,
+        "Henley": 928,
+        "Fowler": 1017,
 
         // Tommy
-        "Finau": 976,
-        "Fitzpatrick": 318,
-        "Kim": 917,
-        "Bradley": 1153,
-        "McNealy": 403,
+        "Finau": 1536,
+        "Fitzpatrick": 930,
+        "Kim": 1028,
+        "Bradley": 1233,
+        "McNealy": 414,
 
         // Goose
-        "Hovland": 738,
-        "Im": 700,
-        "Pereira": 185,
-        "Power": 972,
-        "Grillo": 319,
+        "Hovland": 1623,
+        "Im": 937,
+        "Pereira": 236,
+        "Power": 1077,
+        "Grillo": 1048,
 
         // James
-        "Burns": 984,
-        "Horschel":228, 
-        "Hatton": 641,
-        "Fleetwood": 403,
-        "Wise": 283,
+        "Burns": 1218,
+        "Horschel":281, 
+        "Hatton":1068,
+        "Fleetwood": 611,
+        "Wise": 289,
 
 
         // DJ
-        "English": 536,
-        "SiWoo": 858,
-        "Scott": 142,
-        "Champ": 91,
-        "Rose": 828,
+        "English": 797,
+        "SiWoo": 1333,
+        "Scott": 452,
+        "Champ": 183,
+        "Rose": 1003,
 
 
         // Big Dog
-        "Hoge": 755,
-        "Hughes": 805,
-        "Putnam": 679,
-        "Day": 793,
-        "Griffin": 501, 
+        "Hoge": 811,
+        "Hughes": 858,
+        "Putnam": 850,
+        "Day": 1293,
+        "Griffin": 529, 
 
         // NFL starts here 
         // "Chiefs": 122.2,
