@@ -12,7 +12,7 @@ class Table extends Component {
         allTeams: [],
         // Putting NBA arrays here. Each person's array will include three NBA teams. 
         allNBA: [],
-        tomNBA: "",
+        tomNBA: 194,
         patrickNBA: "",
         jamesNBA: "",
         neptuneNBA: "",
@@ -169,7 +169,7 @@ class Table extends Component {
                     epl: this.state.tomEPL,
                     nfl: this.state.tomNFL,
                     pga: this.state.tomPGA,
-                    nba: this.state.tomNBA,
+                    nba: 194,
                     nhl: this.state.tomNHL,
                     mlb: this.state.tomMLB,
                     bonus: this.state.tomBonus,
@@ -1873,6 +1873,10 @@ class Table extends Component {
                 var bullsWin = res.data.api.standings[7].win;
                 var pistonsWin = res.data.api.standings[9].win;
 
+                console.log(hawksWin)
+                console.log(bullsWin)
+                console.log(pistonsWin)
+
                 const tempTomNBA = this.state.allNBA;
 
                 tempTomNBA.push(hawksWin);
@@ -1888,6 +1892,7 @@ class Table extends Component {
                 }
                 // console.log(TomPoints);
                 this.setState({ tomNBA: TomPoints });
+                console.log(TomPoints)
 
                 // PATRICK
                 var mavsWin = res.data.api.standings[26].win;
