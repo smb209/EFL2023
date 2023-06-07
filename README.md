@@ -1,71 +1,46 @@
-# Epic-Fantasy-League
+# Getting Started with Create React App
 
-Built by Tommy Flynn 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-With thanks for Excel help/ initial league creation to: 
-Ryan Neptune | Alex Andrews
+## Available Scripts
 
-This is currently the platform for my existing league to use and track points. My intention is to build out the platform to allow for anyone to sign up and start an epic fantasy league. 
+In the project directory, you can run:
 
-1. How it Works
+### `yarn start`
 
-- 10 Teams in the EFL League. Each team is required to pick:
-- Three NFL Teams (30 total teams selected out of 32 possible teams)
-- Three NBA Teams (30 teams selected out of 30 possible teams)
-- Three NHL Teams (30 teams selected out of 31 possible teams)
-- Three MLB Teams (30 teams selected out of 30 possible teams) 
-- Two EPL teams (20 teams selected out of 20 possible teams) 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- 14 Teams in total for a total of 140 draft picks. 
-    - Can draft any team from any league, as long as you end up with 3/3/3/3/2
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-- League pays out top three finishes 
+### `yarn test`
 
-2. Under the Hood
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- React
-- MongoDB
-- Autho Login Integration
-- APIs
-    - EPL: API Football (100 calls per day for free) 
-    - NBA: API NBA (unlimited for free) 
-    - NHL: https://statsapi.web.nhl.com/api/v1/standings (unlimited for free)
-    - MLB:  https://fantasydata.com/api/api-documentation/mlb#(but season hasn’t started)
-    - NFL: https://fantasydata.com/api/api-documentation/nfl#/core (but season has ended)
-- Bootstrap:
-    - MDBReact Table
-- Balsamiq for wireframe. 
+### `yarn build`
 
-3. Crunching the numbers
-- States on States: Total Score =
-    -   EPL 
-    [(API Grab for EPL Team [1] Wins * 4.25) +   (API Grab for EPL Team[1] Ties)] + 
-    [(API Grab for EPL Team[2]  Wins * 4.25) +   (API Grab for EPL Team[2] Ties)]  + 
-    -   NBA 
-    [(API Grab for NBA Team[1] Wins * 2) +
-    [(API Grab for NBA Team[2] Wins * 2) +   
-    [(API Grab for NBA Team[3] Wins * 2) +  
-    -   NFL
-    [(API Grab for NFL Team[1] Wins * 10) + 
-    [(API Grab for NFL Team[2] Wins * 10) +
-    [(API Grab for NFL Team[3] Wins * 10) +
-    -   NHL
-    [(API Grab for NHL Team[1] Wins * 2) + (API Grab for NHL Team[1] Ties)] +
-    [(API Grab for NHL Team[2] Wins * 2) + (API Grab for NHL Team[2] Ties)] +
-    [(API Grab for NHL Team[3] Wins * 2) + (API Grab for NHL Team[3] Ties)] +
-    -   MLB
-    [(API Grab for MLB  Team[1] Wins ) + 
-    [(API Grab for MLB  Team[2] Wins ) + 
-    [(API Grab for MLB  Team[3] Wins ) + 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-4. Features I want to add:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-    A. Add team colors to each individual page/draft 
-    B. Use win percentage to project a user’s total points at the end of the season (on a projections page)
-    C. Add Win/Loss record for each real life team.    
-    D. Build the draft platform. 
-    - Snake Draft 
-    - Auction Draft 
-    - Automated Draft (actually the easiest of the three)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Please contact me at TFly.Flynn@gmail.com with any questions about the app. 
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
