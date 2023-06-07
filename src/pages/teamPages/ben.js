@@ -1,6 +1,7 @@
 import React from "react";
 import API from "../../utils/API";
 import { golfHelper } from "../../middleware/helper";
+import { Link } from "react-router-dom";
 
 // This page is now for Mark Eres. 
 
@@ -300,21 +301,21 @@ class ben extends React.Component {
                                         Teams
                                     </div>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="tommy">Tommy</a>
-                                        <a class="dropdown-item" href="patrick">Patrick</a>
-                                        <a class="dropdown-item" href="james">James</a>
-                                        <a class="dropdown-item" href="neptune">Neptune</a>
-                                        <a class="dropdown-item" href="dj">DJ</a>
-                                        <a class="dropdown-item" href="goose">Goose</a>
-                                        <a class="dropdown-item" href="al">Al</a>
-                                        <a class="dropdown-item" href="joe">Joe</a>
-                                        <a class="dropdown-item" href="steids">Steids</a>
-                                        <a class="dropdown-item" href="ben">Eres</a>
+                                        <Link class="dropdown-item" to="/tommy">Tommy</Link>
+                                        <Link class="dropdown-item" to="/patrick">Patrick</Link>
+                                        <Link class="dropdown-item" to="/james">James</Link>
+                                        <Link class="dropdown-item" to="/neptune">Neptune</Link>
+                                        <Link class="dropdown-item" to="/dj">DJ</Link>
+                                        <Link class="dropdown-item" to="/goose">Goose</Link>
+                                        <Link class="dropdown-item" to="/al">Al</Link>
+                                        <Link class="dropdown-item" to="/joe">Joe</Link>
+                                        <Link class="dropdown-item" to="/steids">Steids</Link>
+                                        <Link class="dropdown-item" to="/ben">Eres</Link>
                                     </div>
                                 </div>
                             </li>
                             {/* <li class="nav-item">
-                                <a class="nav-link" href="/Login">Login</a>
+                                <Link class="nav-link"  to="/Login">Login</Link>
                             </li> */}
                             <li class="nav-item">
                                 <a class="nav-link" href="/draft">Draft Results</a>

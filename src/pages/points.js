@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class points extends React.Component {
 
@@ -7,14 +8,14 @@ class points extends React.Component {
         return (
             <div>
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a class="navbar-brand" href="/Home">Epic Fantasy League</a>
+                    <Link class="navbar-brand"  to="/Home">Epic Fantasy League</Link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="/Home">Standings <span class="sr-only">(current)</span></a>
+                                <Link class="nav-link"  to="/Home">Standings <span class="sr-only">(current)</span></Link>
                             </li>
                             <li class="nav-item">
                                 <div class="dropdown show">
@@ -22,27 +23,27 @@ class points extends React.Component {
                                         Teams
                                     </div>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="tommy">Tommy</a>
-                                        <a class="dropdown-item" href="patrick">Patrick</a>
-                                        <a class="dropdown-item" href="james">James</a>
-                                        <a class="dropdown-item" href="neptune">Neptune</a>
-                                        <a class="dropdown-item" href="dj">DJ</a>
-                                        <a class="dropdown-item" href="goose">Goose</a>
-                                        <a class="dropdown-item" href="al">Al</a>
-                                        <a class="dropdown-item" href="joe">Joe</a>
-                                        <a class="dropdown-item" href="steids">Steids</a>
-                                        <a class="dropdown-item" href="ben">Eres</a>
+                                        <Link class="dropdown-item" to="/tommy">Tommy</Link>
+                                        <Link class="dropdown-item" to="/patrick">Patrick</Link>
+                                        <Link class="dropdown-item" to="/james">James</Link>
+                                        <Link class="dropdown-item" to="/neptune">Neptune</Link>
+                                        <Link class="dropdown-item" to="/dj">DJ</Link>
+                                        <Link class="dropdown-item" to="/goose">Goose</Link>
+                                        <Link class="dropdown-item" to="/al">Al</Link>
+                                        <Link class="dropdown-item" to="/joe">Joe</Link>
+                                        <Link class="dropdown-item" to="/steids">Steids</Link>
+                                        <Link class="dropdown-item" to="/ben">Eres</Link>
                                     </div>
                                 </div>
                             </li>
                             {/* <li class="nav-item">
-                                <a class="nav-link" href="/Login">Login</a>
+                                <Link class="nav-link"  to="/Login">Login</Link>
                             </li> */}
                             <li class="nav-item">
-                                <a class="nav-link" href="/draft">Draft Results</a>
+                                <Link class="nav-link"  to="/draft">Draft Results</Link>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="/points">Points System</a>
+                                <Link class="nav-link"  to="/points">Points System</Link>
                             </li>
                         </ul>
                     </div>
