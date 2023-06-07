@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/EFL2023/static/css/main.ddd09cb6.css",
+    "main.js": "/EFL2023/static/js/main.a8cb0056.js",
+    "index.html": "/EFL2023/index.html",
+    "main.ddd09cb6.css.map": "/EFL2023/static/css/main.ddd09cb6.css.map",
+    "main.a8cb0056.js.map": "/EFL2023/static/js/main.a8cb0056.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ddd09cb6.css",
+    "static/js/main.a8cb0056.js"
+  ]
+}
